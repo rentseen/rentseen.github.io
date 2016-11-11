@@ -131,9 +131,12 @@ i {
 }
 .tag-a:hover{
   text-decoration:none;
+  color:#999999 !important;
+  border-color: #999999 !important;
 }
 
 
 .tag-a:visited{
   color:#349ef3;
+  text-decoration:none;
 }
