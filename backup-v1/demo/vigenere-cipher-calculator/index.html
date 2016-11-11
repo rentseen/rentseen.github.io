@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>vigenere cipher</title>
+    <style>
+      .container{
+        width:60%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .button{
+        margin-top: 30px;
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3 >Text</h3>
+      <textarea id="text" rows="5" cols="30" value="">
+      </textarea>
+      <h3>Key</h3>
+      <input type="text" id="key" name="key">
+      <h3>Transformation</h3>
+      <div class="radio">
+        <input type="radio" name="transformation" value="e" checked>Encryption
+        <input type="radio" name="transformation" value="d">Decryption
+      </div>
+      <div class="button">
+        <input onclick="calculate()" type="button" name="name" value="calculate">
+      </div>
+
+      <h3>Result</h3>
+      <input type="text" id="result" disabled="disabled" name="result" value="">
+    </div>
+    <script type="text/javascript">
+      function calculate() {
+        var textObject=document.getElementById("text");
+        var keyObject=document.getElementById("key");
+        var transformationObject=document.getElementsByName("transformation");
+        var resultObject=document.getElementById("result");
+        var direction=-1;
+        for(var i=0;i<transformationObject.length;i++){
+          if(transformationObject[i].checked){
+            direction=i;
+            break;
+          }
+        }
+        var text=textObject.value.toLowerCase();
+        var posF=0;
+        var posE=text.length;
+        for(var i=text.length-1;i>=0;i--){
+          if(text.charAt(i)==' '){
+            posE--;
+          }
+          else{
+            break;
+          }
+        }
+        for(var i=0;i<text.length;i++){
+          if(text.charAt(i)==' '){
+            posF++;
+          }
+          else{
+            break;
+          }
+        }
+        text=text.substring(posF,posE);
+        var key=keyObject.value.toLowerCase();
+        //replace space
+        key=key.replace(/\s+/g,"");
+        var pos=0;
+        var result=new Array();
+        for(var i=0;i<text.length;i++){
+          if(text[i]==' '){
+            result.push(' ');
+            continue;
+          }
+          if(direction==0){
+            tmp=((text.charCodeAt(i)-"a".charCodeAt(0))+(key.charCodeAt(pos)-"a".charCodeAt(0)))%26+"a".charCodeAt(0);
+            tmp=String.fromCharCode(tmp);
+            result.push(tmp);
+            pos=(pos+1)%key.length;
+          }
+          else{
+            tmp=(text.charCodeAt(i)-key.charCodeAt(pos));
+            if(tmp<0){
+              tmp=tmp+26;
+            }
+            tmp=tmp+"a".charCodeAt(0);
+            tmp=String.fromCharCode(tmp);
+            result.push(tmp);
+            pos=(pos+1)%key.length;
+          }
+        }
+        result=result.join("");
+        resultObject.value=result;
+
+      }
+    </script>
+  </body>
+</html>

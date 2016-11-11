@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.18-DEV" />
+
+  <title>linux bash学习 &middot; Rentsen&#39;s Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://rentsenn.github.io/css/side-menu.css">
+
+  <link rel="stylesheet" href="http://rentsenn.github.io/css/style.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/monokai-sublime.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="http://rentsenn.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="http://rentsenn.github.io/">Rentsen</a>
+
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://rentsenn.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://rentsenn.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://rentsenn.github.io/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://rentsenn.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="mailto:yelinsheng@sjtu.edu.cn"><i class='fa fa-envelope fa-fw'></i>Email Me</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/yelinsheng" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/u/3845941574" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/%e6%9e%97%e7%94%9f-%e5%8f%b6-b73a6793" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/RentsenRentsenn" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>Copyright &copy; 叶林生 2016.</small>
+  </div>
+  <div class="small-print">
+    <small>Powered by <a class="copyright-a" href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <br>
+    <small>Theme with  <a class="copyright-a" href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>linux bash学习</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2016-09-01</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="tag-a" href="http://rentsenn.github.io/tags/study">study</a>
+    
+      <a class="tag-a" href="http://rentsenn.github.io/tags/language">language</a>
+    
+      <a class="tag-a" href="http://rentsenn.github.io/tags/linux-bash">linux-bash</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  
+
+<h1 id="linux-bash学习">linux bash学习</h1>
+
+<h2 id="chmod">chmod</h2>
+
+<p>change mode, 改变文件的权限
+<a href="http://www.cnblogs.com/younes/archive/2009/11/20/1607174.html">详情可见博客</a></p>
+
+<h2 id="hello-world">hello world</h2>
+
+<p>demo 如下</p>
+
+<pre><code class="language-bash">#!/bin/bash
+#hello world
+a=&quot;hello world&quot;
+echo $a
+</code></pre>
+
+<h2 id="if-else">if else</h2>
+
+<p>格式为</p>
+
+<pre><code class="language-bash">if [ ... ]; then
+	  ...
+elif [ ... ]; then
+	  ...
+else
+	  ...
+fi
+</code></pre>
+
+<p>demo如下</p>
+
+<pre><code class="language-bash">#!/bin/bash
+#test if else
+
+#-f ----&gt; if is a file
+a=&quot;if-else.sh&quot;
+if [ -f $a ]; then
+	echo &quot;$a is a file&quot;
+else
+	echo &quot;$a is not a file&quot;
+fi
+
+#-lt ----&gt; less than -le -&gt; less equal
+b=4
+if [ $b -lt 5 ]; then
+	echo &quot;$b is less than 5&quot;
+else
+	echo &quot;$b is great or equal than 5&quot;
+fi
+
+#-x ----&gt; if is executable
+c=&quot;if-else.sh&quot;
+if [ -x $c ]; then
+	echo &quot;$c is executable&quot;
+else
+	echo &quot;$c is not executable&quot;
+fi
+</code></pre>
+
+<h2 id="参数列表">参数列表</h2>
+
+<p>$#表示包括$0在内的命令行参数的个数。在Shell中，脚本名称本身是$0，剩下的依次是$0、$1、$2…、${10}、${11}，等等。$*表示整个参数列表，不包括$0，也就是说不包括文件名的参数列表。</p>
+
+<pre><code class="language-bash">#!/bin/bash
+#test parameters
+echo $#
+echo $0
+echo $1
+echo $*
+</code></pre>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://rentsenn.github.io/post/mogodb/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://rentsenn.github.io/post/mogodb/">mongodb学习</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="http://rentsenn.github.io/post/cplusplus-multithread/">c&#43;&#43; multithreading学习</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="http://rentsenn.github.io/post/cplusplus-multithread/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="http://rentsenn.github.io/js/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.18-DEV" />
+
+  <title>c&#43;&#43;函数 &middot; Rentsen&#39;s Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://rentsenn.github.io/css/side-menu.css">
+
+  <link rel="stylesheet" href="http://rentsenn.github.io/css/style.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/monokai-sublime.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="http://rentsenn.github.io/img/favicon.ico" type="image/x-icon" />
+
+  
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="http://rentsenn.github.io/">Rentsen</a>
+
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://rentsenn.github.io/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://rentsenn.github.io/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://rentsenn.github.io/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://rentsenn.github.io/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="mailto:yelinsheng@sjtu.edu.cn"><i class='fa fa-envelope fa-fw'></i>Email Me</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/yelinsheng" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/u/3845941574" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/%e6%9e%97%e7%94%9f-%e5%8f%b6-b73a6793" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/RentsenRentsenn" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>Copyright &copy; 叶林生 2016.</small>
+  </div>
+  <div class="small-print">
+    <small>Powered by <a class="copyright-a" href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <br>
+    <small>Theme with  <a class="copyright-a" href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>c&#43;&#43;函数</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2014-09-01</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="tag-a" href="http://rentsenn.github.io/tags/study">study</a>
+    
+      <a class="tag-a" href="http://rentsenn.github.io/tags/language">language</a>
+    
+      <a class="tag-a" href="http://rentsenn.github.io/tags/c&#43;&#43;">C&#43;&#43;</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  
+
+<h1 id="函数用法">函数用法</h1>
+
+<h2 id="function-call-operator">function call operator</h2>
+
+<p>在class中加入operator()使类具有函数的特征</p>
+
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+class mul{
+	public:
+		mul(int x){
+			multiplier=x;
+		}
+		int operator()(int x) const {
+			return x*multiplier;
+		}
+	private:
+		int multiplier;
+};
+int main(){
+	mul test(10);
+	std::cout&lt;&lt;test(2)&lt;&lt;std::endl;
+}
+</code></pre>
+
+<h2 id="lamda-expression">lamda expression</h2>
+
+<p>[传入的变量列表](函数参数){函数体}(调用);</p>
+
+<p>在[ ]中声明需要使用的调用体的域中的本地变量，全局变量不需要声明。[=]表示所有的变量以赋值的形式传入，[&amp;]表示所有的变量以引用的形式传入，[=,&amp;j]表示除j外都以赋值传入，[i,&amp;j]，表示i以赋值传入，j以引用传入</p>
+
+<p>第一个()为参数列表</p>
+
+<p>{}中是函数体</p>
+
+<p>第二个()表示调用</p>
+
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+int main(){
+	int x=1;
+	double y=1.2;
+	bool z=false;
+	[x,&amp;y](int i){std::cout&lt;&lt;i+x+y&lt;&lt;std::endl;}(1);
+	return 0;
+}
+</code></pre>
+
+<h2 id="accumulate">accumulate</h2>
+
+<p>累加, demo 如下所示，可使用vector的迭代器</p>
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;numeric&gt;
+
+int main(){
+    int can[]={1,2,3,4};
+    int r=std::accumulate(can,can+4,0);
+    std::cout&lt;&lt;r&lt;&lt;std::endl;
+    return 0;
+}
+</code></pre>
+
+<h2 id="distance">distance</h2>
+
+<p>返回迭代器之间的距离，demo如下:</p>
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+int main(){
+	char a[]={1,2,3,4,5};
+	std::vector&lt; int&gt; b={1,2,3,4,5};
+	std::cout&lt;&lt;std::distance(a,a+4)&lt;&lt;std::endl;
+	std::cout&lt;&lt;std::distance(b.begin(), b.end())&lt;&lt;std::endl;
+	return 0;
+}
+</code></pre>
+
+<h2 id="advance">advance</h2>
+
+<p>增加迭代器变量值，在list中应使用这个</p>
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+int main(){
+	std::vector&lt;int&gt; v={1,2,3,4,5};
+	auto b= v.begin();
+	std::advance(b,2);
+	std::cout&lt;&lt;v[b-v.begin()]&lt;&lt;std::endl;
+	return 0;
+}
+</code></pre>
+
+<h2 id="hash">hash</h2>
+
+<p>对对象进行hash</p>
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+int main(){
+	std::hash&lt;std::string&gt; test;
+	std::cout&lt;&lt;test(&quot;hello&quot;)&lt;&lt;std::endl;
+	return 0;
+}
+</code></pre>
+
+<h2 id="find">find</h2>
+
+<p>在容器中查找元素</p>
+
+<h2 id="move">move</h2>
+
+<p>将object转移给其他的变量，leaves the source object with a NULL pointer</p>
+
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+
+int main(){
+	std::string a=&quot;abs&quot;;
+	std::cout&lt;&lt;a&lt;&lt;std::endl;
+	std::string b=std::move(a);
+	std::cout&lt;&lt;a&lt;&lt;std::endl&lt;&lt;b&lt;&lt;std::endl;
+	return 0;
+}
+</code></pre>
+
+<h2 id="函数传入参数-是否会拷贝副本的问题">函数传入参数，是否会拷贝副本的问题</h2>
+
+<p>当调用函数时，在函数的scope中，一般使用的是参数的副本，即在执行函数体之前参数的copy版本会被传入，然而当参数是一个新建的对象而没用变量指向它时，它会直接传入调用的函数中去，而不会传入它的副本，以下代码可以验证这个问题。</p>
+
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+
+class c{
+	int a;
+	public:
+		c(int x):a(x){}
+		c(const c &amp;x){
+			a=x.a;
+			std::cout&lt;&lt;&quot;copy constructor called&quot;&lt;&lt;std::endl;
+		}
+};
+
+void func(c x){
+	std::cout&lt;&lt;&quot;func called&quot;&lt;&lt;std::endl;
+}
+int main(){
+	c t(10);
+	std::cout&lt;&lt;&quot;object with name:&quot;&lt;&lt;std::endl;
+	func(t);
+	std::cout&lt;&lt;&quot;object without name:&quot;&lt;&lt;std::endl;
+	func(c(20));
+	return 0;
+}
+</code></pre>
+
+<h2 id="std-mem-fn">std::mem_fn</h2>
+
+<p>将类的成员保存在一个变量中之后调用，&rdquo;Its functional call takes as first argument an object of type T (or a reference or a pointer to it) and, as additional arguments, the arguments taken by pm (if any). The effect of such a call with fn as first argument are the same as calling fn.*pm (or (*fn).*pm if fn is a pointer), forwarding any additional arguments.&rdquo;</p>
+
+<pre><code class="language-cpp">#include &lt;iostream&gt;     // std::cout
+#include &lt;functional&gt;   // std::mem_fn
+
+struct int_holder {
+	 int value;
+	 int triple() {return value*3;}
+};
+
+int main () {
+	 int_holder five {5};
+
+	 // call member directly:
+	 std::cout &lt;&lt; five.triple() &lt;&lt; '\n';
+
+	 // same as above using a mem_fn:
+	 auto triple = std::mem_fn (&amp;int_holder::triple);
+	 std::cout &lt;&lt; triple(five) &lt;&lt; '\n';
+
+	 return 0;
+}
+</code></pre>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://rentsenn.github.io/post/algorithm-review/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://rentsenn.github.io/post/algorithm-review/">算法复习</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="http://rentsenn.github.io/post/mogodb/">mongodb学习</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="http://rentsenn.github.io/post/mogodb/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</div>
+
+</div>
+</div>
+<script src="http://rentsenn.github.io/js/ui.js"></script>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Front End on Rentsen&#39;s Blog</title>
+    <link>http://rentsenn.github.io/tags/front-end/index.xml</link>
+    <description>Recent content in Front End on Rentsen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
+    <atom:link href="http://rentsenn.github.io/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>htmlpy框架学习</title>
+      <link>http://rentsenn.github.io/post/htmlpy/</link>
+      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/htmlpy/</guid>
+      <description>
+
+&lt;h1 id=&#34;notes-for-htmlpy&#34;&gt;Notes for htmlpy&lt;/h1&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Platform&lt;/strong&gt;: Ubuntu 16.04 LTS&lt;/p&gt;
+
+&lt;p&gt;1) Installing python package manager: pip&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Installing htmlPy&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pip install htmlPy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Installing PySide&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pyside
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4) Installing jinja2, which is depended by htmlPy.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo pip install jinja2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5) Installing PyQt4&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-qt4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;a-simple-demo&#34;&gt;A simple demo&lt;/h2&gt;
+
+&lt;p&gt;Assume that there is a file named &amp;ldquo;index.html&amp;rdquo; in the same path.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import htmlPy
+import os
+
+app = htmlPy.AppGUI(title=u&amp;quot;htmlPy Quickstart&amp;quot;, maximized=True)
+
+app.template_path = os.path.abspath(&amp;quot;.&amp;quot;)
+app.static_path = os.path.abspath(&amp;quot;.&amp;quot;)
+
+app.template = (&amp;quot;index.html&amp;quot;, {&amp;quot;username&amp;quot;: &amp;quot;htmlPy_user&amp;quot;})
+
+app.start()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;modularization&#34;&gt;Modularization&lt;/h2&gt;
+
+&lt;p&gt;The driver file structure should be:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Initial configurations&lt;/li&gt;
+&lt;li&gt;htmlPy GUI initialization&lt;/li&gt;
+&lt;li&gt;htmlPy GUI configuration&lt;/li&gt;
+&lt;li&gt;Binding of back-end functionalities with GUI
+a. Import back-end functionalities
+b. Bind imported functionalities&lt;/li&gt;
+&lt;li&gt;Instructions for running front-end in if __name__ \=\= &amp;ldquo;__main__&amp;ldquo;: conditional. Always keep the GUI starter code in the &lt;code&gt;if __name__ == “__main__”:&lt;/code&gt; conditional. The GUI has to be started only when the driver file is running, not when it is being imported&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+import htmlPy
+from PyQt4 import QtGui
+
+
+# Initial confiurations
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+
+# GUI initializations
+app = htmlPy.AppGUI(title=u&amp;quot;Application&amp;quot;, maximized=True, plugins=True)
+
+
+# GUI configurations
+app.static_path = os.path.join(BASE_DIR, &amp;quot;static/&amp;quot;)
+app.template_path = os.path.join(BASE_DIR, &amp;quot;templates/&amp;quot;)
+
+app.web_app.setMinimumWidth(1024)
+app.web_app.setMinimumHeight(768)
+app.window.setWindowIcon(QtGui.QIcon(BASE_DIR + &amp;quot;/static/img/icon.png&amp;quot;))
+
+# Binding of back-end functionalities with GUI
+
+# Import back-end functionalities
+from html_to_python import ClassName
+
+# Register back-end functionalities
+app.bind(ClassName())
+
+
+# Instructions for running application
+if __name__ == &amp;quot;__main__&amp;quot;:
+    # The driver file will have to be imported everywhere in back-end.
+    # So, always keep app.start() in if __name__ == &amp;quot;__main__&amp;quot; conditional
+    app.start()
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

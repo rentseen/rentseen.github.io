@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Rentsen&#39;s Blog</title>
+    <link>http://rentsenn.github.io/tags/hugo/index.xml</link>
+    <description>Recent content in Hugo on Rentsen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
+    <atom:link href="http://rentsenn.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hugo tips记录</title>
+      <link>http://rentsenn.github.io/post/hugo/</link>
+      <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/hugo/</guid>
+      <description>
+
+&lt;h2 id=&#34;编译的路径&#34;&gt;编译的路径&lt;/h2&gt;
+
+&lt;p&gt;layouts/indexes下的html文件会被编译到一个单独的路径中，作为索引&lt;/p&gt;
+
+&lt;p&gt;也可以用以下代码在config中强行指定索引文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[indexes]
+  tag = &amp;quot;tags&amp;quot;
+  topic = &amp;quot;topics&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;md渲染&#34;&gt;md渲染&lt;/h2&gt;
+
+&lt;p&gt;默认是按_default下的single.html来渲染的&lt;/p&gt;
+
+&lt;h2 id=&#34;render模板指令&#34;&gt;render模板指令&lt;/h2&gt;
+
+&lt;p&gt;默认是从_default目录中寻找的&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

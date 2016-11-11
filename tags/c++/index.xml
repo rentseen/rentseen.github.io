@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on Rentsen&#39;s Blog</title>
+    <link>http://rentsenn.github.io/tags/c&#43;&#43;/index.xml</link>
+    <description>Recent content in C&#43;&#43; on Rentsen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
+    <atom:link href="http://rentsenn.github.io/tags/c&#43;&#43;/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>c&#43;&#43; multithreading学习</title>
+      <link>http://rentsenn.github.io/post/cplusplus-multithread/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/cplusplus-multithread/</guid>
+      <description>
+
+&lt;h1 id=&#34;c-concurrency-in-action&#34;&gt;c++ concurrency in action&lt;/h1&gt;
+
+&lt;h2 id=&#34;g-compile&#34;&gt;g++ compile&lt;/h2&gt;
+
+&lt;p&gt;g++ -std=c++11 launch-thread.cpp -o launch-thread -lpthread&lt;/p&gt;
+
+&lt;h2 id=&#34;basic-thread-management&#34;&gt;basic thread management&lt;/h2&gt;
+
+&lt;h3 id=&#34;lanch-a-thread&#34;&gt;lanch a thread&lt;/h3&gt;
+
+&lt;p&gt;we can lanch a thread by passing a parameter which can be function, lamda expression and function call operator&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;thread&amp;gt;
+
+void helloWorld(){
+	std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function&amp;quot;&amp;lt;&amp;lt;std::endl;
+}
+
+class hello{
+	public:
+		void operator()(){
+			std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function call operator&amp;quot;&amp;lt;&amp;lt;std::endl;
+		}
+};
+
+int main(){
+	std::thread testFunction(helloWorld);
+
+	std::thread testLamda([]{
+		std::cout&amp;lt;&amp;lt;&amp;quot;hello world from lamda&amp;quot;&amp;lt;&amp;lt;std::endl;
+	});
+
+	hello x;
+	std::thread testCall(x);
+
+	testFunction.join();
+	testLamda.join();
+	testCall.join();
+
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;wait-all-let-it-run&#34;&gt;wait all let it run&lt;/h3&gt;
+
+&lt;p&gt;using join(), local thread will wait until thread to finished.&lt;/p&gt;
+
+&lt;p&gt;using detach(), thread will continue run even if local thread is destroyed&lt;/p&gt;
+
+&lt;h3 id=&#34;waiting-in-exceptional-circumstances&#34;&gt;Waiting in exceptional circumstances&lt;/h3&gt;
+
+&lt;p&gt;thread_guard will be destroyed before thread, so join() will be called in destructor&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;thread&amp;gt;
+
+class thread_guard{
+	std::thread &amp;amp;t;
+	public:
+		thread_guard(std::thread &amp;amp;t_):t(t_){
+		}
+		~thread_guard(){
+			if(t.joinable()){
+				t.join();
+			}
+		}
+};
+
+int main(){
+	std::thread t([](){
+		std::cout&amp;lt;&amp;lt;&amp;quot;hello&amp;quot;&amp;lt;&amp;lt;std::endl;
+	});
+	thread_guard g(t);
+
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;passing-argument&#34;&gt;passing argument&lt;/h3&gt;
+
+&lt;p&gt;argument is passed by pass a copy into internal storage. If pass a reference, we should use std::ref.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;thread&amp;gt;
+void func(int &amp;amp;x){
+	x++;
+	x++;
+}
+int main(){
+	int x=10;
+	std::thread t(func,std::ref(x));
+	t.join();
+	std::cout&amp;lt;&amp;lt;x&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;thread-management&#34;&gt;thread management&lt;/h2&gt;
+
+&lt;h3 id=&#34;hardware-concurrency&#34;&gt;hardware_concurrency&lt;/h3&gt;
+
+&lt;p&gt;This function returns an indication of the number of threads that can truly run concurrently for a given execution of a program. On a multicore system it might be the number of CPU cores, for example.
+demo show as follow:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+int main(){
+	std::cout&amp;lt;&amp;lt;std::thread::hardware_concurrency()&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;thread-id&#34;&gt;thread id&lt;/h3&gt;
+
+&lt;p&gt;the identifier for a thread can be obtained from its associated std::thread object by calling the get_id() member function;the identifier for the current thread can be obtained by calling std::this_thread::get_id().
+demo show as follow:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+int main(){
+	std::cout&amp;lt;&amp;lt;std::this_thread::get_id()&amp;lt;&amp;lt;std::endl;
+	std::thread a([]{
+		std::cout&amp;lt;&amp;lt;&amp;quot;hello world&amp;quot;&amp;lt;&amp;lt;std::endl;
+	});
+	std::cout&amp;lt;&amp;lt;a.get_id()&amp;lt;&amp;lt;std::endl;
+	a.join();
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;sharing-data-between-threads&#34;&gt;sharing data between threads&lt;/h2&gt;
+
+&lt;h3 id=&#34;race-condition&#34;&gt;race condition&lt;/h3&gt;
+
+&lt;p&gt;几个线程的操作同时修改某个对象产生的问题。&lt;/p&gt;
+
+&lt;p&gt;解决这个问题有三种方法：当某个线程在修改时，不允许其他线程介入；lock-free programming（复杂）;transaction(c++不支持)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>c&#43;&#43;函数</title>
+      <link>http://rentsenn.github.io/post/cplusplus-functions/</link>
+      <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/cplusplus-functions/</guid>
+      <description>
+
+&lt;h1 id=&#34;函数用法&#34;&gt;函数用法&lt;/h1&gt;
+
+&lt;h2 id=&#34;function-call-operator&#34;&gt;function call operator&lt;/h2&gt;
+
+&lt;p&gt;在class中加入operator()使类具有函数的特征&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+class mul{
+	public:
+		mul(int x){
+			multiplier=x;
+		}
+		int operator()(int x) const {
+			return x*multiplier;
+		}
+	private:
+		int multiplier;
+};
+int main(){
+	mul test(10);
+	std::cout&amp;lt;&amp;lt;test(2)&amp;lt;&amp;lt;std::endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;lamda-expression&#34;&gt;lamda expression&lt;/h2&gt;
+
+&lt;p&gt;[传入的变量列表](函数参数){函数体}(调用);&lt;/p&gt;
+
+&lt;p&gt;在[ ]中声明需要使用的调用体的域中的本地变量，全局变量不需要声明。[=]表示所有的变量以赋值的形式传入，[&amp;amp;]表示所有的变量以引用的形式传入，[=,&amp;amp;j]表示除j外都以赋值传入，[i,&amp;amp;j]，表示i以赋值传入，j以引用传入&lt;/p&gt;
+
+&lt;p&gt;第一个()为参数列表&lt;/p&gt;
+
+&lt;p&gt;{}中是函数体&lt;/p&gt;
+
+&lt;p&gt;第二个()表示调用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+int main(){
+	int x=1;
+	double y=1.2;
+	bool z=false;
+	[x,&amp;amp;y](int i){std::cout&amp;lt;&amp;lt;i+x+y&amp;lt;&amp;lt;std::endl;}(1);
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;accumulate&#34;&gt;accumulate&lt;/h2&gt;
+
+&lt;p&gt;累加, demo 如下所示，可使用vector的迭代器&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;numeric&amp;gt;
+
+int main(){
+    int can[]={1,2,3,4};
+    int r=std::accumulate(can,can+4,0);
+    std::cout&amp;lt;&amp;lt;r&amp;lt;&amp;lt;std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;distance&#34;&gt;distance&lt;/h2&gt;
+
+&lt;p&gt;返回迭代器之间的距离，demo如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+int main(){
+	char a[]={1,2,3,4,5};
+	std::vector&amp;lt; int&amp;gt; b={1,2,3,4,5};
+	std::cout&amp;lt;&amp;lt;std::distance(a,a+4)&amp;lt;&amp;lt;std::endl;
+	std::cout&amp;lt;&amp;lt;std::distance(b.begin(), b.end())&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;advance&#34;&gt;advance&lt;/h2&gt;
+
+&lt;p&gt;增加迭代器变量值，在list中应使用这个&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+int main(){
+	std::vector&amp;lt;int&amp;gt; v={1,2,3,4,5};
+	auto b= v.begin();
+	std::advance(b,2);
+	std::cout&amp;lt;&amp;lt;v[b-v.begin()]&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;hash&#34;&gt;hash&lt;/h2&gt;
+
+&lt;p&gt;对对象进行hash&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+int main(){
+	std::hash&amp;lt;std::string&amp;gt; test;
+	std::cout&amp;lt;&amp;lt;test(&amp;quot;hello&amp;quot;)&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;find&#34;&gt;find&lt;/h2&gt;
+
+&lt;p&gt;在容器中查找元素&lt;/p&gt;
+
+&lt;h2 id=&#34;move&#34;&gt;move&lt;/h2&gt;
+
+&lt;p&gt;将object转移给其他的变量，leaves the source object with a NULL pointer&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+
+int main(){
+	std::string a=&amp;quot;abs&amp;quot;;
+	std::cout&amp;lt;&amp;lt;a&amp;lt;&amp;lt;std::endl;
+	std::string b=std::move(a);
+	std::cout&amp;lt;&amp;lt;a&amp;lt;&amp;lt;std::endl&amp;lt;&amp;lt;b&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;函数传入参数-是否会拷贝副本的问题&#34;&gt;函数传入参数，是否会拷贝副本的问题&lt;/h2&gt;
+
+&lt;p&gt;当调用函数时，在函数的scope中，一般使用的是参数的副本，即在执行函数体之前参数的copy版本会被传入，然而当参数是一个新建的对象而没用变量指向它时，它会直接传入调用的函数中去，而不会传入它的副本，以下代码可以验证这个问题。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+
+class c{
+	int a;
+	public:
+		c(int x):a(x){}
+		c(const c &amp;amp;x){
+			a=x.a;
+			std::cout&amp;lt;&amp;lt;&amp;quot;copy constructor called&amp;quot;&amp;lt;&amp;lt;std::endl;
+		}
+};
+
+void func(c x){
+	std::cout&amp;lt;&amp;lt;&amp;quot;func called&amp;quot;&amp;lt;&amp;lt;std::endl;
+}
+int main(){
+	c t(10);
+	std::cout&amp;lt;&amp;lt;&amp;quot;object with name:&amp;quot;&amp;lt;&amp;lt;std::endl;
+	func(t);
+	std::cout&amp;lt;&amp;lt;&amp;quot;object without name:&amp;quot;&amp;lt;&amp;lt;std::endl;
+	func(c(20));
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;std-mem-fn&#34;&gt;std::mem_fn&lt;/h2&gt;
+
+&lt;p&gt;将类的成员保存在一个变量中之后调用，&amp;rdquo;Its functional call takes as first argument an object of type T (or a reference or a pointer to it) and, as additional arguments, the arguments taken by pm (if any). The effect of such a call with fn as first argument are the same as calling fn.*pm (or (*fn).*pm if fn is a pointer), forwarding any additional arguments.&amp;rdquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;     // std::cout
+#include &amp;lt;functional&amp;gt;   // std::mem_fn
+
+struct int_holder {
+	 int value;
+	 int triple() {return value*3;}
+};
+
+int main () {
+	 int_holder five {5};
+
+	 // call member directly:
+	 std::cout &amp;lt;&amp;lt; five.triple() &amp;lt;&amp;lt; &#39;\n&#39;;
+
+	 // same as above using a mem_fn:
+	 auto triple = std::mem_fn (&amp;amp;int_holder::triple);
+	 std::cout &amp;lt;&amp;lt; triple(five) &amp;lt;&amp;lt; &#39;\n&#39;;
+
+	 return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

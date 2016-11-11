@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Rentsen&#39;s Blog</title>
+    <link>http://rentsenn.github.io/post/index.xml</link>
+    <description>Recent content in Posts on Rentsen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
+    <lastBuildDate>Fri, 11 Nov 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://rentsenn.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hugo tips记录</title>
+      <link>http://rentsenn.github.io/post/hugo/</link>
+      <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/hugo/</guid>
+      <description>
+
+&lt;h2 id=&#34;编译的路径&#34;&gt;编译的路径&lt;/h2&gt;
+
+&lt;p&gt;layouts/indexes下的html文件会被编译到一个单独的路径中，作为索引&lt;/p&gt;
+
+&lt;p&gt;也可以用以下代码在config中强行指定索引文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[indexes]
+  tag = &amp;quot;tags&amp;quot;
+  topic = &amp;quot;topics&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;md渲染&#34;&gt;md渲染&lt;/h2&gt;
+
+&lt;p&gt;默认是按_default下的single.html来渲染的&lt;/p&gt;
+
+&lt;h2 id=&#34;render模板指令&#34;&gt;render模板指令&lt;/h2&gt;
+
+&lt;p&gt;默认是从_default目录中寻找的&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>htmlpy框架学习</title>
+      <link>http://rentsenn.github.io/post/htmlpy/</link>
+      <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/htmlpy/</guid>
+      <description>
+
+&lt;h1 id=&#34;notes-for-htmlpy&#34;&gt;Notes for htmlpy&lt;/h1&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Platform&lt;/strong&gt;: Ubuntu 16.04 LTS&lt;/p&gt;
+
+&lt;p&gt;1) Installing python package manager: pip&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Installing htmlPy&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pip install htmlPy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Installing PySide&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pyside
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4) Installing jinja2, which is depended by htmlPy.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo pip install jinja2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5) Installing PyQt4&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-qt4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;a-simple-demo&#34;&gt;A simple demo&lt;/h2&gt;
+
+&lt;p&gt;Assume that there is a file named &amp;ldquo;index.html&amp;rdquo; in the same path.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import htmlPy
+import os
+
+app = htmlPy.AppGUI(title=u&amp;quot;htmlPy Quickstart&amp;quot;, maximized=True)
+
+app.template_path = os.path.abspath(&amp;quot;.&amp;quot;)
+app.static_path = os.path.abspath(&amp;quot;.&amp;quot;)
+
+app.template = (&amp;quot;index.html&amp;quot;, {&amp;quot;username&amp;quot;: &amp;quot;htmlPy_user&amp;quot;})
+
+app.start()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;modularization&#34;&gt;Modularization&lt;/h2&gt;
+
+&lt;p&gt;The driver file structure should be:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Initial configurations&lt;/li&gt;
+&lt;li&gt;htmlPy GUI initialization&lt;/li&gt;
+&lt;li&gt;htmlPy GUI configuration&lt;/li&gt;
+&lt;li&gt;Binding of back-end functionalities with GUI
+a. Import back-end functionalities
+b. Bind imported functionalities&lt;/li&gt;
+&lt;li&gt;Instructions for running front-end in if __name__ \=\= &amp;ldquo;__main__&amp;ldquo;: conditional. Always keep the GUI starter code in the &lt;code&gt;if __name__ == “__main__”:&lt;/code&gt; conditional. The GUI has to be started only when the driver file is running, not when it is being imported&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+import htmlPy
+from PyQt4 import QtGui
+
+
+# Initial confiurations
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+
+# GUI initializations
+app = htmlPy.AppGUI(title=u&amp;quot;Application&amp;quot;, maximized=True, plugins=True)
+
+
+# GUI configurations
+app.static_path = os.path.join(BASE_DIR, &amp;quot;static/&amp;quot;)
+app.template_path = os.path.join(BASE_DIR, &amp;quot;templates/&amp;quot;)
+
+app.web_app.setMinimumWidth(1024)
+app.web_app.setMinimumHeight(768)
+app.window.setWindowIcon(QtGui.QIcon(BASE_DIR + &amp;quot;/static/img/icon.png&amp;quot;))
+
+# Binding of back-end functionalities with GUI
+
+# Import back-end functionalities
+from html_to_python import ClassName
+
+# Register back-end functionalities
+app.bind(ClassName())
+
+
+# Instructions for running application
+if __name__ == &amp;quot;__main__&amp;quot;:
+    # The driver file will have to be imported everywhere in back-end.
+    # So, always keep app.start() in if __name__ == &amp;quot;__main__&amp;quot; conditional
+    app.start()
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>c&#43;&#43; multithreading学习</title>
+      <link>http://rentsenn.github.io/post/cplusplus-multithread/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/cplusplus-multithread/</guid>
+      <description>
+
+&lt;h1 id=&#34;c-concurrency-in-action&#34;&gt;c++ concurrency in action&lt;/h1&gt;
+
+&lt;h2 id=&#34;g-compile&#34;&gt;g++ compile&lt;/h2&gt;
+
+&lt;p&gt;g++ -std=c++11 launch-thread.cpp -o launch-thread -lpthread&lt;/p&gt;
+
+&lt;h2 id=&#34;basic-thread-management&#34;&gt;basic thread management&lt;/h2&gt;
+
+&lt;h3 id=&#34;lanch-a-thread&#34;&gt;lanch a thread&lt;/h3&gt;
+
+&lt;p&gt;we can lanch a thread by passing a parameter which can be function, lamda expression and function call operator&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;thread&amp;gt;
+
+void helloWorld(){
+	std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function&amp;quot;&amp;lt;&amp;lt;std::endl;
+}
+
+class hello{
+	public:
+		void operator()(){
+			std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function call operator&amp;quot;&amp;lt;&amp;lt;std::endl;
+		}
+};
+
+int main(){
+	std::thread testFunction(helloWorld);
+
+	std::thread testLamda([]{
+		std::cout&amp;lt;&amp;lt;&amp;quot;hello world from lamda&amp;quot;&amp;lt;&amp;lt;std::endl;
+	});
+
+	hello x;
+	std::thread testCall(x);
+
+	testFunction.join();
+	testLamda.join();
+	testCall.join();
+
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;wait-all-let-it-run&#34;&gt;wait all let it run&lt;/h3&gt;
+
+&lt;p&gt;using join(), local thread will wait until thread to finished.&lt;/p&gt;
+
+&lt;p&gt;using detach(), thread will continue run even if local thread is destroyed&lt;/p&gt;
+
+&lt;h3 id=&#34;waiting-in-exceptional-circumstances&#34;&gt;Waiting in exceptional circumstances&lt;/h3&gt;
+
+&lt;p&gt;thread_guard will be destroyed before thread, so join() will be called in destructor&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;thread&amp;gt;
+
+class thread_guard{
+	std::thread &amp;amp;t;
+	public:
+		thread_guard(std::thread &amp;amp;t_):t(t_){
+		}
+		~thread_guard(){
+			if(t.joinable()){
+				t.join();
+			}
+		}
+};
+
+int main(){
+	std::thread t([](){
+		std::cout&amp;lt;&amp;lt;&amp;quot;hello&amp;quot;&amp;lt;&amp;lt;std::endl;
+	});
+	thread_guard g(t);
+
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;passing-argument&#34;&gt;passing argument&lt;/h3&gt;
+
+&lt;p&gt;argument is passed by pass a copy into internal storage. If pass a reference, we should use std::ref.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;thread&amp;gt;
+void func(int &amp;amp;x){
+	x++;
+	x++;
+}
+int main(){
+	int x=10;
+	std::thread t(func,std::ref(x));
+	t.join();
+	std::cout&amp;lt;&amp;lt;x&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;thread-management&#34;&gt;thread management&lt;/h2&gt;
+
+&lt;h3 id=&#34;hardware-concurrency&#34;&gt;hardware_concurrency&lt;/h3&gt;
+
+&lt;p&gt;This function returns an indication of the number of threads that can truly run concurrently for a given execution of a program. On a multicore system it might be the number of CPU cores, for example.
+demo show as follow:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+int main(){
+	std::cout&amp;lt;&amp;lt;std::thread::hardware_concurrency()&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;thread-id&#34;&gt;thread id&lt;/h3&gt;
+
+&lt;p&gt;the identifier for a thread can be obtained from its associated std::thread object by calling the get_id() member function;the identifier for the current thread can be obtained by calling std::this_thread::get_id().
+demo show as follow:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;thread&amp;gt;
+int main(){
+	std::cout&amp;lt;&amp;lt;std::this_thread::get_id()&amp;lt;&amp;lt;std::endl;
+	std::thread a([]{
+		std::cout&amp;lt;&amp;lt;&amp;quot;hello world&amp;quot;&amp;lt;&amp;lt;std::endl;
+	});
+	std::cout&amp;lt;&amp;lt;a.get_id()&amp;lt;&amp;lt;std::endl;
+	a.join();
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;sharing-data-between-threads&#34;&gt;sharing data between threads&lt;/h2&gt;
+
+&lt;h3 id=&#34;race-condition&#34;&gt;race condition&lt;/h3&gt;
+
+&lt;p&gt;几个线程的操作同时修改某个对象产生的问题。&lt;/p&gt;
+
+&lt;p&gt;解决这个问题有三种方法：当某个线程在修改时，不允许其他线程介入；lock-free programming（复杂）;transaction(c++不支持)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>linux bash学习</title>
+      <link>http://rentsenn.github.io/post/linux-bash/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/linux-bash/</guid>
+      <description>
+
+&lt;h1 id=&#34;linux-bash学习&#34;&gt;linux bash学习&lt;/h1&gt;
+
+&lt;h2 id=&#34;chmod&#34;&gt;chmod&lt;/h2&gt;
+
+&lt;p&gt;change mode, 改变文件的权限
+&lt;a href=&#34;http://www.cnblogs.com/younes/archive/2009/11/20/1607174.html&#34;&gt;详情可见博客&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;hello-world&#34;&gt;hello world&lt;/h2&gt;
+
+&lt;p&gt;demo 如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+#hello world
+a=&amp;quot;hello world&amp;quot;
+echo $a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;if-else&#34;&gt;if else&lt;/h2&gt;
+
+&lt;p&gt;格式为&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;if [ ... ]; then
+	  ...
+elif [ ... ]; then
+	  ...
+else
+	  ...
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;demo如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+#test if else
+
+#-f ----&amp;gt; if is a file
+a=&amp;quot;if-else.sh&amp;quot;
+if [ -f $a ]; then
+	echo &amp;quot;$a is a file&amp;quot;
+else
+	echo &amp;quot;$a is not a file&amp;quot;
+fi
+
+#-lt ----&amp;gt; less than -le -&amp;gt; less equal
+b=4
+if [ $b -lt 5 ]; then
+	echo &amp;quot;$b is less than 5&amp;quot;
+else
+	echo &amp;quot;$b is great or equal than 5&amp;quot;
+fi
+
+#-x ----&amp;gt; if is executable
+c=&amp;quot;if-else.sh&amp;quot;
+if [ -x $c ]; then
+	echo &amp;quot;$c is executable&amp;quot;
+else
+	echo &amp;quot;$c is not executable&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;参数列表&#34;&gt;参数列表&lt;/h2&gt;
+
+&lt;p&gt;$#表示包括$0在内的命令行参数的个数。在Shell中，脚本名称本身是$0，剩下的依次是$0、$1、$2…、${10}、${11}，等等。$*表示整个参数列表，不包括$0，也就是说不包括文件名的参数列表。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+#test parameters
+echo $#
+echo $0
+echo $1
+echo $*
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>mongodb学习</title>
+      <link>http://rentsenn.github.io/post/mogodb/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/mogodb/</guid>
+      <description>
+
+&lt;h2 id=&#34;指令&#34;&gt;指令&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;show dbs&lt;/strong&gt;  显示所有的数据库&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;db&lt;/strong&gt;  显示当前数据库下的集合&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;use 数据库名&lt;/strong&gt; 切换数据库&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>c&#43;&#43;函数</title>
+      <link>http://rentsenn.github.io/post/cplusplus-functions/</link>
+      <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/cplusplus-functions/</guid>
+      <description>
+
+&lt;h1 id=&#34;函数用法&#34;&gt;函数用法&lt;/h1&gt;
+
+&lt;h2 id=&#34;function-call-operator&#34;&gt;function call operator&lt;/h2&gt;
+
+&lt;p&gt;在class中加入operator()使类具有函数的特征&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+class mul{
+	public:
+		mul(int x){
+			multiplier=x;
+		}
+		int operator()(int x) const {
+			return x*multiplier;
+		}
+	private:
+		int multiplier;
+};
+int main(){
+	mul test(10);
+	std::cout&amp;lt;&amp;lt;test(2)&amp;lt;&amp;lt;std::endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;lamda-expression&#34;&gt;lamda expression&lt;/h2&gt;
+
+&lt;p&gt;[传入的变量列表](函数参数){函数体}(调用);&lt;/p&gt;
+
+&lt;p&gt;在[ ]中声明需要使用的调用体的域中的本地变量，全局变量不需要声明。[=]表示所有的变量以赋值的形式传入，[&amp;amp;]表示所有的变量以引用的形式传入，[=,&amp;amp;j]表示除j外都以赋值传入，[i,&amp;amp;j]，表示i以赋值传入，j以引用传入&lt;/p&gt;
+
+&lt;p&gt;第一个()为参数列表&lt;/p&gt;
+
+&lt;p&gt;{}中是函数体&lt;/p&gt;
+
+&lt;p&gt;第二个()表示调用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+int main(){
+	int x=1;
+	double y=1.2;
+	bool z=false;
+	[x,&amp;amp;y](int i){std::cout&amp;lt;&amp;lt;i+x+y&amp;lt;&amp;lt;std::endl;}(1);
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;accumulate&#34;&gt;accumulate&lt;/h2&gt;
+
+&lt;p&gt;累加, demo 如下所示，可使用vector的迭代器&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;numeric&amp;gt;
+
+int main(){
+    int can[]={1,2,3,4};
+    int r=std::accumulate(can,can+4,0);
+    std::cout&amp;lt;&amp;lt;r&amp;lt;&amp;lt;std::endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;distance&#34;&gt;distance&lt;/h2&gt;
+
+&lt;p&gt;返回迭代器之间的距离，demo如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+int main(){
+	char a[]={1,2,3,4,5};
+	std::vector&amp;lt; int&amp;gt; b={1,2,3,4,5};
+	std::cout&amp;lt;&amp;lt;std::distance(a,a+4)&amp;lt;&amp;lt;std::endl;
+	std::cout&amp;lt;&amp;lt;std::distance(b.begin(), b.end())&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;advance&#34;&gt;advance&lt;/h2&gt;
+
+&lt;p&gt;增加迭代器变量值，在list中应使用这个&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+int main(){
+	std::vector&amp;lt;int&amp;gt; v={1,2,3,4,5};
+	auto b= v.begin();
+	std::advance(b,2);
+	std::cout&amp;lt;&amp;lt;v[b-v.begin()]&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;hash&#34;&gt;hash&lt;/h2&gt;
+
+&lt;p&gt;对对象进行hash&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+int main(){
+	std::hash&amp;lt;std::string&amp;gt; test;
+	std::cout&amp;lt;&amp;lt;test(&amp;quot;hello&amp;quot;)&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;find&#34;&gt;find&lt;/h2&gt;
+
+&lt;p&gt;在容器中查找元素&lt;/p&gt;
+
+&lt;h2 id=&#34;move&#34;&gt;move&lt;/h2&gt;
+
+&lt;p&gt;将object转移给其他的变量，leaves the source object with a NULL pointer&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+
+int main(){
+	std::string a=&amp;quot;abs&amp;quot;;
+	std::cout&amp;lt;&amp;lt;a&amp;lt;&amp;lt;std::endl;
+	std::string b=std::move(a);
+	std::cout&amp;lt;&amp;lt;a&amp;lt;&amp;lt;std::endl&amp;lt;&amp;lt;b&amp;lt;&amp;lt;std::endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;函数传入参数-是否会拷贝副本的问题&#34;&gt;函数传入参数，是否会拷贝副本的问题&lt;/h2&gt;
+
+&lt;p&gt;当调用函数时，在函数的scope中，一般使用的是参数的副本，即在执行函数体之前参数的copy版本会被传入，然而当参数是一个新建的对象而没用变量指向它时，它会直接传入调用的函数中去，而不会传入它的副本，以下代码可以验证这个问题。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
+
+class c{
+	int a;
+	public:
+		c(int x):a(x){}
+		c(const c &amp;amp;x){
+			a=x.a;
+			std::cout&amp;lt;&amp;lt;&amp;quot;copy constructor called&amp;quot;&amp;lt;&amp;lt;std::endl;
+		}
+};
+
+void func(c x){
+	std::cout&amp;lt;&amp;lt;&amp;quot;func called&amp;quot;&amp;lt;&amp;lt;std::endl;
+}
+int main(){
+	c t(10);
+	std::cout&amp;lt;&amp;lt;&amp;quot;object with name:&amp;quot;&amp;lt;&amp;lt;std::endl;
+	func(t);
+	std::cout&amp;lt;&amp;lt;&amp;quot;object without name:&amp;quot;&amp;lt;&amp;lt;std::endl;
+	func(c(20));
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;std-mem-fn&#34;&gt;std::mem_fn&lt;/h2&gt;
+
+&lt;p&gt;将类的成员保存在一个变量中之后调用，&amp;rdquo;Its functional call takes as first argument an object of type T (or a reference or a pointer to it) and, as additional arguments, the arguments taken by pm (if any). The effect of such a call with fn as first argument are the same as calling fn.*pm (or (*fn).*pm if fn is a pointer), forwarding any additional arguments.&amp;rdquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;     // std::cout
+#include &amp;lt;functional&amp;gt;   // std::mem_fn
+
+struct int_holder {
+	 int value;
+	 int triple() {return value*3;}
+};
+
+int main () {
+	 int_holder five {5};
+
+	 // call member directly:
+	 std::cout &amp;lt;&amp;lt; five.triple() &amp;lt;&amp;lt; &#39;\n&#39;;
+
+	 // same as above using a mem_fn:
+	 auto triple = std::mem_fn (&amp;amp;int_holder::triple);
+	 std::cout &amp;lt;&amp;lt; triple(five) &amp;lt;&amp;lt; &#39;\n&#39;;
+
+	 return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>算法复习</title>
+      <link>http://rentsenn.github.io/post/algorithm-review/</link>
+      <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://rentsenn.github.io/post/algorithm-review/</guid>
+      <description>
+
+&lt;h1 id=&#34;algorithm-course-review&#34;&gt;Algorithm course review&lt;/h1&gt;
+
+&lt;h2 id=&#34;graph-algorithms&#34;&gt;Graph Algorithms&lt;/h2&gt;
+
+&lt;h3 id=&#34;algorithm-on-graphs&#34;&gt;Algorithm on Graphs&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;elementary graph algorithms
+
+&lt;ol&gt;
+&lt;li&gt;breadth-first search&lt;/li&gt;
+&lt;li&gt;depth-first search&lt;/li&gt;
+&lt;li&gt;minimum spanning tree&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;shortest path problem
+
+&lt;ol&gt;
+&lt;li&gt;single-source shortest path&lt;/li&gt;
+&lt;li&gt;all-pairs shortest path&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;maximum flow
+
+&lt;ol&gt;
+&lt;li&gt;max-flow vs min-cut&lt;/li&gt;
+&lt;li&gt;applications&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;dfs&#34;&gt;DFS&lt;/h3&gt;
+
+&lt;p&gt;time complexity: O(|V|+|E|)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
