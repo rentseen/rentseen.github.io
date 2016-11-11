@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C&#43;&#43; on Rentsen&#39;s Blog</title>
-    <link>http://rentsenn.github.io/tags/c&#43;&#43;/index.xml</link>
-    <description>Recent content in C&#43;&#43; on Rentsen&#39;s Blog</description>
+    <title>C&#43;&#43; on Rentsenn&#39;s Blog</title>
+    <link>rentsenn.github.io/tags/c&#43;&#43;/index.xml</link>
+    <description>Recent content in C&#43;&#43; on Rentsenn&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
-    <atom:link href="http://rentsenn.github.io/tags/c&#43;&#43;/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="rentsenn.github.io/tags/c&#43;&#43;/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>c&#43;&#43; multithreading学习</title>
-      <link>http://rentsenn.github.io/post/cplusplus-multithread/</link>
+      <link>/rentsenn.github.io/post/cplusplus-multithread/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://rentsenn.github.io/post/cplusplus-multithread/</guid>
+      <guid>/rentsenn.github.io/post/cplusplus-multithread/</guid>
       <description>
 
 &lt;h1 id=&#34;c-concurrency-in-action&#34;&gt;c++ concurrency in action&lt;/h1&gt;
@@ -159,10 +159,10 @@ int main(){
     
     <item>
       <title>c&#43;&#43;函数</title>
-      <link>http://rentsenn.github.io/post/cplusplus-functions/</link>
+      <link>/rentsenn.github.io/post/cplusplus-functions/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://rentsenn.github.io/post/cplusplus-functions/</guid>
+      <guid>/rentsenn.github.io/post/cplusplus-functions/</guid>
       <description>
 
 &lt;h1 id=&#34;函数用法&#34;&gt;函数用法&lt;/h1&gt;
