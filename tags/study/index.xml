@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Study on Rentsenn&#39;s Blog</title>
-    <link>https://rentsenn.github.io/tags/study/index.xml</link>
-    <description>Recent content in Study on Rentsenn&#39;s Blog</description>
+    <title>Study on Rentseen&#39;s Blog</title>
+    <link>https://rentseen.github.io/tags/study/index.xml</link>
+    <description>Recent content in Study on Rentseen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
-    <atom:link href="https://rentsenn.github.io/tags/study/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rentseen.github.io/tags/study/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>hugo tips记录</title>
-      <link>https://rentsenn.github.io/post/hugo/</link>
+      <link>https://rentseen.github.io/post/hugo/</link>
       <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rentsenn.github.io/post/hugo/</guid>
+      <guid>https://rentseen.github.io/post/hugo/</guid>
       <description>
 
 &lt;h2 id=&#34;编译的路径&#34;&gt;编译的路径&lt;/h2&gt;
@@ -39,10 +39,10 @@
     
     <item>
       <title>htmlpy框架学习</title>
-      <link>https://rentsenn.github.io/post/htmlpy/</link>
+      <link>https://rentseen.github.io/post/htmlpy/</link>
       <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rentsenn.github.io/post/htmlpy/</guid>
+      <guid>https://rentseen.github.io/post/htmlpy/</guid>
       <description>
 
 &lt;h1 id=&#34;notes-for-htmlpy&#34;&gt;Notes for htmlpy&lt;/h1&gt;
@@ -148,10 +148,10 @@ if __name__ == &amp;quot;__main__&amp;quot;:
     
     <item>
       <title>c&#43;&#43; multithreading学习</title>
-      <link>https://rentsenn.github.io/post/cplusplus-multithread/</link>
+      <link>https://rentseen.github.io/post/cplusplus-multithread/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rentsenn.github.io/post/cplusplus-multithread/</guid>
+      <guid>https://rentseen.github.io/post/cplusplus-multithread/</guid>
       <description>
 
 &lt;h1 id=&#34;c-concurrency-in-action&#34;&gt;c++ concurrency in action&lt;/h1&gt;
@@ -297,10 +297,10 @@ int main(){
     
     <item>
       <title>linux bash学习</title>
-      <link>https://rentsenn.github.io/post/linux-bash/</link>
+      <link>https://rentseen.github.io/post/linux-bash/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rentsenn.github.io/post/linux-bash/</guid>
+      <guid>https://rentseen.github.io/post/linux-bash/</guid>
       <description>
 
 &lt;h1 id=&#34;linux-bash学习&#34;&gt;linux bash学习&lt;/h1&gt;
@@ -379,10 +379,10 @@ echo $*
     
     <item>
       <title>mongodb学习</title>
-      <link>https://rentsenn.github.io/post/mogodb/</link>
+      <link>https://rentseen.github.io/post/mogodb/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rentsenn.github.io/post/mogodb/</guid>
+      <guid>https://rentseen.github.io/post/mogodb/</guid>
       <description>
 
 &lt;h2 id=&#34;指令&#34;&gt;指令&lt;/h2&gt;
@@ -397,10 +397,10 @@ echo $*
     
     <item>
       <title>c&#43;&#43;函数</title>
-      <link>https://rentsenn.github.io/post/cplusplus-functions/</link>
+      <link>https://rentseen.github.io/post/cplusplus-functions/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://rentsenn.github.io/post/cplusplus-functions/</guid>
+      <guid>https://rentseen.github.io/post/cplusplus-functions/</guid>
       <description>
 
 &lt;h1 id=&#34;函数用法&#34;&gt;函数用法&lt;/h1&gt;
@@ -586,10 +586,10 @@ int main () {
     
     <item>
       <title>算法复习</title>
-      <link>https://rentsenn.github.io/post/algorithm-review/</link>
+      <link>https://rentseen.github.io/post/algorithm-review/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://rentsenn.github.io/post/algorithm-review/</guid>
+      <guid>https://rentseen.github.io/post/algorithm-review/</guid>
       <description>
 
 &lt;h1 id=&#34;algorithm-course-review&#34;&gt;Algorithm course review&lt;/h1&gt;

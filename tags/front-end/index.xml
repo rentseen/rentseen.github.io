@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Front End on Rentsenn&#39;s Blog</title>
-    <link>https://rentsenn.github.io/tags/front-end/index.xml</link>
-    <description>Recent content in Front End on Rentsenn&#39;s Blog</description>
+    <title>Front End on Rentseen&#39;s Blog</title>
+    <link>https://rentseen.github.io/tags/front-end/index.xml</link>
+    <description>Recent content in Front End on Rentseen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
-    <atom:link href="https://rentsenn.github.io/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rentseen.github.io/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>htmlpy框架学习</title>
-      <link>https://rentsenn.github.io/post/htmlpy/</link>
+      <link>https://rentseen.github.io/post/htmlpy/</link>
       <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rentsenn.github.io/post/htmlpy/</guid>
+      <guid>https://rentseen.github.io/post/htmlpy/</guid>
       <description>
 
 &lt;h1 id=&#34;notes-for-htmlpy&#34;&gt;Notes for htmlpy&lt;/h1&gt;
