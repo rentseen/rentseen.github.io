@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Rentseen&#39;s Blog</title>
-    <link>https://rentseen.github.io/tags/hugo/index.xml</link>
+    <link>http://yelinsheng.top/tags/hugo/index.xml</link>
     <description>Recent content in Hugo on Rentseen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
-    <atom:link href="https://rentseen.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yelinsheng.top/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>hugo tips记录</title>
-      <link>https://rentseen.github.io/post/hugo/</link>
+      <link>http://yelinsheng.top/post/hugo/</link>
       <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://rentseen.github.io/post/hugo/</guid>
+      <guid>http://yelinsheng.top/post/hugo/</guid>
       <description>
 
 &lt;h2 id=&#34;编译的路径&#34;&gt;编译的路径&lt;/h2&gt;

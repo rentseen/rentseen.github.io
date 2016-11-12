@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Algorithm on Rentseen&#39;s Blog</title>
-    <link>https://rentseen.github.io/tags/algorithm/index.xml</link>
+    <link>http://yelinsheng.top/tags/algorithm/index.xml</link>
     <description>Recent content in Algorithm on Rentseen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
-    <atom:link href="https://rentseen.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://yelinsheng.top/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>算法复习</title>
-      <link>https://rentseen.github.io/post/algorithm-review/</link>
+      <link>http://yelinsheng.top/post/algorithm-review/</link>
       <pubDate>Mon, 01 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://rentseen.github.io/post/algorithm-review/</guid>
+      <guid>http://yelinsheng.top/post/algorithm-review/</guid>
       <description>
 
 &lt;h1 id=&#34;algorithm-course-review&#34;&gt;Algorithm course review&lt;/h1&gt;
