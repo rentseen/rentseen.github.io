@@ -20,9 +20,58 @@
 
 &lt;h2 id=&#34;supervised-learning&#34;&gt;Supervised learning&lt;/h2&gt;
 
-&lt;h3 id=&#34;hourse-price-prediction&#34;&gt;Hourse price prediction&lt;/h3&gt;
+&lt;p&gt;Predict output according to the correct dataset which are already known.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/week1-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Supervised learning problems are categorized into &amp;ldquo;regression&amp;rdquo; and &amp;ldquo;classification&amp;rdquo; problems&lt;/p&gt;
+
+&lt;h3 id=&#34;house-price-prediction&#34;&gt;House price prediction&lt;/h3&gt;
+
+&lt;p&gt;This is a regression problem, whose prediction value is continuous.&lt;/p&gt;
+
+&lt;p&gt;Do regression according to history data, you can do linear regression or quadratic regression which is up to you.&lt;/p&gt;
+
+&lt;p&gt;Then do prediction using this result.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;breast-cancer&#34;&gt;Breast cancer&lt;/h3&gt;
+
+&lt;p&gt;This is a classification problem, whose prediction value is discrete.&lt;/p&gt;
+
+&lt;p&gt;Predict if tumor is benign or malignant according to tumor size. This is a classification problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When there are two feature: tumor size and age, it will be like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;unsupervised-learning&#34;&gt;Unsupervised learning&lt;/h2&gt;
+
+&lt;p&gt;Find data structure from given dataset which do have right answer.&lt;/p&gt;
+
+&lt;p&gt;###Clustering problem&lt;/p&gt;
+
+&lt;p&gt;Cluster these data into two parts.
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;An application: google news will cluster different news from different site but with same topic together.
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-5.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Application of Unsupervised learning.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cluster the servers to make it more efficient&lt;/li&gt;
+&lt;li&gt;Cluster the user in social network&lt;/li&gt;
+&lt;li&gt;Market segmentation&lt;/li&gt;
+&lt;li&gt;Astronomical data analysis
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-6.png&#34; alt=&#34;image&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cocktail party: Identify the voice from a mesh of sounds in chaotic environment.
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-7.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
