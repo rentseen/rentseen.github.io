@@ -14,9 +14,7 @@ h1,h2,h3,h4,h5,h6{
   color:#4a4a4a !important;
 }
 
-img{
-  max-width: 600px;
-}
+
 
 .small-print {
   font-size: 0.8em;
@@ -147,4 +145,34 @@ i {
 .tag-a:visited{
   color:#349ef3;
   text-decoration:none;
+}
+
+img{
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px){
+  img{
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  img{
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  img{
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 300px){
+  img{
+    max-width: 200px;
+  }
 }
