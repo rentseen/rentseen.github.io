@@ -9,6 +9,24 @@
     <atom:link href="http://yelinsheng.top/tags/study/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>machine learning: week1</title>
+      <link>http://yelinsheng.top/post/mathine-learning-week1/</link>
+      <pubDate>Sun, 13 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://yelinsheng.top/post/mathine-learning-week1/</guid>
+      <description>
+
+&lt;h1 id=&#34;machine-learning-week1&#34;&gt;Machine Learning: Week1&lt;/h1&gt;
+
+&lt;h2 id=&#34;supervised-learning&#34;&gt;Supervised learning&lt;/h2&gt;
+
+&lt;h3 id=&#34;hourse-price-prediction&#34;&gt;Hourse price prediction&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/week1-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>hugo tips记录</title>
       <link>http://yelinsheng.top/post/hugo/</link>
       <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
