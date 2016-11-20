@@ -288,7 +288,7 @@ var _hmt = _hmt || [];
 
 <h2 id="unsupervised-learning">Unsupervised learning</h2>
 
-<p>Find data structure from given dataset which do have right answer.</p>
+<p>Find data structure from given dataset which do not have right answer.</p>
 
 <h3 id="clustering-problem">Clustering problem</h3>
 
@@ -310,6 +310,39 @@ var _hmt = _hmt || [];
 
 <p>Cocktail party: Identify the voice from a mesh of sounds in chaotic environment.
 <img src="http://yelinsheng.top/img/ML-week1-7.png" alt="image" /></p>
+
+<h2 id="model-and-cost-function">Model and Cost Function</h2>
+
+<h3 id="notation">Notation</h3>
+
+<p><img src="http://yelinsheng.top/img/ML-week1-8.png" alt="image" /></p>
+
+<h3 id="model">Model</h3>
+
+<p>why use hypothesis to represent function h: Former research used it, maybe it is not the best choice, but it just a terminology.
+<img src="http://yelinsheng.top/img/ML-week1-9.png" alt="image" /></p>
+
+<h3 id="cost-function">Cost Function</h3>
+
+<p>theta 1 and theta 0 are parameters of function h.
+<img src="http://yelinsheng.top/img/ML-week1-10.png" alt="image" /></p>
+
+<p><strong>Something I don&rsquo;t know before:</strong><br />
+#: hash sign, represent the number of something.<br />
+1/m: 1 over | the 2m</p>
+
+<p>The figure as follow shows the detail of cost function <em>J</em> of linear regression function, which can be call squared error function.</p>
+
+<p>The mean is halved (1/2m) as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the 12 term
+<img src="http://yelinsheng.top/img/ML-week1-11.png" alt="image" /></p>
+
+<p><strong>Intuition of cost function:</strong></p>
+
+<p>One parameter:
+<img src="http://yelinsheng.top/img/ML-week1-12.png" alt="image" /></p>
+
+<p>Two parameters:
+<img src="http://yelinsheng.top/img/ML-week1-13.png" alt="image" /></p>
 
 
   
