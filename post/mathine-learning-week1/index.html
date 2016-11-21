@@ -344,6 +344,52 @@ var _hmt = _hmt || [];
 <p>Two parameters:
 <img src="http://yelinsheng.top/img/ML-week1-13.png" alt="image" /></p>
 
+<h2 id="parameter-learning">Parameter learning</h2>
+
+<h3 id="gradient-descent">Gradient Descent</h3>
+
+<p>Init theta 0 and theta 1, change these two values till J reaches local minimum value.
+<img src="http://yelinsheng.top/img/ML-week1-14.png" alt="image" /></p>
+
+<dl>
+<dt><img src="http://yelinsheng.top/img/ML-week1-15.png" alt="image" /></dt>
+</dl>
+
+<dl>
+<dt><img src="http://yelinsheng.top/img/ML-week1-15.png" alt="image" /></dt>
+</dl>
+
+<dl>
+<dt>image](/img/ML-week1-15.png)</dt>
+</dl>
+
+<p>:= is assignment; = is truth assertion.<br />
+Right side of equation should be updated simultaneously.
+<img src="http://yelinsheng.top/img/ML-week1-16.png" alt="image" /></p>
+
+<h3 id="gradient-descent-intuition">Gradient Descent Intuition</h3>
+
+<p>Case of one parameter:
+<img src="http://yelinsheng.top/img/ML-week1-17.png" alt="image" />
+<img src="http://yelinsheng.top/img/ML-week1-18.png" alt="image" /></p>
+
+<p>The step will be smaller and smaller, so there is no need to decrease alpha.
+<img src="http://yelinsheng.top/img/ML-week1-19.png" alt="image" /></p>
+
+<h3 id="gradient-descent-for-linear-regression">Gradient Descent for Linear Regression</h3>
+
+<p>Calculate partial derivation of J:
+<img src="http://yelinsheng.top/img/ML-week1-20.png" alt="image" /></p>
+
+<p>Gradient descent algorithm for linear regression:
+<img src="http://yelinsheng.top/img/ML-week1-21.png" alt="image" /></p>
+
+<p>Process of descent for linear regression
+<img src="http://yelinsheng.top/img/ML-week1-22.png" alt="image" /></p>
+
+<p>Batch gradient descent: calculate all data in every update, high cost:
+<img src="http://yelinsheng.top/img/ML-week1-23.png" alt="image" /></p>
+
 
   
 <div class="prev-next-post pure-g">

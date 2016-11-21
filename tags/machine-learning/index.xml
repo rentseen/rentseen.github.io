@@ -103,6 +103,52 @@
 
 &lt;p&gt;Two parameters:
 &lt;img src=&#34;http://yelinsheng.top/img/ML-week1-13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;parameter-learning&#34;&gt;Parameter learning&lt;/h2&gt;
+
+&lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient Descent&lt;/h3&gt;
+
+&lt;p&gt;Init theta 0 and theta 1, change these two values till J reaches local minimum value.
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-15.png&#34; alt=&#34;image&#34; /&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-15.png&#34; alt=&#34;image&#34; /&gt;&lt;/dt&gt;
+&lt;/dl&gt;
+
+&lt;dl&gt;
+&lt;dt&gt;image](/img/ML-week1-15.png)&lt;/dt&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;:= is assignment; = is truth assertion.&lt;br /&gt;
+Right side of equation should be updated simultaneously.
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-16.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;gradient-descent-intuition&#34;&gt;Gradient Descent Intuition&lt;/h3&gt;
+
+&lt;p&gt;Case of one parameter:
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-17.png&#34; alt=&#34;image&#34; /&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-18.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The step will be smaller and smaller, so there is no need to decrease alpha.
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-19.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;gradient-descent-for-linear-regression&#34;&gt;Gradient Descent for Linear Regression&lt;/h3&gt;
+
+&lt;p&gt;Calculate partial derivation of J:
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-20.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Gradient descent algorithm for linear regression:
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-21.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Process of descent for linear regression
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-22.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Batch gradient descent: calculate all data in every update, high cost:
+&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-23.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
