@@ -6,8 +6,51 @@
     <description>Recent content in Posts on Rentseen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
-    <lastBuildDate>Sun, 13 Nov 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Dec 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://yelinsheng.top/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Unity 3d 学习、体验</title>
+      <link>http://yelinsheng.top/post/unity-3d/</link>
+      <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://yelinsheng.top/post/unity-3d/</guid>
+      <description>
+
+&lt;h1 id=&#34;游戏引擎-unity-3d-的初次学习以及体验&#34;&gt;游戏引擎：unity-3d 的初次学习以及体验&lt;/h1&gt;
+
+&lt;p&gt;unity-3d 是由Unity Technologies开发的专业游戏引擎&lt;/p&gt;
+
+&lt;h2 id=&#34;安装&#34;&gt;安装：&lt;/h2&gt;
+
+&lt;p&gt;支持mac和windows这两个平台，我使用的是windows，直接选择免费版的下载安装即可，在安装时需要登录并填写一个调查问卷（不知道是干嘛的==）。&lt;/p&gt;
+
+&lt;h2 id=&#34;使用&#34;&gt;使用：&lt;/h2&gt;
+
+&lt;p&gt;我是学习了一下官网上的教程，做的是第一个案例：Roll a ball.（没做完- -）&lt;/p&gt;
+
+&lt;p&gt;官网上的视频讲的很清楚，每一步的操作都解释的很明白，它的视频用的是youtube提供的接口（youtube的字幕太强大了，似乎是自动生成的，用了机器学习神马的，很精准）&lt;/p&gt;
+
+&lt;h2 id=&#34;细节记录&#34;&gt;细节记录：&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;元件都是包含在一个scene中的&lt;/li&gt;
+&lt;li&gt;camera元件：视角&lt;/li&gt;
+&lt;li&gt;光线元件，可以投射到地面上&lt;/li&gt;
+&lt;li&gt;plane，一个平面&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;总体感受&#34;&gt;总体感受：&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;界面功能很强大，3d效果超棒&lt;/li&gt;
+&lt;li&gt;图形是在软件上手动添加操作的&lt;/li&gt;
+&lt;li&gt;可以通过给图形元件绑定script代码来添加元件的逻辑，从而操作元件。&lt;/li&gt;
+&lt;li&gt;代码可以使用 c# 或 javascript&lt;/li&gt;
+&lt;li&gt;整个操作体验更像是设计和代码的结合（Dreamweaver？。。。）&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Machine Learning: Week 1</title>
