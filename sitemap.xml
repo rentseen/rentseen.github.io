@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yelinsheng.top/</loc>
-    <lastmod>2016-11-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://yelinsheng.top/post/mathine-learning-week1/</loc>
     <lastmod>2016-11-13T00:00:00+00:00</lastmod>
   </url>
@@ -49,6 +44,89 @@
   <url>
     <loc>http://yelinsheng.top/post/algorithm-review/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/algorithm/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/c&#43;&#43;/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/course/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/database/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/front-end/</loc>
+    <lastmod>2016-10-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/hugo/</loc>
+    <lastmod>2016-11-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/language/</loc>
+    <lastmod>2016-10-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/linux-bash/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/machine-learning/</loc>
+    <lastmod>2016-11-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/mongodb/</loc>
+    <lastmod>2016-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/post/</loc>
+    <lastmod>2016-11-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/</loc>
+    <lastmod>2016-11-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/study/</loc>
+    <lastmod>2016-11-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>

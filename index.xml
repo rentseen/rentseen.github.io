@@ -112,16 +112,10 @@
 &lt;p&gt;Init theta 0 and theta 1, change these two values till J reaches local minimum value.
 &lt;img src=&#34;http://yelinsheng.top/img/ML-week1-14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
-&lt;dl&gt;
-&lt;dt&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-15.png&#34; alt=&#34;image&#34; /&gt;&lt;/dt&gt;
-&lt;/dl&gt;
+&lt;p&gt;Different start position can lead to different local optimal.&lt;/p&gt;
 
 &lt;dl&gt;
 &lt;dt&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-15.png&#34; alt=&#34;image&#34; /&gt;&lt;/dt&gt;
-&lt;/dl&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;image](/img/ML-week1-15.png)&lt;/dt&gt;
 &lt;/dl&gt;
 
 &lt;p&gt;:= is assignment; = is truth assertion.&lt;br /&gt;
