@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.18-DEV" />
 
-  <title>Machine Learning: Week 2 &middot; Rentseen&#39;s Blog</title>
+  <title>Vim 的使用与学习 &middot; Rentseen&#39;s Blog</title>
 
   
   
@@ -223,7 +223,7 @@ var _hmt = _hmt || [];
 
 
 <div class="header">
-  <h1>Machine Learning: Week 2</h1>
+  <h1>Vim 的使用与学习</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -245,7 +245,7 @@ var _hmt = _hmt || [];
     
       <a class="tag-a" href="http://yelinsheng.top/tags/study">study</a>
     
-      <a class="tag-a" href="http://yelinsheng.top/tags/machine-learning">machine learning</a>
+      <a class="tag-a" href="http://yelinsheng.top/tags/vim">Vim</a>
     
   </div>
   
@@ -256,81 +256,42 @@ var _hmt = _hmt || [];
 
   
 
-<h1 id="machine-learning-week-2">Machine Learning: Week 2</h1>
+<h1 id="vim-的使用与学习">Vim 的使用与学习</h1>
 
-<h2 id="multivariate-linear-regression">Multivariate linear regression</h2>
+<p>据说大神都在用Vim，为了把右手从鼠标上解放出来，我也来入这个坑把。。。</p>
 
-<p>Linear regression with multiple variables is also known as &ldquo;multivariate linear regression&rdquo;.</p>
+<h2 id="网站资源">网站资源</h2>
 
-<h3 id="notation">Notation</h3>
+<p><a href="http://www.openvim.com/">openvim</a></p>
 
-<p><img src="http://yelinsheng.top/img/ML-2-1.png" alt="image" /></p>
+<h2 id="shortcut">shortcut</h2>
 
-<h3 id="hypothesis">Hypothesis</h3>
-
-<p><img src="http://yelinsheng.top/img/ML-2-2.png" alt="image" /></p>
-
-<h3 id="gradient-descent">Gradient descent</h3>
-
-<p>Formula:</p>
-
-<p><img src="http://yelinsheng.top/img/ML-2-3.png" alt="image" /></p>
-
-<p>Partial derivation will be like this:</p>
-
-<p><img src="http://yelinsheng.top/img/ML-2-4.png" alt="image" /></p>
-
-<h3 id="feature-scaling">Feature scaling</h3>
-
-<p>If scale of features differ widely, it may take long time to converge. So it is
-necessary to scale the feature.</p>
-
-<p>The contour will look like a circle after scaling.</p>
-
-<p><strong>Problem:</strong> Is converge result which is scaled the same as converge result which is not scaled.</p>
-
-<p><img src="http://yelinsheng.top/img/ML-2-5.png" alt="image" /></p>
-
-<p>If scale of feature is similar to [-1,1], it will be fine. When it is too big or too small, it should be scaled.</p>
-
-<p><img src="http://yelinsheng.top/img/ML-2-6.png" alt="image" /></p>
-
-<p>Mean normalization:</p>
-
-<p><img src="http://yelinsheng.top/img/ML-2-7.png" alt="image" /></p>
-
-<h3 id="learning-rate">Learning rate</h3>
-
-<p>Check if gradient descent works correctly using this plot: min(J) - iteration number.</p>
-
-<p><img src="http://yelinsheng.top/img/ML-2-8.png" alt="image" /></p>
-
-<p>Alpha can&rsquo;t be too small or too big, we can check it using descent rate plot.</p>
-
-<p><img src="http://yelinsheng.top/img/ML-2-9.png" alt="image" /></p>
-
-<h3 id="polynomial-regression">Polynomial regression</h3>
-
-<p>We can combine multiple features into one, or use polynomial function.</p>
-
-<p>Convert it into linear regression, but range of variables may differ widely, so it need feature scaling.</p>
-
-<p><img src="http://yelinsheng.top/img/ML-2-10.png" alt="image" /></p>
-
-<h2 id="computing-parameters-analytically">Computing parameters analytically</h2>
+<p>i / esc: insert模式和nomal模式的切换<br />
+h/j/k/l: left/down/up/right<br />
+b: 到当前词的词首<br />
+w: 到下一词的开头<br />
+e: 到当前词的结尾<br />
+O: 在当前行插入一行<br />
+o: 在下一行插入新的一行<br />
+$: 到这一行的行尾<br />
+0: 到这一行的行首<br />
+3i: 插入的值×3<br />
+3+移动键: 移动的次数×3<br />
+/: 查找<br />
+%: 找到与当前括号匹配的括号</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="http://yelinsheng.top/post/vim/"><i class="fa fa-chevron-left"></i></a>
+    <a href="http://yelinsheng.top/post/unity-3d/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="http://yelinsheng.top/post/vim/">Vim 的使用与学习</a>
+      <a href="http://yelinsheng.top/post/unity-3d/">Unity 3d 学习、体验</a>
     </nav>
     
   </div>
@@ -339,8 +300,14 @@ necessary to scale the feature.</p>
   </div>
   <div class="pure-u-10-24">
     
+    <nav class="next">
+      <a href="http://yelinsheng.top/post/machine-learning-week2/">Machine Learning: Week 2</a>
+    </nav>
+    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="http://yelinsheng.top/post/machine-learning-week2/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
@@ -350,7 +317,7 @@ necessary to scale the feature.</p>
   
 
 
-	<div class="ds-thread" data-thread-key="Machine Learning: Week 2" data-title="Machine Learning: Week 2" data-url="http://yelinsheng.top/post/machine-learning-week2/"></div>
+	<div class="ds-thread" data-thread-key="Vim 的使用与学习" data-title="Vim 的使用与学习" data-url="http://yelinsheng.top/post/vim/"></div>
 
 
 <script type="text/javascript">

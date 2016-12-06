@@ -7,6 +7,11 @@
   </url>
   
   <url>
+    <loc>http://yelinsheng.top/post/vim/</loc>
+    <lastmod>2016-12-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yelinsheng.top/post/unity-3d/</loc>
     <lastmod>2016-12-05T00:00:00+00:00</lastmod>
   </url>
@@ -148,6 +153,12 @@
   <url>
     <loc>http://yelinsheng.top/tags/unity-3d/</loc>
     <lastmod>2016-12-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/vim/</loc>
+    <lastmod>2016-12-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
