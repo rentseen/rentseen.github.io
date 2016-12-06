@@ -9,9 +9,82 @@
     <atom:link href="http://yelinsheng.top/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Machine Learning: Week 2</title>
+      <link>http://yelinsheng.top/post/machine-learning-week2/</link>
+      <pubDate>Tue, 06 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://yelinsheng.top/post/machine-learning-week2/</guid>
+      <description>
+
+&lt;h1 id=&#34;machine-learning-week-2&#34;&gt;Machine Learning: Week 2&lt;/h1&gt;
+
+&lt;h2 id=&#34;multivariate-linear-regression&#34;&gt;Multivariate linear regression&lt;/h2&gt;
+
+&lt;p&gt;Linear regression with multiple variables is also known as &amp;ldquo;multivariate linear regression&amp;rdquo;.&lt;/p&gt;
+
+&lt;h3 id=&#34;notation&#34;&gt;Notation&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;hypothesis&#34;&gt;Hypothesis&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient descent&lt;/h3&gt;
+
+&lt;p&gt;Formula:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Partial derivation will be like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;feature-scaling&#34;&gt;Feature scaling&lt;/h3&gt;
+
+&lt;p&gt;If scale of features differ widely, it may take long time to converge. So it is
+necessary to scale the feature.&lt;/p&gt;
+
+&lt;p&gt;The contour will look like a circle after scaling.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt; Is converge result which is scaled the same as converge result which is not scaled.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-5.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If scale of feature is similar to [-1,1], it will be fine. When it is too big or too small, it should be scaled.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-6.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mean normalization:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-7.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;learning-rate&#34;&gt;Learning rate&lt;/h3&gt;
+
+&lt;p&gt;Check if gradient descent works correctly using this plot: min(J) - iteration number.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Alpha can&amp;rsquo;t be too small or too big, we can check it using descent rate plot.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;polynomial-regression&#34;&gt;Polynomial regression&lt;/h3&gt;
+
+&lt;p&gt;We can combine multiple features into one, or use polynomial function.&lt;/p&gt;
+
+&lt;p&gt;Convert it into linear regression, but range of variables may differ widely, so it need feature scaling.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;computing-parameters-analytically&#34;&gt;Computing parameters analytically&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Machine Learning: Week 1</title>
       <link>http://yelinsheng.top/post/mathine-learning-week1/</link>
-      <pubDate>Sun, 13 Nov 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/mathine-learning-week1/</guid>
       <description>
@@ -32,7 +105,7 @@
 
 &lt;p&gt;Then do prediction using this result.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-1-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;breast-cancer&#34;&gt;Breast cancer&lt;/h3&gt;
 
@@ -40,11 +113,11 @@
 
 &lt;p&gt;Predict if tumor is benign or malignant according to tumor size. This is a classification problem.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-1-2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;When there are two feature: tumor size and age, it will be like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-1-3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;unsupervised-learning&#34;&gt;Unsupervised learning&lt;/h2&gt;
 
@@ -53,10 +126,10 @@
 &lt;h3 id=&#34;clustering-problem&#34;&gt;Clustering problem&lt;/h3&gt;
 
 &lt;p&gt;Cluster these data into two parts.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;An application: google news will cluster different news from different site but with same topic together.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-5.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-5.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Application of Unsupervised learning.&lt;/p&gt;
 
@@ -65,27 +138,27 @@
 &lt;li&gt;Cluster the user in social network&lt;/li&gt;
 &lt;li&gt;Market segmentation&lt;/li&gt;
 &lt;li&gt;Astronomical data analysis
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-6.png&#34; alt=&#34;image&#34; /&gt;&lt;/li&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-6.png&#34; alt=&#34;image&#34; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Cocktail party: Identify the voice from a mesh of sounds in chaotic environment.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-7.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-7.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;model-and-cost-function&#34;&gt;Model and Cost Function&lt;/h2&gt;
 
 &lt;h3 id=&#34;notation&#34;&gt;Notation&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-1-8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;model&#34;&gt;Model&lt;/h3&gt;
 
 &lt;p&gt;why use hypothesis to represent function h: Former research used it, maybe it is not the best choice, but it just a terminology.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;cost-function&#34;&gt;Cost Function&lt;/h3&gt;
 
 &lt;p&gt;theta 1 and theta 0 are parameters of function h.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Something I don&amp;rsquo;t know before:&lt;/strong&gt;&lt;br /&gt;
 #: hash sign, represent the number of something.&lt;br /&gt;
@@ -94,55 +167,55 @@
 &lt;p&gt;The figure as follow shows the detail of cost function &lt;em&gt;J&lt;/em&gt; of linear regression function, which can be call squared error function.&lt;/p&gt;
 
 &lt;p&gt;The mean is halved (1/2m) as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the 12 term
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Intuition of cost function:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;One parameter:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-12.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-12.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Two parameters:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;parameter-learning&#34;&gt;Parameter learning&lt;/h2&gt;
 
 &lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient Descent&lt;/h3&gt;
 
 &lt;p&gt;Init theta 0 and theta 1, change these two values till J reaches local minimum value.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Different start position can lead to different local optimal.&lt;/p&gt;
 
 &lt;dl&gt;
-&lt;dt&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-15.png&#34; alt=&#34;image&#34; /&gt;&lt;/dt&gt;
+&lt;dt&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-1-15.png&#34; alt=&#34;image&#34; /&gt;&lt;/dt&gt;
 &lt;/dl&gt;
 
 &lt;p&gt;:= is assignment; = is truth assertion.&lt;br /&gt;
 Right side of equation should be updated simultaneously.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-16.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-16.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;gradient-descent-intuition&#34;&gt;Gradient Descent Intuition&lt;/h3&gt;
 
 &lt;p&gt;Case of one parameter:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-17.png&#34; alt=&#34;image&#34; /&gt;
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-18.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-17.png&#34; alt=&#34;image&#34; /&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-18.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The step will be smaller and smaller, so there is no need to decrease alpha.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-19.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-19.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;gradient-descent-for-linear-regression&#34;&gt;Gradient Descent for Linear Regression&lt;/h3&gt;
 
 &lt;p&gt;Calculate partial derivation of J:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-20.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-20.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Gradient descent algorithm for linear regression:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-21.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-21.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Process of descent for linear regression
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-22.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-22.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Batch gradient descent: calculate all data in every update, high cost:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-week1-23.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-1-23.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
