@@ -319,6 +319,34 @@ necessary to scale the feature.</p>
 
 <h2 id="computing-parameters-analytically">Computing parameters analytically</h2>
 
+<h3 id="normal-equation">Normal Equation</h3>
+
+<p>Solve the optimal theta analytically just by one go.</p>
+
+<p>Matrix setup:</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-11.png" alt="image" /></p>
+
+<p>Derivation of theta: <a href="https://zhuanlan.zhihu.com/p/22757336">知乎专栏</a>
+<img src="http://yelinsheng.top/img/ML-2-12.png" alt="image" /></p>
+
+<p>Normal equation don&rsquo;t need feature scaling:</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-13.png" alt="image" /></p>
+
+<p>When number of features is small, normal equation is better. Otherwise, gradient descent is better.
+<img src="http://yelinsheng.top/img/ML-2-14.png" alt="image" /></p>
+
+<p>What if X^T X is not invertable.</p>
+
+<p>pinv() in octave will give a value even if parameter is not invertable; int() is not.
+<img src="http://yelinsheng.top/img/ML-2-15.png" alt="image" /></p>
+
+<p>The reason why X^T X is not invertable:
+1. Redundant feature;
+2. Too many features.
+<img src="http://yelinsheng.top/img/ML-2-16.png" alt="image" /></p>
+
 
   
 <div class="prev-next-post pure-g">

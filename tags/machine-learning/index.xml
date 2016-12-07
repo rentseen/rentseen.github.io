@@ -78,6 +78,34 @@ necessary to scale the feature.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;computing-parameters-analytically&#34;&gt;Computing parameters analytically&lt;/h2&gt;
+
+&lt;h3 id=&#34;normal-equation&#34;&gt;Normal Equation&lt;/h3&gt;
+
+&lt;p&gt;Solve the optimal theta analytically just by one go.&lt;/p&gt;
+
+&lt;p&gt;Matrix setup:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Derivation of theta: &lt;a href=&#34;https://zhuanlan.zhihu.com/p/22757336&#34;&gt;知乎专栏&lt;/a&gt;
+&lt;img src=&#34;http://yelinsheng.top/img/ML-2-12.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Normal equation don&amp;rsquo;t need feature scaling:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When number of features is small, normal equation is better. Otherwise, gradient descent is better.
+&lt;img src=&#34;http://yelinsheng.top/img/ML-2-14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What if X^T X is not invertable.&lt;/p&gt;
+
+&lt;p&gt;pinv() in octave will give a value even if parameter is not invertable; int() is not.
+&lt;img src=&#34;http://yelinsheng.top/img/ML-2-15.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The reason why X^T X is not invertable:
+1. Redundant feature;
+2. Too many features.
+&lt;img src=&#34;http://yelinsheng.top/img/ML-2-16.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
