@@ -6,8 +6,163 @@
     <description>Recent content on Rentseen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
-    <lastBuildDate>Tue, 06 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Dec 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://yelinsheng.top/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>高级数据库课程复习</title>
+      <link>http://yelinsheng.top/post/Advanced-database-review/</link>
+      <pubDate>Fri, 30 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://yelinsheng.top/post/Advanced-database-review/</guid>
+      <description>
+
+&lt;h1 id=&#34;数据库复习&#34;&gt;数据库复习&lt;/h1&gt;
+
+&lt;h2 id=&#34;第14章-事务&#34;&gt;第14章 事务&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;事务&lt;/strong&gt;：原子性，隔离线（并发控制系统），持久性，一致性&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;存储结构&lt;/strong&gt;：易失型，非易失型，稳定型&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;事务的状态&lt;/strong&gt;：活动，部分提交，失败，中止，提交&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;原子性，持久性&lt;/strong&gt;：系统遇到故障时可能无法保证原子性和持久性。日志可以提供恢复机制。回滚。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;事务隔离性&lt;/strong&gt;：并发执行，由并发控制来保证，以防止系统产生不一致性&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;可串行化&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;非冲突指令：可以调换顺序的两个指令（操作不同数据+读同一个数据）&lt;/p&gt;
+
+&lt;p&gt;冲突等价：可以通过一系列非冲突指令变换获得的调度&lt;/p&gt;
+
+&lt;p&gt;冲突可串行化：冲突等价于一个串行化调度&lt;/p&gt;
+
+&lt;p&gt;多个事务：拓扑排序中没有环即可。&lt;/p&gt;
+
+&lt;p&gt;不是冲突等价的也有可能调度等价。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;可恢复调度:&lt;/strong&gt; 读取了其他事务数据的事务应之后提交&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;无级联调度:&lt;/strong&gt; 被读事务在读操作前提交&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;事务隔离性级别:&lt;/strong&gt; 可串行化，可重复读，已提交读，未提交读&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;隔离线级别的实现:&lt;/strong&gt; 锁/时间戳/多版本&lt;/p&gt;
+
+&lt;h2 id=&#34;第15章-并发控制&#34;&gt;第15章 并发控制&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;锁:&lt;/strong&gt; 共享、排他&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;死锁:&lt;/strong&gt; 需要回滚&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;饿死:&lt;/strong&gt; 排他锁可能一直无法成功申请到锁。解决方法：如果之前有等待的事务，则不能授予锁。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;两阶段封锁协议:&lt;/strong&gt; 增长阶段；缩减阶段。&lt;br /&gt;
+两阶段封锁协议可以保证冲突可串行化，但可能会发生死锁，可能会级联回滚。&lt;br /&gt;
+级联回滚可以通过&lt;strong&gt;严格两阶段封锁协议&lt;/strong&gt;来避免。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;具有锁转换的两阶段封锁协议:&lt;/strong&gt; 在增长阶段可以升级锁，在缩减阶段可以降级锁&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;死锁处理:&lt;/strong&gt; 两个途径:死锁预防；运行系统进入死锁，然后进行死锁检测和恢复。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;死锁预防:&lt;/strong&gt; 对加锁请求进行排序或一次获得所有锁；抢占和事务回滚:wait-die,wound-wait。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;死锁检测与恢复:&lt;/strong&gt;&lt;br /&gt;
+死锁检测：检测等待图中是否有环。何时激活死锁检测算法？&lt;br /&gt;
+死锁恢复：选择牺牲者-&amp;gt;回滚。需要避免某些事务频繁被回滚导致饿死。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多粒度:&lt;/strong&gt; 节点树，意向锁&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;基于时间戳的协议:&lt;/strong&gt; 事先选定事务的次序，基于时间戳的则以时间戳为次序&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;时间戳:&lt;/strong&gt; 可以用系统时钟，也可以用逻辑计数器。&lt;br /&gt;
+TS(T):事务的时间戳&lt;br /&gt;
+W-timestamp(Q):数据Q的写操作的最大时间戳&lt;br /&gt;
+R-timestamp(Q):数据Q的读操作的最大时间戳&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;时间戳排序协议&lt;/strong&gt;&lt;br /&gt;
+时间戳排序协议保证冲突可串行化，保证无死锁，可能会饿死，可能产生不可恢复的调度（可通过几个方法来解决）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Thomas写规则:&lt;/strong&gt; 过时的write操作将被忽略&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;基于有效性检查的协议:&lt;/strong&gt; 读阶段，有效性检查阶段，写阶段&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多版本机制:&lt;/strong&gt; 记录每个版本的值&lt;/p&gt;
+
+&lt;h2 id=&#34;第16章-恢复系统&#34;&gt;第16章 恢复系统&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;恢复与原子性:&lt;/strong&gt;&lt;br /&gt;
+ 日志记录: 更新日志记录 &lt;T,X,V1,V2&gt; 等&lt;br /&gt;
+ 数据库修改: 延迟修改，立即修改，undo，redo&lt;br /&gt;
+ 并发控制和恢复&lt;br /&gt;
+ 事务提交: 修改的数据将输出到稳定存储器&lt;br /&gt;
+ 使用日志来重做和撤销事务: commit或abort的需要redo，否则要undo&lt;br /&gt;
+ 检查点: &lt;checkpoint L&gt;，恢复是查找日志中最近的checkpoint来恢复&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;恢复算法:&lt;/strong&gt;&lt;br /&gt;
+ 事务回滚: 在log中从后往前undo
+ 系统奔溃后的恢复: 先从checkpoint开始从前往后redo，再对未完成事务进行事务回滚&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;非易失性存储器故障:&lt;/strong&gt; &lt;dump&gt; log&lt;/p&gt;
+
+&lt;h2 id=&#34;第17章-数据库系统体系结构&#34;&gt;第17章 数据库系统体系结构&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;集中式系统:&lt;/strong&gt; 单用户系统，多用户系统&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;客户-服务器系统:&lt;/strong&gt;  客户端是个人计算机，通过网络连接来向服务器提交事务&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;事务服务器:&lt;/strong&gt; 服务器进程，锁管理器进程，数据库写进程，日志写进程，检查点进程，进程监控进程，共享内存&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;并行系统:&lt;/strong&gt; 粗粒度并行机，大规模并行机（细粒度）&lt;br /&gt;
+ 性能指标: 吞吐量，响应时间&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;加速比:&lt;/strong&gt; 更短的时间运行一个任务；线性加速比，亚线性加速比&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;扩展比:&lt;/strong&gt; 增加并行度来处理更大的任务；线性扩展比，亚线性扩展比&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;并行数据库体系结构:&lt;/strong&gt;&lt;br /&gt;
+ 共享内存&lt;br /&gt;
+ 共享硬盘&lt;br /&gt;
+ 无共享&lt;br /&gt;
+ 层次的&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;分布式系统:&lt;/strong&gt; 一般在地理上是隔离的，分为局部事务和全局事务。&lt;br /&gt;
+ 建立分布式系统的原因：数据共享，自制性，可用性。&lt;/p&gt;
+
+&lt;h2 id=&#34;第18章-并行数据库&#34;&gt;第18章 并行数据库&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;I/O并行:&lt;/strong&gt; 最简单的方式是将关系划分到不同的磁盘上来缩减查询时间，最通用的是水平划分。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;划分技术:&lt;/strong&gt; 轮转法，散列划分，范围划分&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;偏斜处理:&lt;/strong&gt; 直方图，虚处理器&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;查询间并行:&lt;/strong&gt; 事务之间并行&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;查询内并行:&lt;/strong&gt; 事务内并行，有操作内并行和操作间并行。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;操作内并行:&lt;/strong&gt;&lt;br /&gt;
+ 并行排序: 对划分属性排序，则直接在各处理器上并行排序在做连接即可；如果不是划分属性，则：范围划分排序；外部排序归并。&lt;br /&gt;
+ 并行连接: 基于划分的连接（等值，自然连接）；分片-复制连接（所有连接方式都可以）&lt;/p&gt;
+
+&lt;h2 id=&#34;第19章-分布式数据库&#34;&gt;第19章 分布式数据库&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;分布式数据存储:&lt;/strong&gt;数据复制，数据分片，透明性&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;分布式事务:&lt;/strong&gt; 局部事务，全局事务&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;系统结构:&lt;/strong&gt; 事务管理器，事务协调器&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;两阶段提交:&lt;/strong&gt; 阶段1，阶段2&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;故障:&lt;/strong&gt; 参与站点故障，协调器故障，网络划分&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;分布式数据库中的并发控制:&lt;/strong&gt;&lt;br /&gt;
+ 封锁协议: 单一锁管理器方式，分布式锁管理器&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Machine Learning: Week 2</title>
