@@ -2,11 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Course on Rentseen&#39;s Blog</title>
-    <link>http://yelinsheng.top/tags/course/index.xml</link>
+    <link>http://yelinsheng.top/tags/course/</link>
     <description>Recent content in Course on Rentseen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
-    <atom:link href="http://yelinsheng.top/tags/course/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Dec 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://yelinsheng.top/tags/course/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>高级数据库课程复习</title>
+      <link>http://yelinsheng.top/post/advanced-database-review/</link>
+      <pubDate>Fri, 30 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://yelinsheng.top/post/advanced-database-review/</guid>
+      <description>数据库复习 第14章 事务 事务：原子性，隔离线（并发控制系统），持久性，一致性
+存储结构：易失型，非易失型，稳定型
+事务的状态：活动，部分提交，失败，中止，提交
+原子性，持久性：系统遇到故障时可能无法保证原子性和持久性。日志可以提供恢复机制。回滚。
+事务隔离性：并发执行，由并发控制来保证，以防止系统产生不一致性
+可串行化：
+非冲突指令：可以调换顺序的两个指令（操作不同数据+读同一个数据）
+冲突等价：可以通过一系列非冲突指令变换获得的调度
+冲突可串行化：冲突等价于一个串行化调度
+多个事务：拓扑排序中没有环即可。
+不是冲突等价的也有可能调度等价。
+可恢复调度: 读取了其他事务数据的事务应之后提交
+无级联调度: 被读事务在读操作前提交
+事务隔离性级别: 可串行化，可重复读，已提交读，未提交读
+隔离线级别的实现: 锁/时间戳/多版本
+第15章 并发控制 锁: 共享、排他
+死锁: 需要回滚
+饿死: 排他锁可能一直无法成功申请到锁。解决方法：如果之前有等待的事务，则不能授予锁。
+两阶段封锁协议: 增长阶段；缩减阶段。
+两阶段封锁协议可以保证冲突可串行化，但可能会发生死锁，可能会级联回滚。
+级联回滚可以通过严格两阶段封锁协议来避免。
+具有锁转换的两阶段封锁协议: 在增长阶段可以升级锁，在缩减阶段可以降级锁
+死锁处理: 两个途径:死锁预防；运行系统进入死锁，然后进行死锁检测和恢复。
+死锁预防: 对加锁请求进行排序或一次获得所有锁；抢占和事务回滚:wait-die,wound-wait。
+死锁检测与恢复:
+死锁检测：检测等待图中是否有环。何时激活死锁检测算法？
+死锁恢复：选择牺牲者-&amp;gt;回滚。需要避免某些事务频繁被回滚导致饿死。
+多粒度: 节点树，意向锁
+基于时间戳的协议: 事先选定事务的次序，基于时间戳的则以时间戳为次序
+时间戳: 可以用系统时钟，也可以用逻辑计数器。
+TS(T):事务的时间戳
+W-timestamp(Q):数据Q的写操作的最大时间戳
+R-timestamp(Q):数据Q的读操作的最大时间戳
+时间戳排序协议
+时间戳排序协议保证冲突可串行化，保证无死锁，可能会饿死，可能产生不可恢复的调度（可通过几个方法来解决）
+Thomas写规则: 过时的write操作将被忽略
+基于有效性检查的协议: 读阶段，有效性检查阶段，写阶段
+多版本机制: 记录每个版本的值
+第16章 恢复系统 恢复与原子性:
+日志记录: 更新日志记录  等
+数据库修改: 延迟修改，立即修改，undo，redo</description>
+    </item>
     
     <item>
       <title>算法复习</title>
@@ -14,40 +66,7 @@
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/algorithm-review/</guid>
-      <description>
-
-&lt;h1 id=&#34;algorithm-course-review&#34;&gt;Algorithm course review&lt;/h1&gt;
-
-&lt;h2 id=&#34;graph-algorithms&#34;&gt;Graph Algorithms&lt;/h2&gt;
-
-&lt;h3 id=&#34;algorithm-on-graphs&#34;&gt;Algorithm on Graphs&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;elementary graph algorithms
-
-&lt;ol&gt;
-&lt;li&gt;breadth-first search&lt;/li&gt;
-&lt;li&gt;depth-first search&lt;/li&gt;
-&lt;li&gt;minimum spanning tree&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;shortest path problem
-
-&lt;ol&gt;
-&lt;li&gt;single-source shortest path&lt;/li&gt;
-&lt;li&gt;all-pairs shortest path&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;maximum flow
-
-&lt;ol&gt;
-&lt;li&gt;max-flow vs min-cut&lt;/li&gt;
-&lt;li&gt;applications&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;dfs&#34;&gt;DFS&lt;/h3&gt;
-
-&lt;p&gt;time complexity: O(|V|+|E|)&lt;/p&gt;
-</description>
+      <description>Algorithm course review Graph Algorithms Algorithm on Graphs  elementary graph algorithms  breadth-first search depth-first search minimum spanning tree  shortest path problem  single-source shortest path all-pairs shortest path  maximum flow  max-flow vs min-cut applications   DFS time complexity: O(|V|+|E|)</description>
     </item>
     
   </channel>

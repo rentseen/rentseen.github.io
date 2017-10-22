@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on Rentseen&#39;s Blog</title>
+    <link>http://yelinsheng.top/tags/bash/</link>
+    <description>Recent content in Bash on Rentseen&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
+    <lastBuildDate>Thu, 01 Sep 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://yelinsheng.top/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>linux bash学习</title>
+      <link>http://yelinsheng.top/post/linux-bash/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://yelinsheng.top/post/linux-bash/</guid>
+      <description>linux bash学习 chmod change mode, 改变文件的权限 详情可见博客
+hello world demo 如下
+#!/bin/bash #hello world a=&amp;quot;hello world&amp;quot; echo $a  if else 格式为
+if [ ... ]; then ... elif [ ... ]; then ... else ... fi  demo如下
+#!/bin/bash #test if else #-f ----&amp;gt; if is a file a=&amp;quot;if-else.sh&amp;quot; if [ -f $a ]; then echo &amp;quot;$a is a file&amp;quot; else echo &amp;quot;$a is not a file&amp;quot; fi #-lt ----&amp;gt; less than -le -&amp;gt; less equal b=4 if [ $b -lt 5 ]; then echo &amp;quot;$b is less than 5&amp;quot; else echo &amp;quot;$b is great or equal than 5&amp;quot; fi #-x ----&amp;gt; if is executable c=&amp;quot;if-else.</description>
+    </item>
+    
+  </channel>
+</rss>

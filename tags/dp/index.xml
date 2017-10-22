@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Algorithm on Rentseen&#39;s Blog</title>
-    <link>http://yelinsheng.top/tags/algorithm/</link>
-    <description>Recent content in Algorithm on Rentseen&#39;s Blog</description>
+    <title>Dp on Rentseen&#39;s Blog</title>
+    <link>http://yelinsheng.top/tags/dp/</link>
+    <description>Recent content in Dp on Rentseen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
     <lastBuildDate>Sun, 22 Oct 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://yelinsheng.top/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://yelinsheng.top/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>http://yelinsheng.top/post/leetcode-714/</guid>
       <description>714. Best Time to Buy and Sell Stock with Transaction Fee 题目 Your are given an array of integers prices, for which the i-th element is the price of a given stock on day i; and a non-negative integer fee representing a transaction fee.
 You may complete as many transactions as you like, but you need to pay the transaction fee for each transaction. You may not buy more than 1 share of a stock at a time (ie.</description>
-    </item>
-    
-    <item>
-      <title>算法复习</title>
-      <link>http://yelinsheng.top/post/algorithm-review/</link>
-      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://yelinsheng.top/post/algorithm-review/</guid>
-      <description>Algorithm course review Graph Algorithms Algorithm on Graphs  elementary graph algorithms  breadth-first search depth-first search minimum spanning tree  shortest path problem  single-source shortest path all-pairs shortest path  maximum flow  max-flow vs min-cut applications   DFS time complexity: O(|V|+|E|)</description>
     </item>
     
   </channel>

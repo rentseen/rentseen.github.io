@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.30.2" />
 
-  <title>Algorithm &middot; Rentseen&#39;s Blog</title>
+  <title>leetcode: Question 714 &middot; Rentseen&#39;s Blog</title>
 
   
   
@@ -28,8 +28,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Rentseen&#39;s Blog" href="http://yelinsheng.top/tags/algorithm/index.xml" />
   
 
   
@@ -111,10 +109,6 @@ var _hmt = _hmt || [];
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="http://yelinsheng.top/tags/algorithm/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -222,18 +216,12 @@ var _hmt = _hmt || [];
 
 
 <div class="header">
-  <h1>Algorithm</h1>
+  <h1>leetcode: Question 714</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    
 
-<article class="post-short-content">
-  <header>
-    <h2><a class="post-short-header" href="http://yelinsheng.top/post/leetcode-714/">leetcode: Question 714</a></h2>
-
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -261,72 +249,120 @@ var _hmt = _hmt || [];
 </div>
 
 
+  
 
-  </header>
-  <div class="post-short-body">
-    
-      <div class="post-short-item">
-        <span>-</span>
-        Best Time to Buy and Sell Stock with Transaction Fee
-      </div>
+<h1 id="714-best-time-to-buy-and-sell-stock-with-transaction-fee">714. Best Time to Buy and Sell Stock with Transaction Fee</h1>
+
+<h2 id="题目">题目</h2>
+
+<p>Your are given an array of integers prices, for which the i-th element is the price of a given stock on day i; and a non-negative integer fee representing a transaction fee.</p>
+
+<p>You may complete as many transactions as you like, but you need to pay the transaction fee for each transaction. You may not buy more than 1 share of a stock at a time (ie. you must sell the stock share before you buy again.)</p>
+
+<p>Return the maximum profit you can make.</p>
+
+<p><em>Example 1:</em></p>
+
+<pre><code class="language-bash">Input: prices = [1, 3, 2, 8, 4, 9], fee = 2
+Output: 8
+Explanation: The maximum profit can be achieved by:
+Buying at prices[0] = 1
+Selling at prices[3] = 8
+Buying at prices[4] = 4
+Selling at prices[5] = 9
+The total profit is ((8 - 1) - 2) + ((9 - 4) - 2) = 8.
+</code></pre>
+
+<h2 id="传统动态规划">传统动态规划</h2>
+
+<p>这是我第一个版本的答案，方法是对的，可惜需要n^2的时间复杂度，在leetcode上提交直接超时了。</p>
+
+<p>具体思路就是：profit[i]这个状态的值由 (profit[0],&hellip; profit[i-1]) 到profit[i]的状态转变的最大值决定,即：</p>
+
+<pre><code>profit[i]= max{profit[0]+max{0, prices[i]-prices[0]}, ..., profit[i-1]+max{0, prices[i]-prices[i-1]}}
+</code></pre>
+
+<p>代码如下所示：</p>
+
+<pre><code class="language-java">public static int maxProfit(int[] prices, int fee) {
+    int profit[] = new int[prices.length];
+    for(int i=1; i&lt;profit.length; i++){
+        for(int j=0; j&lt;i; j++){
+            int tmp = prices[i]-prices[j]-fee&gt;0?prices[i]-prices[j]-fee:0;
+            if(profit[j]+tmp&gt;profit[i]){
+                profit[i]=profit[j]+tmp;
+            }
+        }
+    }
+    return profit[profit.length-1];
+}
+</code></pre>
+
+<h2 id="状态机">状态机</h2>
+
+<p>这个方法是看了<a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/">leetcode-309</a>的状态机解法之后受到的启发。</p>
+
+<p>通过分析，我们可以发现总共有三个状态：已买入（S0），已卖出（S1）和空闲（S2）。已买入状态的入度为：由已买入状态自我维持，或由已卖出状态转入，或有空闲状态转入。已卖出状态只有由已买入状态转入，因为有买才有卖。空闲状态可以由已卖出状态转入，或由空闲状态自我维持。开始状态，即对应第一个price，可以是空闲状态或已买入状态。所以状态转移图为：</p>
+
+<p><img src="http://yelinsheng.top/img/leetcode714-0.jpg" alt="image" /></p>
+
+<p>买入时profit会降低相应的price，而卖出则会赚到相应的差价，所以状态转移函数为：</p>
+
+<pre><code class="language-bash">s0[i] = max(s0[i-1], s2[i-1]-prices[i]);
+s0[i] = max(s0[i], s1[i-1]-prices[i]);
+s1[i] = s0[i-1] + prices[i] - fee;
+s2[i] = max(s1[i-1], s2[i-1]);
+</code></pre>
+
+<p>所以代码就如下所示了：</p>
+
+<pre><code class="language-java">public static int maxProfit(int[] prices, int fee) {
+    int s0[] = new int[prices.length];
+    int s1[] = new int[prices.length];
+    int s2[] = new int[prices.length];
+    s0[0] = -prices[0];
+    s1[0] = -fee;
+    s2[0] = 0;
+    for(int i=1; i&lt;prices.length; i++){
+        s0[i] = Math.max(s0[i-1], s2[i-1]-prices[i]);
+        s0[i] = Math.max(s0[i], s1[i-1]-prices[i]);
+        s1[i] = s0[i-1] + prices[i] - fee;
+        s2[i] = Math.max(s1[i-1], s2[i-1]);
+    }
+    return Math.max(s2[prices.length-1], s1[prices.length-1]);
+    }
+</code></pre>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
   </div>
-
-  <div class="read-more">
-    <a href="http://yelinsheng.top/post/leetcode-714/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </div>
-</article>
-
-  
-    
-
-<article class="post-short-content">
-  <header>
-    <h2><a class="post-short-header" href="http://yelinsheng.top/post/algorithm-review/">算法复习</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2016-09-01</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="tag-a" href="http://yelinsheng.top/tags/course">course</a>
-    
-      <a class="tag-a" href="http://yelinsheng.top/tags/algorithm">algorithm</a>
+  <div class="pure-u-10-24">
     
   </div>
-  
-  
-
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="http://yelinsheng.top/post/advanced-database-review/">高级数据库课程复习</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="http://yelinsheng.top/post/advanced-database-review/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
 </div>
 
 
-
-  </header>
-  <div class="post-short-body">
-    
-      <div class="post-short-item">
-        <span>-</span>
-        研一算法课程复习
-      </div>
-    
-  </div>
-
-  <div class="read-more">
-    <a href="http://yelinsheng.top/post/algorithm-review/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </div>
-</article>
-
   
+  
+
 </div>
 
 </div>
@@ -335,4 +371,3 @@ var _hmt = _hmt || [];
 
 </body>
 </html>
-

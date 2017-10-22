@@ -7,7 +7,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.18-DEV" />
+  <meta name="generator" content="Hugo 0.30.2" />
 
   <title>Vim 的使用与学习 &middot; Rentseen&#39;s Blog</title>
 
@@ -31,8 +31,9 @@
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/monokai-sublime.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   
 
@@ -74,12 +75,6 @@ var _hmt = _hmt || [];
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="http://yelinsheng.top/"><i class='fa fa-home fa-fw'></i>Home</a>
-      
-        </li>
-      
-      
-        <li class="pure-menu-item">
           <a class="pure-menu-link" href="http://yelinsheng.top/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
       
         </li>
@@ -99,6 +94,12 @@ var _hmt = _hmt || [];
       
         <li class="pure-menu-item">
           <a class="pure-menu-link" href="mailto:yelinsheng@sjtu.edu.cn"><i class='fa fa-envelope fa-fw'></i>Email Me</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://yelinsheng.top/"><i class='fa fa-home fa-fw'></i>Home</a>
       
         </li>
       
@@ -235,9 +236,7 @@ var _hmt = _hmt || [];
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="tag-a" href="http://yelinsheng.top/tags/study">study</a>
-    
-      <a class="tag-a" href="http://yelinsheng.top/tags/vim">Vim</a>
+      <a class="tag-a" href="http://yelinsheng.top/tags/vim">vim</a>
     
   </div>
   
@@ -258,23 +257,54 @@ var _hmt = _hmt || [];
 
 <h2 id="shortcut">shortcut</h2>
 
-<p>i / esc: insert模式和nomal模式的切换<br />
-h/j/k/l: left/down/up/right<br />
-b: 到当前词的词首<br />
-w: 到下一词的开头<br />
-e: 到当前词的结尾<br />
-O: 在当前行插入一行<br />
-o: 在下一行插入新的一行<br />
-$: 到这一行的行尾<br />
-0: 到这一行的行首<br />
-3i: 插入的值×3<br />
-3+移动键: 移动的次数×3<br />
-/: 查找<br />
-%: 找到与当前括号匹配的括号<br />
-yy: 复制一行<br />
-p: 粘贴<br />
-gg: 光标移动到开头<br />
-G: 光标移动到末尾</p>
+<p>hjkl:左下上右
+dd:删除一行
+J:合并一行
+x:删除一个字符
+i:在光标前插入
+a:在光标后插入
+A:在行末尾插入
+u:undo
+U:将一行恢复原样
+ctrl+r:redo
+O:在上方插入一行
+o:在下方插入一行
+number:在指令前加数字，可以执行多次
+ZZ:保存并退出
+:q!:不保存退出
+dw:删除一个word
+d$:从光标处删除到行尾
+de:删除到当前单词的end
+0:移动到开头
+$:移动到行尾
+2w:移动2个word到开头
+2e：移动两个word到end
+d2w:删除两个word
+2dd:删除两行
+r+字母:替换当前光标的字母
+ce:change until the end word
+c+number+motion:与d类似
+gg:移动到文档开头
+G:移动到文档末尾
+number+G:移动到第number行
+/word:搜索，正向
+?word:搜索，反向
+n:搜索时下一个命中项
+N:搜索时上一个命中项
+ctrl+o:到光标上一个位置
+%:找到与当前光标匹配的),],}
+:s/old/new:将当前行的第一个old替换成new
+:s/old/new/g:将当前行所有的old替换成new
+:%s/old/new/gc:替换文件所有的匹配项，在替换每一个匹配项之前会询问用户
+:%s/old/new/g:替换文件所有的匹配项
+:#,#/old/new/g:替换#之间的行的所有匹配项
+:!command:可以执行命令行的命令
+:w filename:另存为
+v:可以高亮选择文本
+:r filename: 把filename的内容粘贴过来
+R:进入replace模式，替换多个字符
+y：yank 复制
+p:put 粘贴/将删除的放在光标之后</p>
 
 
   
@@ -312,27 +342,7 @@ G: 光标移动到末尾</p>
   
   
 
-
-	<div class="ds-thread" data-thread-key="Vim 的使用与学习" data-title="Vim 的使用与学习" data-url="http://yelinsheng.top/post/vim/"></div>
-
-
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"yelinsheng"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0]
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-
-
-
 </div>
-
-
 
 </div>
 </div>
@@ -340,4 +350,3 @@ var duoshuoQuery = {short_name:"yelinsheng"};
 
 </body>
 </html>
-

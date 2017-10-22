@@ -2,166 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Rentseen&#39;s Blog</title>
-    <link>http://yelinsheng.top/post/index.xml</link>
+    <link>http://yelinsheng.top/post/</link>
     <description>Recent content in Posts on Rentseen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
-    <lastBuildDate>Fri, 30 Dec 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://yelinsheng.top/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://yelinsheng.top/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>leetcode: Question 714</title>
+      <link>http://yelinsheng.top/post/leetcode-714/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://yelinsheng.top/post/leetcode-714/</guid>
+      <description>714. Best Time to Buy and Sell Stock with Transaction Fee 题目 Your are given an array of integers prices, for which the i-th element is the price of a given stock on day i; and a non-negative integer fee representing a transaction fee.
+You may complete as many transactions as you like, but you need to pay the transaction fee for each transaction. You may not buy more than 1 share of a stock at a time (ie.</description>
+    </item>
     
     <item>
       <title>高级数据库课程复习</title>
-      <link>http://yelinsheng.top/post/Advanced-database-review/</link>
+      <link>http://yelinsheng.top/post/advanced-database-review/</link>
       <pubDate>Fri, 30 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://yelinsheng.top/post/Advanced-database-review/</guid>
-      <description>
-
-&lt;h1 id=&#34;数据库复习&#34;&gt;数据库复习&lt;/h1&gt;
-
-&lt;h2 id=&#34;第14章-事务&#34;&gt;第14章 事务&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;事务&lt;/strong&gt;：原子性，隔离线（并发控制系统），持久性，一致性&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;存储结构&lt;/strong&gt;：易失型，非易失型，稳定型&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;事务的状态&lt;/strong&gt;：活动，部分提交，失败，中止，提交&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;原子性，持久性&lt;/strong&gt;：系统遇到故障时可能无法保证原子性和持久性。日志可以提供恢复机制。回滚。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;事务隔离性&lt;/strong&gt;：并发执行，由并发控制来保证，以防止系统产生不一致性&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;可串行化&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;非冲突指令：可以调换顺序的两个指令（操作不同数据+读同一个数据）&lt;/p&gt;
-
-&lt;p&gt;冲突等价：可以通过一系列非冲突指令变换获得的调度&lt;/p&gt;
-
-&lt;p&gt;冲突可串行化：冲突等价于一个串行化调度&lt;/p&gt;
-
-&lt;p&gt;多个事务：拓扑排序中没有环即可。&lt;/p&gt;
-
-&lt;p&gt;不是冲突等价的也有可能调度等价。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;可恢复调度:&lt;/strong&gt; 读取了其他事务数据的事务应之后提交&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;无级联调度:&lt;/strong&gt; 被读事务在读操作前提交&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;事务隔离性级别:&lt;/strong&gt; 可串行化，可重复读，已提交读，未提交读&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;隔离线级别的实现:&lt;/strong&gt; 锁/时间戳/多版本&lt;/p&gt;
-
-&lt;h2 id=&#34;第15章-并发控制&#34;&gt;第15章 并发控制&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;锁:&lt;/strong&gt; 共享、排他&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;死锁:&lt;/strong&gt; 需要回滚&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;饿死:&lt;/strong&gt; 排他锁可能一直无法成功申请到锁。解决方法：如果之前有等待的事务，则不能授予锁。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;两阶段封锁协议:&lt;/strong&gt; 增长阶段；缩减阶段。&lt;br /&gt;
-两阶段封锁协议可以保证冲突可串行化，但可能会发生死锁，可能会级联回滚。&lt;br /&gt;
-级联回滚可以通过&lt;strong&gt;严格两阶段封锁协议&lt;/strong&gt;来避免。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;具有锁转换的两阶段封锁协议:&lt;/strong&gt; 在增长阶段可以升级锁，在缩减阶段可以降级锁&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;死锁处理:&lt;/strong&gt; 两个途径:死锁预防；运行系统进入死锁，然后进行死锁检测和恢复。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;死锁预防:&lt;/strong&gt; 对加锁请求进行排序或一次获得所有锁；抢占和事务回滚:wait-die,wound-wait。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;死锁检测与恢复:&lt;/strong&gt;&lt;br /&gt;
-死锁检测：检测等待图中是否有环。何时激活死锁检测算法？&lt;br /&gt;
-死锁恢复：选择牺牲者-&amp;gt;回滚。需要避免某些事务频繁被回滚导致饿死。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;多粒度:&lt;/strong&gt; 节点树，意向锁&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;基于时间戳的协议:&lt;/strong&gt; 事先选定事务的次序，基于时间戳的则以时间戳为次序&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;时间戳:&lt;/strong&gt; 可以用系统时钟，也可以用逻辑计数器。&lt;br /&gt;
-TS(T):事务的时间戳&lt;br /&gt;
-W-timestamp(Q):数据Q的写操作的最大时间戳&lt;br /&gt;
-R-timestamp(Q):数据Q的读操作的最大时间戳&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;时间戳排序协议&lt;/strong&gt;&lt;br /&gt;
-时间戳排序协议保证冲突可串行化，保证无死锁，可能会饿死，可能产生不可恢复的调度（可通过几个方法来解决）&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Thomas写规则:&lt;/strong&gt; 过时的write操作将被忽略&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;基于有效性检查的协议:&lt;/strong&gt; 读阶段，有效性检查阶段，写阶段&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;多版本机制:&lt;/strong&gt; 记录每个版本的值&lt;/p&gt;
-
-&lt;h2 id=&#34;第16章-恢复系统&#34;&gt;第16章 恢复系统&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;恢复与原子性:&lt;/strong&gt;&lt;br /&gt;
- 日志记录: 更新日志记录 &lt;T,X,V1,V2&gt; 等&lt;br /&gt;
- 数据库修改: 延迟修改，立即修改，undo，redo&lt;br /&gt;
- 并发控制和恢复&lt;br /&gt;
- 事务提交: 修改的数据将输出到稳定存储器&lt;br /&gt;
- 使用日志来重做和撤销事务: commit或abort的需要redo，否则要undo&lt;br /&gt;
- 检查点: &lt;checkpoint L&gt;，恢复是查找日志中最近的checkpoint来恢复&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;恢复算法:&lt;/strong&gt;&lt;br /&gt;
- 事务回滚: 在log中从后往前undo
- 系统奔溃后的恢复: 先从checkpoint开始从前往后redo，再对未完成事务进行事务回滚&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;非易失性存储器故障:&lt;/strong&gt; &lt;dump&gt; log&lt;/p&gt;
-
-&lt;h2 id=&#34;第17章-数据库系统体系结构&#34;&gt;第17章 数据库系统体系结构&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;集中式系统:&lt;/strong&gt; 单用户系统，多用户系统&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;客户-服务器系统:&lt;/strong&gt;  客户端是个人计算机，通过网络连接来向服务器提交事务&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;事务服务器:&lt;/strong&gt; 服务器进程，锁管理器进程，数据库写进程，日志写进程，检查点进程，进程监控进程，共享内存&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;并行系统:&lt;/strong&gt; 粗粒度并行机，大规模并行机（细粒度）&lt;br /&gt;
- 性能指标: 吞吐量，响应时间&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;加速比:&lt;/strong&gt; 更短的时间运行一个任务；线性加速比，亚线性加速比&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;扩展比:&lt;/strong&gt; 增加并行度来处理更大的任务；线性扩展比，亚线性扩展比&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;并行数据库体系结构:&lt;/strong&gt;&lt;br /&gt;
- 共享内存&lt;br /&gt;
- 共享硬盘&lt;br /&gt;
- 无共享&lt;br /&gt;
- 层次的&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;分布式系统:&lt;/strong&gt; 一般在地理上是隔离的，分为局部事务和全局事务。&lt;br /&gt;
- 建立分布式系统的原因：数据共享，自制性，可用性。&lt;/p&gt;
-
-&lt;h2 id=&#34;第18章-并行数据库&#34;&gt;第18章 并行数据库&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;I/O并行:&lt;/strong&gt; 最简单的方式是将关系划分到不同的磁盘上来缩减查询时间，最通用的是水平划分。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;划分技术:&lt;/strong&gt; 轮转法，散列划分，范围划分&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;偏斜处理:&lt;/strong&gt; 直方图，虚处理器&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;查询间并行:&lt;/strong&gt; 事务之间并行&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;查询内并行:&lt;/strong&gt; 事务内并行，有操作内并行和操作间并行。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;操作内并行:&lt;/strong&gt;&lt;br /&gt;
- 并行排序: 对划分属性排序，则直接在各处理器上并行排序在做连接即可；如果不是划分属性，则：范围划分排序；外部排序归并。&lt;br /&gt;
- 并行连接: 基于划分的连接（等值，自然连接）；分片-复制连接（所有连接方式都可以）&lt;/p&gt;
-
-&lt;h2 id=&#34;第19章-分布式数据库&#34;&gt;第19章 分布式数据库&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;分布式数据存储:&lt;/strong&gt;数据复制，数据分片，透明性&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;分布式事务:&lt;/strong&gt; 局部事务，全局事务&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;系统结构:&lt;/strong&gt; 事务管理器，事务协调器&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;两阶段提交:&lt;/strong&gt; 阶段1，阶段2&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;故障:&lt;/strong&gt; 参与站点故障，协调器故障，网络划分&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;分布式数据库中的并发控制:&lt;/strong&gt;&lt;br /&gt;
- 封锁协议: 单一锁管理器方式，分布式锁管理器&lt;/p&gt;
-</description>
+      <guid>http://yelinsheng.top/post/advanced-database-review/</guid>
+      <description>数据库复习 第14章 事务 事务：原子性，隔离线（并发控制系统），持久性，一致性
+存储结构：易失型，非易失型，稳定型
+事务的状态：活动，部分提交，失败，中止，提交
+原子性，持久性：系统遇到故障时可能无法保证原子性和持久性。日志可以提供恢复机制。回滚。
+事务隔离性：并发执行，由并发控制来保证，以防止系统产生不一致性
+可串行化：
+非冲突指令：可以调换顺序的两个指令（操作不同数据+读同一个数据）
+冲突等价：可以通过一系列非冲突指令变换获得的调度
+冲突可串行化：冲突等价于一个串行化调度
+多个事务：拓扑排序中没有环即可。
+不是冲突等价的也有可能调度等价。
+可恢复调度: 读取了其他事务数据的事务应之后提交
+无级联调度: 被读事务在读操作前提交
+事务隔离性级别: 可串行化，可重复读，已提交读，未提交读
+隔离线级别的实现: 锁/时间戳/多版本
+第15章 并发控制 锁: 共享、排他
+死锁: 需要回滚
+饿死: 排他锁可能一直无法成功申请到锁。解决方法：如果之前有等待的事务，则不能授予锁。
+两阶段封锁协议: 增长阶段；缩减阶段。
+两阶段封锁协议可以保证冲突可串行化，但可能会发生死锁，可能会级联回滚。
+级联回滚可以通过严格两阶段封锁协议来避免。
+具有锁转换的两阶段封锁协议: 在增长阶段可以升级锁，在缩减阶段可以降级锁
+死锁处理: 两个途径:死锁预防；运行系统进入死锁，然后进行死锁检测和恢复。
+死锁预防: 对加锁请求进行排序或一次获得所有锁；抢占和事务回滚:wait-die,wound-wait。
+死锁检测与恢复:
+死锁检测：检测等待图中是否有环。何时激活死锁检测算法？
+死锁恢复：选择牺牲者-&amp;gt;回滚。需要避免某些事务频繁被回滚导致饿死。
+多粒度: 节点树，意向锁
+基于时间戳的协议: 事先选定事务的次序，基于时间戳的则以时间戳为次序
+时间戳: 可以用系统时钟，也可以用逻辑计数器。
+TS(T):事务的时间戳
+W-timestamp(Q):数据Q的写操作的最大时间戳
+R-timestamp(Q):数据Q的读操作的最大时间戳
+时间戳排序协议
+时间戳排序协议保证冲突可串行化，保证无死锁，可能会饿死，可能产生不可恢复的调度（可通过几个方法来解决）
+Thomas写规则: 过时的write操作将被忽略
+基于有效性检查的协议: 读阶段，有效性检查阶段，写阶段
+多版本机制: 记录每个版本的值
+第16章 恢复系统 恢复与原子性:
+日志记录: 更新日志记录  等
+数据库修改: 延迟修改，立即修改，undo，redo</description>
     </item>
     
     <item>
@@ -170,99 +76,12 @@ R-timestamp(Q):数据Q的读操作的最大时间戳&lt;/p&gt;
       <pubDate>Tue, 06 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/machine-learning-week2/</guid>
-      <description>
-
-&lt;h1 id=&#34;machine-learning-week-2&#34;&gt;Machine Learning: Week 2&lt;/h1&gt;
-
-&lt;h2 id=&#34;multivariate-linear-regression&#34;&gt;Multivariate linear regression&lt;/h2&gt;
-
-&lt;p&gt;Linear regression with multiple variables is also known as &amp;ldquo;multivariate linear regression&amp;rdquo;.&lt;/p&gt;
-
-&lt;h3 id=&#34;notation&#34;&gt;Notation&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;hypothesis&#34;&gt;Hypothesis&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient descent&lt;/h3&gt;
-
-&lt;p&gt;Formula:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Partial derivation will be like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;feature-scaling&#34;&gt;Feature scaling&lt;/h3&gt;
-
-&lt;p&gt;If scale of features differ widely, it may take long time to converge. So it is
-necessary to scale the feature.&lt;/p&gt;
-
-&lt;p&gt;The contour will look like a circle after scaling.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt; Is converge result which is scaled the same as converge result which is not scaled.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-5.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If scale of feature is similar to [-1,1], it will be fine. When it is too big or too small, it should be scaled.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-6.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Mean normalization:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-7.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;learning-rate&#34;&gt;Learning rate&lt;/h3&gt;
-
-&lt;p&gt;Check if gradient descent works correctly using this plot: min(J) - iteration number.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Alpha can&amp;rsquo;t be too small or too big, we can check it using descent rate plot.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;polynomial-regression&#34;&gt;Polynomial regression&lt;/h3&gt;
-
-&lt;p&gt;We can combine multiple features into one, or use polynomial function.&lt;/p&gt;
-
-&lt;p&gt;Convert it into linear regression, but range of variables may differ widely, so it need feature scaling.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;computing-parameters-analytically&#34;&gt;Computing parameters analytically&lt;/h2&gt;
-
-&lt;h3 id=&#34;normal-equation&#34;&gt;Normal Equation&lt;/h3&gt;
-
-&lt;p&gt;Solve the optimal theta analytically just by one go.&lt;/p&gt;
-
-&lt;p&gt;Matrix setup:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Derivation of theta: &lt;a href=&#34;https://zhuanlan.zhihu.com/p/22757336&#34;&gt;知乎专栏&lt;/a&gt;
-&lt;img src=&#34;http://yelinsheng.top/img/ML-2-12.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Normal equation don&amp;rsquo;t need feature scaling:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-2-13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;When number of features is small, normal equation is better. Otherwise, gradient descent is better.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-2-14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;What if X^T X is not invertable.&lt;/p&gt;
-
-&lt;p&gt;pinv() in octave will give a value even if parameter is not invertable; int() is not.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-2-15.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The reason why X^T X is not invertable:
-1. Redundant feature;
-2. Too many features.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-2-16.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>Machine Learning: Week 2 Multivariate linear regression Linear regression with multiple variables is also known as &amp;ldquo;multivariate linear regression&amp;rdquo;.
+Notation Hypothesis Gradient descent Formula:
+Partial derivation will be like this:
+Feature scaling If scale of features differ widely, it may take long time to converge. So it is necessary to scale the feature.
+The contour will look like a circle after scaling.
+Problem: Is converge result which is scaled the same as converge result which is not scaled.</description>
     </item>
     
     <item>
@@ -271,36 +90,9 @@ necessary to scale the feature.&lt;/p&gt;
       <pubDate>Tue, 06 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/vim/</guid>
-      <description>
-
-&lt;h1 id=&#34;vim-的使用与学习&#34;&gt;Vim 的使用与学习&lt;/h1&gt;
-
-&lt;p&gt;据说大神都在用Vim，为了把右手从鼠标上解放出来，我也来入这个坑把。。。&lt;/p&gt;
-
-&lt;h2 id=&#34;网站资源&#34;&gt;网站资源&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.openvim.com/&#34;&gt;openvim&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;shortcut&#34;&gt;shortcut&lt;/h2&gt;
-
-&lt;p&gt;i / esc: insert模式和nomal模式的切换&lt;br /&gt;
-h/j/k/l: left/down/up/right&lt;br /&gt;
-b: 到当前词的词首&lt;br /&gt;
-w: 到下一词的开头&lt;br /&gt;
-e: 到当前词的结尾&lt;br /&gt;
-O: 在当前行插入一行&lt;br /&gt;
-o: 在下一行插入新的一行&lt;br /&gt;
-$: 到这一行的行尾&lt;br /&gt;
-0: 到这一行的行首&lt;br /&gt;
-3i: 插入的值×3&lt;br /&gt;
-3+移动键: 移动的次数×3&lt;br /&gt;
-/: 查找&lt;br /&gt;
-%: 找到与当前括号匹配的括号&lt;br /&gt;
-yy: 复制一行&lt;br /&gt;
-p: 粘贴&lt;br /&gt;
-gg: 光标移动到开头&lt;br /&gt;
-G: 光标移动到末尾&lt;/p&gt;
-</description>
+      <description>Vim 的使用与学习 据说大神都在用Vim，为了把右手从鼠标上解放出来，我也来入这个坑把。。。
+网站资源 openvim
+shortcut hjkl:左下上右 dd:删除一行 J:合并一行 x:删除一个字符 i:在光标前插入 a:在光标后插入 A:在行末尾插入 u:undo U:将一行恢复原样 ctrl+r:redo O:在上方插入一行 o:在下方插入一行 number:在指令前加数字，可以执行多次 ZZ:保存并退出 :q!:不保存退出 dw:删除一个word d$:从光标处删除到行尾 de:删除到当前单词的end 0:移动到开头 $:移动到行尾 2w:移动2个word到开头 2e：移动两个word到end d2w:删除两个word 2dd:删除两行 r+字母:替换当前光标的字母 ce:change until the end word c+number+motion:与d类似 gg:移动到文档开头 G:移动到文档末尾 number+G:移动到第number行 /word:搜索，正向 ?word:搜索，反向 n:搜索时下一个命中项 N:搜索时上一个命中项 ctrl+o:到光标上一个位置 %:找到与当前光标匹配的),],} :s/old/new:将当前行的第一个old替换成new :s/old/new/g:将当前行所有的old替换成new :%s/old/new/gc:替换文件所有的匹配项，在替换每一个匹配项之前会询问用户 :%s/old/new/g:替换文件所有的匹配项 :#,#/old/new/g:替换#之间的行的所有匹配项 :!command:可以执行命令行的命令 :w filename:另存为 v:可以高亮选择文本 :r filename: 把filename的内容粘贴过来 R:进入replace模式，替换多个字符 y：yank 复制 p:put 粘贴/将删除的放在光标之后</description>
     </item>
     
     <item>
@@ -309,41 +101,11 @@ G: 光标移动到末尾&lt;/p&gt;
       <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/unity-3d/</guid>
-      <description>
-
-&lt;h1 id=&#34;游戏引擎-unity-3d-的初次学习以及体验&#34;&gt;游戏引擎：unity-3d 的初次学习以及体验&lt;/h1&gt;
-
-&lt;p&gt;unity-3d 是由Unity Technologies开发的专业游戏引擎&lt;/p&gt;
-
-&lt;h2 id=&#34;安装&#34;&gt;安装：&lt;/h2&gt;
-
-&lt;p&gt;支持mac和windows这两个平台，我使用的是windows，直接选择免费版的下载安装即可，在安装时需要登录并填写一个调查问卷（不知道是干嘛的==）。&lt;/p&gt;
-
-&lt;h2 id=&#34;使用&#34;&gt;使用：&lt;/h2&gt;
-
-&lt;p&gt;我是学习了一下官网上的教程，做的是第一个案例：Roll a ball.（没做完- -）&lt;/p&gt;
-
-&lt;p&gt;官网上的视频讲的很清楚，每一步的操作都解释的很明白，它的视频用的是youtube提供的接口（youtube的字幕太强大了，似乎是自动生成的，用了机器学习神马的，很精准）&lt;/p&gt;
-
-&lt;h2 id=&#34;细节记录&#34;&gt;细节记录：&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;元件都是包含在一个scene中的&lt;/li&gt;
-&lt;li&gt;camera元件：视角&lt;/li&gt;
-&lt;li&gt;光线元件，可以投射到地面上&lt;/li&gt;
-&lt;li&gt;plane，一个平面&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;总体感受&#34;&gt;总体感受：&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;界面功能很强大，3d效果超棒&lt;/li&gt;
-&lt;li&gt;图形是在软件上手动添加操作的&lt;/li&gt;
-&lt;li&gt;可以通过给图形元件绑定script代码来添加元件的逻辑，从而操作元件。&lt;/li&gt;
-&lt;li&gt;代码可以使用 c# 或 javascript&lt;/li&gt;
-&lt;li&gt;整个操作体验更像是设计和代码的结合（Dreamweaver？。。。）&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <description> 游戏引擎：unity-3d 的初次学习以及体验 unity-3d 是由Unity Technologies开发的专业游戏引擎
+安装： 支持mac和windows这两个平台，我使用的是windows，直接选择免费版的下载安装即可，在安装时需要登录并填写一个调查问卷（不知道是干嘛的==）。
+使用： 我是学习了一下官网上的教程，做的是第一个案例：Roll a ball.（没做完- -）
+官网上的视频讲的很清楚，每一步的操作都解释的很明白，它的视频用的是youtube提供的接口（youtube的字幕太强大了，似乎是自动生成的，用了机器学习神马的，很精准）
+细节记录：  元件都是包含在一个scene中的 camera元件：视角 光线元件，可以投射到地面上 plane，一个平面  总体感受：  界面功能很强大，3d效果超棒 图形是在软件上手动添加操作的 可以通过给图形元件绑定script代码来添加元件的逻辑，从而操作元件。 代码可以使用 c# 或 javascript 整个操作体验更像是设计和代码的结合（Dreamweaver？。。。）  </description>
     </item>
     
     <item>
@@ -352,136 +114,12 @@ G: 光标移动到末尾&lt;/p&gt;
       <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/mathine-learning-week1/</guid>
-      <description>
-
-&lt;h1 id=&#34;machine-learning-week-1&#34;&gt;Machine Learning: Week 1&lt;/h1&gt;
-
-&lt;h2 id=&#34;supervised-learning&#34;&gt;Supervised learning&lt;/h2&gt;
-
-&lt;p&gt;Predict output according to the correct dataset which are already known.&lt;/p&gt;
-
-&lt;p&gt;Supervised learning problems are categorized into &amp;ldquo;regression&amp;rdquo; and &amp;ldquo;classification&amp;rdquo; problems&lt;/p&gt;
-
-&lt;h3 id=&#34;house-price-prediction&#34;&gt;House price prediction&lt;/h3&gt;
-
-&lt;p&gt;This is a regression problem, whose prediction value is continuous.&lt;/p&gt;
-
-&lt;p&gt;Do regression according to history data, you can do linear regression or quadratic regression which is up to you.&lt;/p&gt;
-
-&lt;p&gt;Then do prediction using this result.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-1-1.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;breast-cancer&#34;&gt;Breast cancer&lt;/h3&gt;
-
-&lt;p&gt;This is a classification problem, whose prediction value is discrete.&lt;/p&gt;
-
-&lt;p&gt;Predict if tumor is benign or malignant according to tumor size. This is a classification problem.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-1-2.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;When there are two feature: tumor size and age, it will be like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-1-3.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;unsupervised-learning&#34;&gt;Unsupervised learning&lt;/h2&gt;
-
-&lt;p&gt;Find data structure from given dataset which do not have right answer.&lt;/p&gt;
-
-&lt;h3 id=&#34;clustering-problem&#34;&gt;Clustering problem&lt;/h3&gt;
-
-&lt;p&gt;Cluster these data into two parts.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-4.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;An application: google news will cluster different news from different site but with same topic together.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-5.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Application of Unsupervised learning.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Cluster the servers to make it more efficient&lt;/li&gt;
-&lt;li&gt;Cluster the user in social network&lt;/li&gt;
-&lt;li&gt;Market segmentation&lt;/li&gt;
-&lt;li&gt;Astronomical data analysis
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-6.png&#34; alt=&#34;image&#34; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Cocktail party: Identify the voice from a mesh of sounds in chaotic environment.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-7.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;model-and-cost-function&#34;&gt;Model and Cost Function&lt;/h2&gt;
-
-&lt;h3 id=&#34;notation&#34;&gt;Notation&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-1-8.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;model&#34;&gt;Model&lt;/h3&gt;
-
-&lt;p&gt;why use hypothesis to represent function h: Former research used it, maybe it is not the best choice, but it just a terminology.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-9.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;cost-function&#34;&gt;Cost Function&lt;/h3&gt;
-
-&lt;p&gt;theta 1 and theta 0 are parameters of function h.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-10.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Something I don&amp;rsquo;t know before:&lt;/strong&gt;&lt;br /&gt;
-#: hash sign, represent the number of something.&lt;br /&gt;
-1/m: 1 over | the 2m&lt;/p&gt;
-
-&lt;p&gt;The figure as follow shows the detail of cost function &lt;em&gt;J&lt;/em&gt; of linear regression function, which can be call squared error function.&lt;/p&gt;
-
-&lt;p&gt;The mean is halved (1/2m) as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the 12 term
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-11.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Intuition of cost function:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;One parameter:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-12.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Two parameters:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-13.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;parameter-learning&#34;&gt;Parameter learning&lt;/h2&gt;
-
-&lt;h3 id=&#34;gradient-descent&#34;&gt;Gradient Descent&lt;/h3&gt;
-
-&lt;p&gt;Init theta 0 and theta 1, change these two values till J reaches local minimum value.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-14.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Different start position can lead to different local optimal.&lt;/p&gt;
-
-&lt;dl&gt;
-&lt;dt&gt;&lt;img src=&#34;http://yelinsheng.top/img/ML-1-15.png&#34; alt=&#34;image&#34; /&gt;&lt;/dt&gt;
-&lt;/dl&gt;
-
-&lt;p&gt;:= is assignment; = is truth assertion.&lt;br /&gt;
-Right side of equation should be updated simultaneously.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-16.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;gradient-descent-intuition&#34;&gt;Gradient Descent Intuition&lt;/h3&gt;
-
-&lt;p&gt;Case of one parameter:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-17.png&#34; alt=&#34;image&#34; /&gt;
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-18.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The step will be smaller and smaller, so there is no need to decrease alpha.
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-19.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;gradient-descent-for-linear-regression&#34;&gt;Gradient Descent for Linear Regression&lt;/h3&gt;
-
-&lt;p&gt;Calculate partial derivation of J:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-20.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Gradient descent algorithm for linear regression:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-21.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Process of descent for linear regression
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-22.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Batch gradient descent: calculate all data in every update, high cost:
-&lt;img src=&#34;http://yelinsheng.top/img/ML-1-23.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>Machine Learning: Week 1 Supervised learning Predict output according to the correct dataset which are already known.
+Supervised learning problems are categorized into &amp;ldquo;regression&amp;rdquo; and &amp;ldquo;classification&amp;rdquo; problems
+House price prediction This is a regression problem, whose prediction value is continuous.
+Do regression according to history data, you can do linear regression or quadratic regression which is up to you.
+Then do prediction using this result.
+Breast cancer This is a classification problem, whose prediction value is discrete.</description>
     </item>
     
     <item>
@@ -490,27 +128,10 @@ Right side of equation should be updated simultaneously.
       <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/hugo/</guid>
-      <description>
-
-&lt;h2 id=&#34;编译的路径&#34;&gt;编译的路径&lt;/h2&gt;
-
-&lt;p&gt;layouts/indexes下的html文件会被编译到一个单独的路径中，作为索引&lt;/p&gt;
-
-&lt;p&gt;也可以用以下代码在config中强行指定索引文件&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[indexes]
-  tag = &amp;quot;tags&amp;quot;
-  topic = &amp;quot;topics&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;md渲染&#34;&gt;md渲染&lt;/h2&gt;
-
-&lt;p&gt;默认是按_default下的single.html来渲染的&lt;/p&gt;
-
-&lt;h2 id=&#34;render模板指令&#34;&gt;render模板指令&lt;/h2&gt;
-
-&lt;p&gt;默认是从_default目录中寻找的&lt;/p&gt;
-</description>
+      <description>编译的路径 layouts/indexes下的html文件会被编译到一个单独的路径中，作为索引
+也可以用以下代码在config中强行指定索引文件
+[indexes] tag = &amp;quot;tags&amp;quot; topic = &amp;quot;topics&amp;quot;  md渲染 默认是按_default下的single.html来渲染的
+render模板指令 默认是从_default目录中寻找的</description>
     </item>
     
     <item>
@@ -519,107 +140,13 @@ Right side of equation should be updated simultaneously.
       <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/htmlpy/</guid>
-      <description>
-
-&lt;h1 id=&#34;notes-for-htmlpy&#34;&gt;Notes for htmlpy&lt;/h1&gt;
-
-&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Platform&lt;/strong&gt;: Ubuntu 16.04 LTS&lt;/p&gt;
-
-&lt;p&gt;1) Installing python package manager: pip&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;2) Installing htmlPy&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pip install htmlPy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;3) Installing PySide&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pyside
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;4) Installing jinja2, which is depended by htmlPy.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo pip install jinja2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;5) Installing PyQt4&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install python-qt4
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;a-simple-demo&#34;&gt;A simple demo&lt;/h2&gt;
-
-&lt;p&gt;Assume that there is a file named &amp;ldquo;index.html&amp;rdquo; in the same path.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import htmlPy
-import os
-
-app = htmlPy.AppGUI(title=u&amp;quot;htmlPy Quickstart&amp;quot;, maximized=True)
-
-app.template_path = os.path.abspath(&amp;quot;.&amp;quot;)
-app.static_path = os.path.abspath(&amp;quot;.&amp;quot;)
-
-app.template = (&amp;quot;index.html&amp;quot;, {&amp;quot;username&amp;quot;: &amp;quot;htmlPy_user&amp;quot;})
-
-app.start()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;modularization&#34;&gt;Modularization&lt;/h2&gt;
-
-&lt;p&gt;The driver file structure should be:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Initial configurations&lt;/li&gt;
-&lt;li&gt;htmlPy GUI initialization&lt;/li&gt;
-&lt;li&gt;htmlPy GUI configuration&lt;/li&gt;
-&lt;li&gt;Binding of back-end functionalities with GUI
-a. Import back-end functionalities
-b. Bind imported functionalities&lt;/li&gt;
-&lt;li&gt;Instructions for running front-end in if __name__ \=\= &amp;ldquo;__main__&amp;ldquo;: conditional. Always keep the GUI starter code in the &lt;code&gt;if __name__ == “__main__”:&lt;/code&gt; conditional. The GUI has to be started only when the driver file is running, not when it is being imported&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
-import htmlPy
-from PyQt4 import QtGui
-
-
-# Initial confiurations
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-
-
-# GUI initializations
-app = htmlPy.AppGUI(title=u&amp;quot;Application&amp;quot;, maximized=True, plugins=True)
-
-
-# GUI configurations
-app.static_path = os.path.join(BASE_DIR, &amp;quot;static/&amp;quot;)
-app.template_path = os.path.join(BASE_DIR, &amp;quot;templates/&amp;quot;)
-
-app.web_app.setMinimumWidth(1024)
-app.web_app.setMinimumHeight(768)
-app.window.setWindowIcon(QtGui.QIcon(BASE_DIR + &amp;quot;/static/img/icon.png&amp;quot;))
-
-# Binding of back-end functionalities with GUI
-
-# Import back-end functionalities
-from html_to_python import ClassName
-
-# Register back-end functionalities
-app.bind(ClassName())
-
-
-# Instructions for running application
-if __name__ == &amp;quot;__main__&amp;quot;:
-    # The driver file will have to be imported everywhere in back-end.
-    # So, always keep app.start() in if __name__ == &amp;quot;__main__&amp;quot; conditional
-    app.start()
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Notes for htmlpy Installation Platform: Ubuntu 16.04 LTS
+1) Installing python package manager: pip
+sudo apt-get install python-pip  2) Installing htmlPy
+pip install htmlPy  3) Installing PySide
+sudo apt-get install python-pyside  4) Installing jinja2, which is depended by htmlPy.
+sudo pip install jinja2  5) Installing PyQt4
+sudo apt-get install python-qt4  A simple demo Assume that there is a file named &amp;ldquo;index.html&amp;rdquo; in the same path.</description>
     </item>
     
     <item>
@@ -628,147 +155,9 @@ if __name__ == &amp;quot;__main__&amp;quot;:
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/cplusplus-multithread/</guid>
-      <description>
-
-&lt;h1 id=&#34;c-concurrency-in-action&#34;&gt;c++ concurrency in action&lt;/h1&gt;
-
-&lt;h2 id=&#34;g-compile&#34;&gt;g++ compile&lt;/h2&gt;
-
-&lt;p&gt;g++ -std=c++11 launch-thread.cpp -o launch-thread -lpthread&lt;/p&gt;
-
-&lt;h2 id=&#34;basic-thread-management&#34;&gt;basic thread management&lt;/h2&gt;
-
-&lt;h3 id=&#34;lanch-a-thread&#34;&gt;lanch a thread&lt;/h3&gt;
-
-&lt;p&gt;we can lanch a thread by passing a parameter which can be function, lamda expression and function call operator&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
-#include&amp;lt;thread&amp;gt;
-
-void helloWorld(){
-	std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function&amp;quot;&amp;lt;&amp;lt;std::endl;
-}
-
-class hello{
-	public:
-		void operator()(){
-			std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function call operator&amp;quot;&amp;lt;&amp;lt;std::endl;
-		}
-};
-
-int main(){
-	std::thread testFunction(helloWorld);
-
-	std::thread testLamda([]{
-		std::cout&amp;lt;&amp;lt;&amp;quot;hello world from lamda&amp;quot;&amp;lt;&amp;lt;std::endl;
-	});
-
-	hello x;
-	std::thread testCall(x);
-
-	testFunction.join();
-	testLamda.join();
-	testCall.join();
-
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;wait-all-let-it-run&#34;&gt;wait all let it run&lt;/h3&gt;
-
-&lt;p&gt;using join(), local thread will wait until thread to finished.&lt;/p&gt;
-
-&lt;p&gt;using detach(), thread will continue run even if local thread is destroyed&lt;/p&gt;
-
-&lt;h3 id=&#34;waiting-in-exceptional-circumstances&#34;&gt;Waiting in exceptional circumstances&lt;/h3&gt;
-
-&lt;p&gt;thread_guard will be destroyed before thread, so join() will be called in destructor&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
-#include&amp;lt;thread&amp;gt;
-
-class thread_guard{
-	std::thread &amp;amp;t;
-	public:
-		thread_guard(std::thread &amp;amp;t_):t(t_){
-		}
-		~thread_guard(){
-			if(t.joinable()){
-				t.join();
-			}
-		}
-};
-
-int main(){
-	std::thread t([](){
-		std::cout&amp;lt;&amp;lt;&amp;quot;hello&amp;quot;&amp;lt;&amp;lt;std::endl;
-	});
-	thread_guard g(t);
-
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;passing-argument&#34;&gt;passing argument&lt;/h3&gt;
-
-&lt;p&gt;argument is passed by pass a copy into internal storage. If pass a reference, we should use std::ref.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
-#include&amp;lt;thread&amp;gt;
-void func(int &amp;amp;x){
-	x++;
-	x++;
-}
-int main(){
-	int x=10;
-	std::thread t(func,std::ref(x));
-	t.join();
-	std::cout&amp;lt;&amp;lt;x&amp;lt;&amp;lt;std::endl;
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;thread-management&#34;&gt;thread management&lt;/h2&gt;
-
-&lt;h3 id=&#34;hardware-concurrency&#34;&gt;hardware_concurrency&lt;/h3&gt;
-
-&lt;p&gt;This function returns an indication of the number of threads that can truly run concurrently for a given execution of a program. On a multicore system it might be the number of CPU cores, for example.
-demo show as follow:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;thread&amp;gt;
-int main(){
-	std::cout&amp;lt;&amp;lt;std::thread::hardware_concurrency()&amp;lt;&amp;lt;std::endl;
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;thread-id&#34;&gt;thread id&lt;/h3&gt;
-
-&lt;p&gt;the identifier for a thread can be obtained from its associated std::thread object by calling the get_id() member function;the identifier for the current thread can be obtained by calling std::this_thread::get_id().
-demo show as follow:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;thread&amp;gt;
-int main(){
-	std::cout&amp;lt;&amp;lt;std::this_thread::get_id()&amp;lt;&amp;lt;std::endl;
-	std::thread a([]{
-		std::cout&amp;lt;&amp;lt;&amp;quot;hello world&amp;quot;&amp;lt;&amp;lt;std::endl;
-	});
-	std::cout&amp;lt;&amp;lt;a.get_id()&amp;lt;&amp;lt;std::endl;
-	a.join();
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;sharing-data-between-threads&#34;&gt;sharing data between threads&lt;/h2&gt;
-
-&lt;h3 id=&#34;race-condition&#34;&gt;race condition&lt;/h3&gt;
-
-&lt;p&gt;几个线程的操作同时修改某个对象产生的问题。&lt;/p&gt;
-
-&lt;p&gt;解决这个问题有三种方法：当某个线程在修改时，不允许其他线程介入；lock-free programming（复杂）;transaction(c++不支持)&lt;/p&gt;
-</description>
+      <description>c++ concurrency in action g++ compile g++ -std=c++11 launch-thread.cpp -o launch-thread -lpthread
+basic thread management lanch a thread we can lanch a thread by passing a parameter which can be function, lamda expression and function call operator
+#include&amp;lt;iostream&amp;gt; #include&amp;lt;thread&amp;gt; void helloWorld(){ std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function&amp;quot;&amp;lt;&amp;lt;std::endl; } class hello{ public: void operator()(){ std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function call operator&amp;quot;&amp;lt;&amp;lt;std::endl; } }; int main(){ std::thread testFunction(helloWorld); std::thread testLamda([]{ std::cout&amp;lt;&amp;lt;&amp;quot;hello world from lamda&amp;quot;&amp;lt;&amp;lt;std::endl; }); hello x; std::thread testCall(x); testFunction.</description>
     </item>
     
     <item>
@@ -777,187 +166,14 @@ int main(){
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/cplusplus-functions/</guid>
-      <description>
-
-&lt;h1 id=&#34;函数用法&#34;&gt;函数用法&lt;/h1&gt;
-
-&lt;h2 id=&#34;function-call-operator&#34;&gt;function call operator&lt;/h2&gt;
-
-&lt;p&gt;在class中加入operator()使类具有函数的特征&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
-class mul{
-	public:
-		mul(int x){
-			multiplier=x;
-		}
-		int operator()(int x) const {
-			return x*multiplier;
-		}
-	private:
-		int multiplier;
-};
-int main(){
-	mul test(10);
-	std::cout&amp;lt;&amp;lt;test(2)&amp;lt;&amp;lt;std::endl;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;lamda-expression&#34;&gt;lamda expression&lt;/h2&gt;
-
-&lt;p&gt;[传入的变量列表](函数参数){函数体}(调用);&lt;/p&gt;
-
-&lt;p&gt;在[ ]中声明需要使用的调用体的域中的本地变量，全局变量不需要声明。[=]表示所有的变量以赋值的形式传入，[&amp;amp;]表示所有的变量以引用的形式传入，[=,&amp;amp;j]表示除j外都以赋值传入，[i,&amp;amp;j]，表示i以赋值传入，j以引用传入&lt;/p&gt;
-
-&lt;p&gt;第一个()为参数列表&lt;/p&gt;
-
-&lt;p&gt;{}中是函数体&lt;/p&gt;
-
-&lt;p&gt;第二个()表示调用&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
-int main(){
-	int x=1;
-	double y=1.2;
-	bool z=false;
-	[x,&amp;amp;y](int i){std::cout&amp;lt;&amp;lt;i+x+y&amp;lt;&amp;lt;std::endl;}(1);
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;accumulate&#34;&gt;accumulate&lt;/h2&gt;
-
-&lt;p&gt;累加, demo 如下所示，可使用vector的迭代器&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;vector&amp;gt;
-#include &amp;lt;numeric&amp;gt;
-
-int main(){
-    int can[]={1,2,3,4};
-    int r=std::accumulate(can,can+4,0);
-    std::cout&amp;lt;&amp;lt;r&amp;lt;&amp;lt;std::endl;
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;distance&#34;&gt;distance&lt;/h2&gt;
-
-&lt;p&gt;返回迭代器之间的距离，demo如下:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;vector&amp;gt;
-int main(){
-	char a[]={1,2,3,4,5};
-	std::vector&amp;lt; int&amp;gt; b={1,2,3,4,5};
-	std::cout&amp;lt;&amp;lt;std::distance(a,a+4)&amp;lt;&amp;lt;std::endl;
-	std::cout&amp;lt;&amp;lt;std::distance(b.begin(), b.end())&amp;lt;&amp;lt;std::endl;
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;advance&#34;&gt;advance&lt;/h2&gt;
-
-&lt;p&gt;增加迭代器变量值，在list中应使用这个&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;vector&amp;gt;
-int main(){
-	std::vector&amp;lt;int&amp;gt; v={1,2,3,4,5};
-	auto b= v.begin();
-	std::advance(b,2);
-	std::cout&amp;lt;&amp;lt;v[b-v.begin()]&amp;lt;&amp;lt;std::endl;
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;hash&#34;&gt;hash&lt;/h2&gt;
-
-&lt;p&gt;对对象进行hash&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;string&amp;gt;
-int main(){
-	std::hash&amp;lt;std::string&amp;gt; test;
-	std::cout&amp;lt;&amp;lt;test(&amp;quot;hello&amp;quot;)&amp;lt;&amp;lt;std::endl;
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;find&#34;&gt;find&lt;/h2&gt;
-
-&lt;p&gt;在容器中查找元素&lt;/p&gt;
-
-&lt;h2 id=&#34;move&#34;&gt;move&lt;/h2&gt;
-
-&lt;p&gt;将object转移给其他的变量，leaves the source object with a NULL pointer&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
-
-int main(){
-	std::string a=&amp;quot;abs&amp;quot;;
-	std::cout&amp;lt;&amp;lt;a&amp;lt;&amp;lt;std::endl;
-	std::string b=std::move(a);
-	std::cout&amp;lt;&amp;lt;a&amp;lt;&amp;lt;std::endl&amp;lt;&amp;lt;b&amp;lt;&amp;lt;std::endl;
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;函数传入参数-是否会拷贝副本的问题&#34;&gt;函数传入参数，是否会拷贝副本的问题&lt;/h2&gt;
-
-&lt;p&gt;当调用函数时，在函数的scope中，一般使用的是参数的副本，即在执行函数体之前参数的copy版本会被传入，然而当参数是一个新建的对象而没用变量指向它时，它会直接传入调用的函数中去，而不会传入它的副本，以下代码可以验证这个问题。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
-
-class c{
-	int a;
-	public:
-		c(int x):a(x){}
-		c(const c &amp;amp;x){
-			a=x.a;
-			std::cout&amp;lt;&amp;lt;&amp;quot;copy constructor called&amp;quot;&amp;lt;&amp;lt;std::endl;
-		}
-};
-
-void func(c x){
-	std::cout&amp;lt;&amp;lt;&amp;quot;func called&amp;quot;&amp;lt;&amp;lt;std::endl;
-}
-int main(){
-	c t(10);
-	std::cout&amp;lt;&amp;lt;&amp;quot;object with name:&amp;quot;&amp;lt;&amp;lt;std::endl;
-	func(t);
-	std::cout&amp;lt;&amp;lt;&amp;quot;object without name:&amp;quot;&amp;lt;&amp;lt;std::endl;
-	func(c(20));
-	return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;std-mem-fn&#34;&gt;std::mem_fn&lt;/h2&gt;
-
-&lt;p&gt;将类的成员保存在一个变量中之后调用，&amp;rdquo;Its functional call takes as first argument an object of type T (or a reference or a pointer to it) and, as additional arguments, the arguments taken by pm (if any). The effect of such a call with fn as first argument are the same as calling fn.*pm (or (*fn).*pm if fn is a pointer), forwarding any additional arguments.&amp;rdquo;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;iostream&amp;gt;     // std::cout
-#include &amp;lt;functional&amp;gt;   // std::mem_fn
-
-struct int_holder {
-	 int value;
-	 int triple() {return value*3;}
-};
-
-int main () {
-	 int_holder five {5};
-
-	 // call member directly:
-	 std::cout &amp;lt;&amp;lt; five.triple() &amp;lt;&amp;lt; &#39;\n&#39;;
-
-	 // same as above using a mem_fn:
-	 auto triple = std::mem_fn (&amp;amp;int_holder::triple);
-	 std::cout &amp;lt;&amp;lt; triple(five) &amp;lt;&amp;lt; &#39;\n&#39;;
-
-	 return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>函数用法 function call operator 在class中加入operator()使类具有函数的特征
+#include&amp;lt;iostream&amp;gt; class mul{ public: mul(int x){ multiplier=x; } int operator()(int x) const { return x*multiplier; } private: int multiplier; }; int main(){ mul test(10); std::cout&amp;lt;&amp;lt;test(2)&amp;lt;&amp;lt;std::endl; }  lamda expression [传入的变量列表](函数参数){函数体}(调用);
+在[ ]中声明需要使用的调用体的域中的本地变量，全局变量不需要声明。[=]表示所有的变量以赋值的形式传入，[&amp;amp;]表示所有的变量以引用的形式传入，[=,&amp;amp;j]表示除j外都以赋值传入，[i,&amp;amp;j]，表示i以赋值传入，j以引用传入
+第一个()为参数列表
+{}中是函数体
+第二个()表示调用
+#include&amp;lt;iostream&amp;gt; int main(){ int x=1; double y=1.2; bool z=false; [x,&amp;amp;y](int i){std::cout&amp;lt;&amp;lt;i+x+y&amp;lt;&amp;lt;std::endl;}(1); return 0; }  accumulate 累加, demo 如下所示，可使用vector的迭代器
+#include &amp;lt;iostream&amp;gt; #include &amp;lt;vector&amp;gt; #include &amp;lt;numeric&amp;gt; int main(){ int can[]={1,2,3,4}; int r=std::accumulate(can,can+4,0); std::cout&amp;lt;&amp;lt;r&amp;lt;&amp;lt;std::endl; return 0; }  distance 返回迭代器之间的距离，demo如下:</description>
     </item>
     
     <item>
@@ -966,80 +182,11 @@ int main () {
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/linux-bash/</guid>
-      <description>
-
-&lt;h1 id=&#34;linux-bash学习&#34;&gt;linux bash学习&lt;/h1&gt;
-
-&lt;h2 id=&#34;chmod&#34;&gt;chmod&lt;/h2&gt;
-
-&lt;p&gt;change mode, 改变文件的权限
-&lt;a href=&#34;http://www.cnblogs.com/younes/archive/2009/11/20/1607174.html&#34;&gt;详情可见博客&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;hello-world&#34;&gt;hello world&lt;/h2&gt;
-
-&lt;p&gt;demo 如下&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
-#hello world
-a=&amp;quot;hello world&amp;quot;
-echo $a
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;if-else&#34;&gt;if else&lt;/h2&gt;
-
-&lt;p&gt;格式为&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;if [ ... ]; then
-	  ...
-elif [ ... ]; then
-	  ...
-else
-	  ...
-fi
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;demo如下&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
-#test if else
-
-#-f ----&amp;gt; if is a file
-a=&amp;quot;if-else.sh&amp;quot;
-if [ -f $a ]; then
-	echo &amp;quot;$a is a file&amp;quot;
-else
-	echo &amp;quot;$a is not a file&amp;quot;
-fi
-
-#-lt ----&amp;gt; less than -le -&amp;gt; less equal
-b=4
-if [ $b -lt 5 ]; then
-	echo &amp;quot;$b is less than 5&amp;quot;
-else
-	echo &amp;quot;$b is great or equal than 5&amp;quot;
-fi
-
-#-x ----&amp;gt; if is executable
-c=&amp;quot;if-else.sh&amp;quot;
-if [ -x $c ]; then
-	echo &amp;quot;$c is executable&amp;quot;
-else
-	echo &amp;quot;$c is not executable&amp;quot;
-fi
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;参数列表&#34;&gt;参数列表&lt;/h2&gt;
-
-&lt;p&gt;$#表示包括$0在内的命令行参数的个数。在Shell中，脚本名称本身是$0，剩下的依次是$0、$1、$2…、${10}、${11}，等等。$*表示整个参数列表，不包括$0，也就是说不包括文件名的参数列表。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
-#test parameters
-echo $#
-echo $0
-echo $1
-echo $*
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>linux bash学习 chmod change mode, 改变文件的权限 详情可见博客
+hello world demo 如下
+#!/bin/bash #hello world a=&amp;quot;hello world&amp;quot; echo $a  if else 格式为
+if [ ... ]; then ... elif [ ... ]; then ... else ... fi  demo如下
+#!/bin/bash #test if else #-f ----&amp;gt; if is a file a=&amp;quot;if-else.sh&amp;quot; if [ -f $a ]; then echo &amp;quot;$a is a file&amp;quot; else echo &amp;quot;$a is not a file&amp;quot; fi #-lt ----&amp;gt; less than -le -&amp;gt; less equal b=4 if [ $b -lt 5 ]; then echo &amp;quot;$b is less than 5&amp;quot; else echo &amp;quot;$b is great or equal than 5&amp;quot; fi #-x ----&amp;gt; if is executable c=&amp;quot;if-else.</description>
     </item>
     
     <item>
@@ -1048,16 +195,9 @@ echo $*
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/mogodb/</guid>
-      <description>
-
-&lt;h2 id=&#34;指令&#34;&gt;指令&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;show dbs&lt;/strong&gt;  显示所有的数据库&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;db&lt;/strong&gt;  显示当前数据库下的集合&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;use 数据库名&lt;/strong&gt; 切换数据库&lt;/p&gt;
-</description>
+      <description>指令 show dbs 显示所有的数据库
+db 显示当前数据库下的集合
+use 数据库名 切换数据库</description>
     </item>
     
     <item>
@@ -1066,40 +206,7 @@ echo $*
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/algorithm-review/</guid>
-      <description>
-
-&lt;h1 id=&#34;algorithm-course-review&#34;&gt;Algorithm course review&lt;/h1&gt;
-
-&lt;h2 id=&#34;graph-algorithms&#34;&gt;Graph Algorithms&lt;/h2&gt;
-
-&lt;h3 id=&#34;algorithm-on-graphs&#34;&gt;Algorithm on Graphs&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;elementary graph algorithms
-
-&lt;ol&gt;
-&lt;li&gt;breadth-first search&lt;/li&gt;
-&lt;li&gt;depth-first search&lt;/li&gt;
-&lt;li&gt;minimum spanning tree&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;shortest path problem
-
-&lt;ol&gt;
-&lt;li&gt;single-source shortest path&lt;/li&gt;
-&lt;li&gt;all-pairs shortest path&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;maximum flow
-
-&lt;ol&gt;
-&lt;li&gt;max-flow vs min-cut&lt;/li&gt;
-&lt;li&gt;applications&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;dfs&#34;&gt;DFS&lt;/h3&gt;
-
-&lt;p&gt;time complexity: O(|V|+|E|)&lt;/p&gt;
-</description>
+      <description>Algorithm course review Graph Algorithms Algorithm on Graphs  elementary graph algorithms  breadth-first search depth-first search minimum spanning tree  shortest path problem  single-source shortest path all-pairs shortest path  maximum flow  max-flow vs min-cut applications   DFS time complexity: O(|V|+|E|)</description>
     </item>
     
   </channel>
