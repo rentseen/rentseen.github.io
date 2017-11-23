@@ -255,12 +255,6 @@ var _hmt = _hmt || [];
 
 <h2 id="boyer-moore-算法">Boyer-Moore 算法</h2>
 
-<h3 id="测试">测试</h3>
-
-<h4 id="测试-1">测试</h4>
-
-<h5 id="测试-2">测试</h5>
-
 <p>对于这类问题，在此<a href="https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html">博客</a>中有详细的介绍，我再用中文简述一下。</p>
 
 <p>就是从一个无序的数组中，找出一个出现次数超过1/2数组长度的元素。很容易分析出，这样的元素最多存在一个。如果先使用排序再统计，则很容易就可以得到这个元素，但这样做的时间复杂度为nlog(n)。而 Boyer-Moore 算法可以做到O(n)的时间复杂度以及O(1)的空间开销。</p>
