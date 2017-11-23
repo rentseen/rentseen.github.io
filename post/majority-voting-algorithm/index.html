@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.30.2" />
 
-  <title>Majority Voting Algorithm(多数投票问题) &middot; Rentseen&#39;s Blog</title>
+  <title>Majority Voting Algorithm (多数投票问题) &middot; Rentseen&#39;s Blog</title>
 
   
   
@@ -216,7 +216,7 @@ var _hmt = _hmt || [];
 
 
 <div class="header">
-  <h1>Majority Voting Algorithm(多数投票问题)</h1>
+  <h1>Majority Voting Algorithm (多数投票问题)</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -249,17 +249,29 @@ var _hmt = _hmt || [];
 
   
 
-<h1 id="majority-voting-algorithm-多数投票问题">Majority Voting Algorithm(多数投票问题)</h1>
+<h1 id="majority-voting-algorithm-多数投票问题">Majority Voting Algorithm (多数投票问题)</h1>
 
 <p>在做leetcode的这道题 <a href="https://leetcode.com/problems/majority-element-ii/description/">229. Majority Element II</a> 时发现了这个有趣的问题。</p>
 
 <h2 id="boyer-moore-算法">Boyer-Moore 算法</h2>
 
+<h3 id="测试">测试</h3>
+
+<h4 id="测试-1">测试</h4>
+
+<h5 id="测试-2">测试</h5>
+
 <p>对于这类问题，在此<a href="https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html">博客</a>中有详细的介绍，我再用中文简述一下。</p>
 
-<p>就是从一个无序的数组中，找出一个出现次数超过1/2数组长度的元素。很容易分析出，这样的元素最多存在一个。如果先使用排序再统计，则很容易就可以得到这个元素，但这样做的时间复杂度为nlog(n)。而 Boyer-Moore 算法可以做到O(n)的时间复杂度以及O(1)的空间开销。其具体思路如下：
-1. 先做一次数组遍历，在此过程中维护两个变量number, count。如果当前元素与number相同，则count加1，否则减1。如果count为0，则将number替换为当前的元素。当遍历一般之后，很容易分析出，如果存在多数元素，则最后维护的number肯定是这个数字。
-2. 再遍历一般，验证当前number的频率是否超过1/2。</p>
+<p>就是从一个无序的数组中，找出一个出现次数超过1/2数组长度的元素。很容易分析出，这样的元素最多存在一个。如果先使用排序再统计，则很容易就可以得到这个元素，但这样做的时间复杂度为nlog(n)。而 Boyer-Moore 算法可以做到O(n)的时间复杂度以及O(1)的空间开销。</p>
+
+<p>其具体思路如下：</p>
+
+<ol>
+<li><p>先做一次数组遍历，在此过程中维护两个变量number, count。如果当前元素与number相同，则count加1，否则减1。如果count为0，则将number替换为当前的元素。当遍历一般之后，很容易分析出，如果存在多数元素，则最后维护的number肯定是这个数字。</p></li>
+
+<li><p>再遍历一般，验证当前number的频率是否超过1/2。</p></li>
+</ol>
 
 <p>在博客中给出的python代码如下：</p>
 
@@ -280,7 +292,7 @@ for value in input:
 
 <p>Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times. The algorithm should run in linear time and in O(1) space.</p>
 
-<p>要求是找超过⌊ n/3 ⌋的元素，则这样的元素最多会有2个，其实现思路与之前的相同，只需要在遍历时维护两个数字。实现代码如下：</p>
+<p>要求是找超过⌊ n/3 ⌋的元素，则这样的元素最多会有2个，其实现思路与之前的相同，区别在于遍历时维护两个数字，这其中其实也存在一些小的trick，请看代码细细品味 : )。实现代码如下：</p>
 
 <pre><code class="language-java">public List&lt;Integer&gt; majorityElement(int[] nums) {
         List&lt;Integer&gt; result = new ArrayList&lt;&gt;();

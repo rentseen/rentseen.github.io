@@ -14,6 +14,18 @@ h1,h2,h3,h4,h5,h6{
   color:#4a4a4a !important;
 }
 
+h2 {
+  1.5 em;
+}
+
+h3 {
+  1em;
+}
+
+h4 {
+  0.5em;
+}
+
 
 
 .small-print {
