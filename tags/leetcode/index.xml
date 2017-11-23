@@ -17,7 +17,7 @@
       <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/majority-voting-algorithm/</guid>
-      <description>Majority Voting Algorithm (多数投票问题) 在做leetcode的这道题 229. Majority Element II 时发现了这个有趣的问题。
+      <description>在做leetcode的这道题 229. Majority Element II 时发现了这个有趣的问题。
 Boyer-Moore 算法 对于这类问题，在此博客中有详细的介绍，我再用中文简述一下。
 就是从一个无序的数组中，找出一个出现次数超过1/2数组长度的元素。很容易分析出，这样的元素最多存在一个。如果先使用排序再统计，则很容易就可以得到这个元素，但这样做的时间复杂度为nlog(n)。而 Boyer-Moore 算法可以做到O(n)的时间复杂度以及O(1)的空间开销。
 其具体思路如下：
