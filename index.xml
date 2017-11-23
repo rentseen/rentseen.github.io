@@ -123,7 +123,8 @@ ctrl+r:redo
 O:在上方插入一行
 o:在下方插入一行
 number:在指令前加数字，可以执行多次
- ZZ:保存并退出  :q!:不保存退出
+ZZ:保存并退出
+:q!:不保存退出
 dw:删除一个word
 d$:从光标处删除到行尾
 de:删除到当前单词的end
@@ -144,8 +145,16 @@ number+G:移动到第number行
 n:搜索时下一个命中项
 N:搜索时上一个命中项
 ctrl+o:到光标上一个位置
- %:找到与当前光标匹配的),],} :s/old/new:将当前行的第一个old替换成new :s/old/new/g:将当前行所有的old替换成new :%s/old/new/gc:替换文件所有的匹配项，在替换每一个匹配项之前会询问用户 :%s/old/new/g:替换文件所有的匹配项 :#,#/old/new/g:替换#之间的行的所有匹配项 :!command:可以执行命令行的命令  :w filename:另存为
- v:可以高亮选择文本  :r filename: 把filename的内容粘贴过来
+%:找到与当前光标匹配的),],}
+:s/old/new:将当前行的第一个old替换成new
+:s/old/new/g:将当前行所有的old替换成new
+:%s/old/new/gc:替换文件所有的匹配项，在替换每一个匹配项之前会询问用户
+:%s/old/new/g:替换文件所有的匹配项
+:#,#/old/new/g:替换#之间的行的所有匹配项
+:!command:可以执行命令行的命令
+:w filename:另存为
+v:可以高亮选择文本
+:r filename: 把filename的内容粘贴过来
 R:进入replace模式，替换多个字符
 y：yank 复制
 p:put 粘贴/将删除的放在光标之后</description>
