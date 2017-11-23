@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.30.2" />
 
-  <title>Algorithm &middot; Rentseen&#39;s Blog</title>
+  <title>Majority Voting Algorithm(多数投票问题) &middot; Rentseen&#39;s Blog</title>
 
   
   
@@ -28,8 +28,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Rentseen&#39;s Blog" href="http://yelinsheng.top/tags/algorithm/index.xml" />
   
 
   
@@ -111,10 +109,6 @@ var _hmt = _hmt || [];
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="http://yelinsheng.top/tags/algorithm/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -222,18 +216,12 @@ var _hmt = _hmt || [];
 
 
 <div class="header">
-  <h1>Algorithm</h1>
+  <h1>Majority Voting Algorithm(多数投票问题)</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    
 
-<article class="post-short-content">
-  <header>
-    <h2><a class="post-short-header" href="http://yelinsheng.top/post/majority-voting-algorithm/">Majority Voting Algorithm(多数投票问题)</a></h2>
-
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -259,123 +247,110 @@ var _hmt = _hmt || [];
 </div>
 
 
+  
 
-  </header>
-  <div class="post-short-body">
-    
-      <div class="post-short-item">
-        <span>-</span>
-        在数组中查找多数元素
-      </div>
+<h1 id="majority-voting-algorithm-多数投票问题">Majority Voting Algorithm(多数投票问题)</h1>
+
+<p>在做leetcode的这道题 <a href="https://leetcode.com/problems/majority-element-ii/description/">229. Majority Element II</a> 时发现了这个有趣的问题。</p>
+
+<h2 id="boyer-moore-算法">Boyer-Moore 算法</h2>
+
+<p>对于这类问题，在此<a href="https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html">博客</a>中有详细的介绍，我再用中文简述一下。</p>
+
+<p>就是从一个无序的数组中，找出一个出现次数超过1/2数组长度的元素。很容易分析出，这样的元素最多存在一个。如果先使用排序再统计，则很容易就可以得到这个元素，但这样做的时间复杂度为nlog(n)。而 Boyer-Moore 算法可以做到O(n)的时间复杂度以及O(1)的空间开销。其具体思路如下：
+1. 先做一次数组遍历，在此过程中维护两个变量number, count。如果当前元素与number相同，则count加1，否则减1。如果count为0，则将number替换为当前的元素。当遍历一般之后，很容易分析出，如果存在多数元素，则最后维护的number肯定是这个数字。
+2. 再遍历一般，验证当前number的频率是否超过1/2。</p>
+
+<p>在博客中给出的python代码如下：</p>
+
+<pre><code class="language-python">candidate = 0
+count = 0
+for value in input:
+  if count == 0:
+    candidate = value
+  if candidate == value:
+    count += 1
+  else:
+    count -= 1
+</code></pre>
+
+<h2 id="leetcode的题目">leetcode的题目</h2>
+
+<p>题目描述如下：</p>
+
+<p>Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times. The algorithm should run in linear time and in O(1) space.</p>
+
+<p>要求是找超过⌊ n/3 ⌋的元素，则这样的元素最多会有2个，其实现思路与之前的相同，只需要在遍历时维护两个数字。实现代码如下：</p>
+
+<pre><code class="language-java">public List&lt;Integer&gt; majorityElement(int[] nums) {
+        List&lt;Integer&gt; result = new ArrayList&lt;&gt;();
+        if(nums==null || nums.length==0)
+            return result;
+        int number1 = nums[0], number2 = nums[0], count1 = 0, count2 = 0;
+        for(int i=0; i&lt;nums.length; i++){
+            if(nums[i]==number1)
+                count1++;
+            else if(nums[i]==number2)
+                count2++;
+            else if(count1==0){
+                number1=nums[i];
+                count1=1;
+            }
+            else if(count2==0){
+                number2=nums[i];
+                count2=1;
+            }
+            else{
+                count1--;
+                count2--;
+            }
+        }
+        count1=0;
+        count2=0;
+        for(int i=0; i&lt;nums.length; i++){
+            if(nums[i]==number1)
+                count1++;
+            else if(nums[i]==number2)
+                count2++;
+        }
+        if(count1&gt;nums.length/3)
+            result.add(number1);
+        if(count2&gt;nums.length/3)
+            result.add(number2);
+        return result;
+    }
+</code></pre>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
   </div>
-
-  <div class="read-more">
-    <a href="http://yelinsheng.top/post/majority-voting-algorithm/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </div>
-</article>
-
-  
-    
-
-<article class="post-short-content">
-  <header>
-    <h2><a class="post-short-header" href="http://yelinsheng.top/post/leetcode-714/">leetcode: Question 714</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2017-10-22</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="tag-a" href="http://yelinsheng.top/tags/leetcode">leetcode</a>
-    
-      <a class="tag-a" href="http://yelinsheng.top/tags/dp">DP</a>
-    
-      <a class="tag-a" href="http://yelinsheng.top/tags/algorithm">algorithm</a>
+  <div class="pure-u-10-24">
     
   </div>
-  
-  
-
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="http://yelinsheng.top/post/leetcode-714/">leetcode: Question 714</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="http://yelinsheng.top/post/leetcode-714/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
 </div>
 
 
-
-  </header>
-  <div class="post-short-body">
-    
-      <div class="post-short-item">
-        <span>-</span>
-        Best Time to Buy and Sell Stock with Transaction Fee
-      </div>
-    
-  </div>
-
-  <div class="read-more">
-    <a href="http://yelinsheng.top/post/leetcode-714/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </div>
-</article>
-
-  
-    
-
-<article class="post-short-content">
-  <header>
-    <h2><a class="post-short-header" href="http://yelinsheng.top/post/algorithm-review/">算法复习</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2016-09-01</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="tag-a" href="http://yelinsheng.top/tags/course">course</a>
-    
-      <a class="tag-a" href="http://yelinsheng.top/tags/algorithm">algorithm</a>
-    
-  </div>
   
   
 
-</div>
-
-
-
-  </header>
-  <div class="post-short-body">
-    
-      <div class="post-short-item">
-        <span>-</span>
-        研一算法课程复习
-      </div>
-    
-  </div>
-
-  <div class="read-more">
-    <a href="http://yelinsheng.top/post/algorithm-review/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </div>
-</article>
-
-  
 </div>
 
 </div>
@@ -384,4 +359,3 @@ var _hmt = _hmt || [];
 
 </body>
 </html>
-

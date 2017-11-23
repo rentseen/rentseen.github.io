@@ -6,10 +6,24 @@
     <description>Recent content on Rentseen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright &amp;copy; 叶林生 2016.</copyright>
-    <lastBuildDate>Sun, 22 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://yelinsheng.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Majority Voting Algorithm(多数投票问题)</title>
+      <link>http://yelinsheng.top/post/majority-voting-algorithm/</link>
+      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://yelinsheng.top/post/majority-voting-algorithm/</guid>
+      <description>Majority Voting Algorithm(多数投票问题) 在做leetcode的这道题 229. Majority Element II 时发现了这个有趣的问题。
+Boyer-Moore 算法 对于这类问题，在此博客中有详细的介绍，我再用中文简述一下。
+就是从一个无序的数组中，找出一个出现次数超过1/2数组长度的元素。很容易分析出，这样的元素最多存在一个。如果先使用排序再统计，则很容易就可以得到这个元素，但这样做的时间复杂度为nlog(n)。而 Boyer-Moore 算法可以做到O(n)的时间复杂度以及O(1)的空间开销。其具体思路如下： 1. 先做一次数组遍历，在此过程中维护两个变量number, count。如果当前元素与number相同，则count加1，否则减1。如果count为0，则将number替换为当前的元素。当遍历一般之后，很容易分析出，如果存在多数元素，则最后维护的number肯定是这个数字。 2. 再遍历一般，验证当前number的频率是否超过1/2。
+在博客中给出的python代码如下：
+candidate = 0 count = 0 for value in input: if count == 0: candidate = value if candidate == value: count += 1 else: count -= 1  leetcode的题目 题目描述如下：
+Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.</description>
+    </item>
     
     <item>
       <title>leetcode: Question 714</title>
