@@ -284,7 +284,9 @@ for value in input:
 
 <p>Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times. The algorithm should run in linear time and in O(1) space.</p>
 
-<p>要求是找超过⌊ n/3 ⌋的元素，则这样的元素最多会有2个，其实现思路与之前的相同，区别在于遍历时维护两个数字，这其中其实也存在一些小的trick，请看代码细细品味 : )。实现代码如下：</p>
+<p>要求是找超过⌊ n/3 ⌋的元素，则这样的元素最多会有2个，其实现思路与之前的相同，区别在于遍历时维护两个数字，这其中其实也存在一些小的trick，请看代码细细品味 : )。</p>
+
+<p>实现代码如下：</p>
 
 <pre><code class="language-java">public List&lt;Integer&gt; majorityElement(int[] nums) {
         List&lt;Integer&gt; result = new ArrayList&lt;&gt;();

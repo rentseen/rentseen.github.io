@@ -110,11 +110,7 @@ Problem: Is converge result which is scaled the same as converge result which is
       <guid>http://yelinsheng.top/post/vim/</guid>
       <description>据说大神都在用Vim，为了把右手从鼠标上解放出来，我也来入这个坑把。。。
 网站资源 openvim
-shortcut hjkl:左下上右
-dd:删除一行
-J:合并一行
-x:删除一个字符
-i:在光标前插入
+shortcut hjkl:左下上右 dd:删除一行 J:合并一行 x:删除一个字符 i:在光标前插入
 a:在光标后插入
 A:在行末尾插入
 u:undo
