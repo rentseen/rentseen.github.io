@@ -17,7 +17,7 @@
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/linux-bash/</guid>
-      <description>linux bash学习 chmod change mode, 改变文件的权限 详情可见博客
+      <description>chmod change mode, 改变文件的权限 详情可见博客
 hello world demo 如下
 #!/bin/bash #hello world a=&amp;quot;hello world&amp;quot; echo $a  if else 格式为
 if [ ... ]; then ... elif [ ... ]; then ... else ... fi  demo如下

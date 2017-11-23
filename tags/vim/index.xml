@@ -17,7 +17,7 @@
       <pubDate>Tue, 06 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/vim/</guid>
-      <description>Vim 的使用与学习 据说大神都在用Vim，为了把右手从鼠标上解放出来，我也来入这个坑把。。。
+      <description>据说大神都在用Vim，为了把右手从鼠标上解放出来，我也来入这个坑把。。。
 网站资源 openvim
 shortcut hjkl:左下上右 dd:删除一行 J:合并一行 x:删除一个字符 i:在光标前插入 a:在光标后插入 A:在行末尾插入 u:undo U:将一行恢复原样 ctrl+r:redo O:在上方插入一行 o:在下方插入一行 number:在指令前加数字，可以执行多次 ZZ:保存并退出 :q!:不保存退出 dw:删除一个word d$:从光标处删除到行尾 de:删除到当前单词的end 0:移动到开头 $:移动到行尾 2w:移动2个word到开头 2e：移动两个word到end d2w:删除两个word 2dd:删除两行 r+字母:替换当前光标的字母 ce:change until the end word c+number+motion:与d类似 gg:移动到文档开头 G:移动到文档末尾 number+G:移动到第number行 /word:搜索，正向 ?word:搜索，反向 n:搜索时下一个命中项 N:搜索时上一个命中项 ctrl+o:到光标上一个位置 %:找到与当前光标匹配的),],} :s/old/new:将当前行的第一个old替换成new :s/old/new/g:将当前行所有的old替换成new :%s/old/new/gc:替换文件所有的匹配项，在替换每一个匹配项之前会询问用户 :%s/old/new/g:替换文件所有的匹配项 :#,#/old/new/g:替换#之间的行的所有匹配项 :!command:可以执行命令行的命令 :w filename:另存为 v:可以高亮选择文本 :r filename: 把filename的内容粘贴过来 R:进入replace模式，替换多个字符 y：yank 复制 p:put 粘贴/将删除的放在光标之后</description>
     </item>

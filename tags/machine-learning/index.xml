@@ -17,7 +17,7 @@
       <pubDate>Tue, 06 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/machine-learning-week2/</guid>
-      <description>Machine Learning: Week 2 Multivariate linear regression Linear regression with multiple variables is also known as &amp;ldquo;multivariate linear regression&amp;rdquo;.
+      <description>Multivariate linear regression Linear regression with multiple variables is also known as &amp;ldquo;multivariate linear regression&amp;rdquo;.
 Notation Hypothesis Gradient descent Formula:
 Partial derivation will be like this:
 Feature scaling If scale of features differ widely, it may take long time to converge. So it is necessary to scale the feature.
@@ -31,7 +31,7 @@ Problem: Is converge result which is scaled the same as converge result which is
       <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/mathine-learning-week1/</guid>
-      <description>Machine Learning: Week 1 Supervised learning Predict output according to the correct dataset which are already known.
+      <description>Supervised learning Predict output according to the correct dataset which are already known.
 Supervised learning problems are categorized into &amp;ldquo;regression&amp;rdquo; and &amp;ldquo;classification&amp;rdquo; problems
 House price prediction This is a regression problem, whose prediction value is continuous.
 Do regression according to history data, you can do linear regression or quadratic regression which is up to you.

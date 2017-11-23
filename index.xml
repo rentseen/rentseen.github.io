@@ -29,13 +29,13 @@ Given an integer array of size n, find all elements that appear more than ⌊ n/
     </item>
     
     <item>
-      <title>leetcode: Question 714</title>
+      <title>leetcode Q714: Best Time to Buy and Sell Stock with Transaction Fee</title>
       <link>http://yelinsheng.top/post/leetcode-714/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/leetcode-714/</guid>
-      <description>714. Best Time to Buy and Sell Stock with Transaction Fee 题目 Your are given an array of integers prices, for which the i-th element is the price of a given stock on day i; and a non-negative integer fee representing a transaction fee.
-You may complete as many transactions as you like, but you need to pay the transaction fee for each transaction. You may not buy more than 1 share of a stock at a time (ie.</description>
+      <description>题目 Your are given an array of integers prices, for which the i-th element is the price of a given stock on day i; and a non-negative integer fee representing a transaction fee.
+You may complete as many transactions as you like, but you need to pay the transaction fee for each transaction. You may not buy more than 1 share of a stock at a time (ie. you must sell the stock share before you buy again.</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@ You may complete as many transactions as you like, but you need to pay the trans
       <pubDate>Fri, 30 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/advanced-database-review/</guid>
-      <description>数据库复习 第14章 事务 事务：原子性，隔离线（并发控制系统），持久性，一致性
+      <description>第14章 事务 事务：原子性，隔离线（并发控制系统），持久性，一致性
 存储结构：易失型，非易失型，稳定型
 事务的状态：活动，部分提交，失败，中止，提交
 原子性，持久性：系统遇到故障时可能无法保证原子性和持久性。日志可以提供恢复机制。回滚。
@@ -84,7 +84,8 @@ Thomas写规则: 过时的write操作将被忽略
 多版本机制: 记录每个版本的值
 第16章 恢复系统 恢复与原子性:
 日志记录: 更新日志记录  等
-数据库修改: 延迟修改，立即修改，undo，redo</description>
+数据库修改: 延迟修改，立即修改，undo，redo
+并发控制和恢复</description>
     </item>
     
     <item>
@@ -93,7 +94,7 @@ Thomas写规则: 过时的write操作将被忽略
       <pubDate>Tue, 06 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/machine-learning-week2/</guid>
-      <description>Machine Learning: Week 2 Multivariate linear regression Linear regression with multiple variables is also known as &amp;ldquo;multivariate linear regression&amp;rdquo;.
+      <description>Multivariate linear regression Linear regression with multiple variables is also known as &amp;ldquo;multivariate linear regression&amp;rdquo;.
 Notation Hypothesis Gradient descent Formula:
 Partial derivation will be like this:
 Feature scaling If scale of features differ widely, it may take long time to converge. So it is necessary to scale the feature.
@@ -107,18 +108,18 @@ Problem: Is converge result which is scaled the same as converge result which is
       <pubDate>Tue, 06 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/vim/</guid>
-      <description>Vim 的使用与学习 据说大神都在用Vim，为了把右手从鼠标上解放出来，我也来入这个坑把。。。
+      <description>据说大神都在用Vim，为了把右手从鼠标上解放出来，我也来入这个坑把。。。
 网站资源 openvim
 shortcut hjkl:左下上右 dd:删除一行 J:合并一行 x:删除一个字符 i:在光标前插入 a:在光标后插入 A:在行末尾插入 u:undo U:将一行恢复原样 ctrl+r:redo O:在上方插入一行 o:在下方插入一行 number:在指令前加数字，可以执行多次 ZZ:保存并退出 :q!:不保存退出 dw:删除一个word d$:从光标处删除到行尾 de:删除到当前单词的end 0:移动到开头 $:移动到行尾 2w:移动2个word到开头 2e：移动两个word到end d2w:删除两个word 2dd:删除两行 r+字母:替换当前光标的字母 ce:change until the end word c+number+motion:与d类似 gg:移动到文档开头 G:移动到文档末尾 number+G:移动到第number行 /word:搜索，正向 ?word:搜索，反向 n:搜索时下一个命中项 N:搜索时上一个命中项 ctrl+o:到光标上一个位置 %:找到与当前光标匹配的),],} :s/old/new:将当前行的第一个old替换成new :s/old/new/g:将当前行所有的old替换成new :%s/old/new/gc:替换文件所有的匹配项，在替换每一个匹配项之前会询问用户 :%s/old/new/g:替换文件所有的匹配项 :#,#/old/new/g:替换#之间的行的所有匹配项 :!command:可以执行命令行的命令 :w filename:另存为 v:可以高亮选择文本 :r filename: 把filename的内容粘贴过来 R:进入replace模式，替换多个字符 y：yank 复制 p:put 粘贴/将删除的放在光标之后</description>
     </item>
     
     <item>
-      <title>Unity 3d 学习、体验</title>
+      <title>游戏引擎：unity-3d 的初次学习以及体验</title>
       <link>http://yelinsheng.top/post/unity-3d/</link>
       <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/unity-3d/</guid>
-      <description> 游戏引擎：unity-3d 的初次学习以及体验 unity-3d 是由Unity Technologies开发的专业游戏引擎
+      <description> unity-3d 是由Unity Technologies开发的专业游戏引擎
 安装： 支持mac和windows这两个平台，我使用的是windows，直接选择免费版的下载安装即可，在安装时需要登录并填写一个调查问卷（不知道是干嘛的==）。
 使用： 我是学习了一下官网上的教程，做的是第一个案例：Roll a ball.（没做完- -）
 官网上的视频讲的很清楚，每一步的操作都解释的很明白，它的视频用的是youtube提供的接口（youtube的字幕太强大了，似乎是自动生成的，用了机器学习神马的，很精准）
@@ -131,7 +132,7 @@ shortcut hjkl:左下上右 dd:删除一行 J:合并一行 x:删除一个字符 i
       <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/mathine-learning-week1/</guid>
-      <description>Machine Learning: Week 1 Supervised learning Predict output according to the correct dataset which are already known.
+      <description>Supervised learning Predict output according to the correct dataset which are already known.
 Supervised learning problems are categorized into &amp;ldquo;regression&amp;rdquo; and &amp;ldquo;classification&amp;rdquo; problems
 House price prediction This is a regression problem, whose prediction value is continuous.
 Do regression according to history data, you can do linear regression or quadratic regression which is up to you.
@@ -167,13 +168,14 @@ Hello, I&amp;rsquo;m Rentseen. Now I&amp;rsquo;m studying in Shanghai Jiao Tong 
       <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/htmlpy/</guid>
-      <description>Notes for htmlpy Installation Platform: Ubuntu 16.04 LTS
+      <description>Installation Platform: Ubuntu 16.04 LTS
 1) Installing python package manager: pip
 sudo apt-get install python-pip  2) Installing htmlPy
 pip install htmlPy  3) Installing PySide
 sudo apt-get install python-pyside  4) Installing jinja2, which is depended by htmlPy.
 sudo pip install jinja2  5) Installing PyQt4
-sudo apt-get install python-qt4  A simple demo Assume that there is a file named &amp;ldquo;index.html&amp;rdquo; in the same path.</description>
+sudo apt-get install python-qt4  A simple demo Assume that there is a file named &amp;ldquo;index.html&amp;rdquo; in the same path.
+import htmlPy import os app = htmlPy.</description>
     </item>
     
     <item>
@@ -182,7 +184,7 @@ sudo apt-get install python-qt4  A simple demo Assume that there is a file named
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/cplusplus-multithread/</guid>
-      <description>c++ concurrency in action g++ compile g++ -std=c++11 launch-thread.cpp -o launch-thread -lpthread
+      <description>g++ compile g++ -std=c++11 launch-thread.cpp -o launch-thread -lpthread
 basic thread management lanch a thread we can lanch a thread by passing a parameter which can be function, lamda expression and function call operator
 #include&amp;lt;iostream&amp;gt; #include&amp;lt;thread&amp;gt; void helloWorld(){ std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function&amp;quot;&amp;lt;&amp;lt;std::endl; } class hello{ public: void operator()(){ std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function call operator&amp;quot;&amp;lt;&amp;lt;std::endl; } }; int main(){ std::thread testFunction(helloWorld); std::thread testLamda([]{ std::cout&amp;lt;&amp;lt;&amp;quot;hello world from lamda&amp;quot;&amp;lt;&amp;lt;std::endl; }); hello x; std::thread testCall(x); testFunction.</description>
     </item>
@@ -193,7 +195,7 @@ basic thread management lanch a thread we can lanch a thread by passing a parame
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/cplusplus-functions/</guid>
-      <description>函数用法 function call operator 在class中加入operator()使类具有函数的特征
+      <description>function call operator 在class中加入operator()使类具有函数的特征
 #include&amp;lt;iostream&amp;gt; class mul{ public: mul(int x){ multiplier=x; } int operator()(int x) const { return x*multiplier; } private: int multiplier; }; int main(){ mul test(10); std::cout&amp;lt;&amp;lt;test(2)&amp;lt;&amp;lt;std::endl; }  lamda expression [传入的变量列表](函数参数){函数体}(调用);
 在[ ]中声明需要使用的调用体的域中的本地变量，全局变量不需要声明。[=]表示所有的变量以赋值的形式传入，[&amp;amp;]表示所有的变量以引用的形式传入，[=,&amp;amp;j]表示除j外都以赋值传入，[i,&amp;amp;j]，表示i以赋值传入，j以引用传入
 第一个()为参数列表
@@ -209,7 +211,7 @@ basic thread management lanch a thread we can lanch a thread by passing a parame
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/linux-bash/</guid>
-      <description>linux bash学习 chmod change mode, 改变文件的权限 详情可见博客
+      <description>chmod change mode, 改变文件的权限 详情可见博客
 hello world demo 如下
 #!/bin/bash #hello world a=&amp;quot;hello world&amp;quot; echo $a  if else 格式为
 if [ ... ]; then ... elif [ ... ]; then ... else ... fi  demo如下
@@ -233,7 +235,7 @@ use 数据库名 切换数据库</description>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/algorithm-review/</guid>
-      <description>Algorithm course review Graph Algorithms Algorithm on Graphs  elementary graph algorithms  breadth-first search depth-first search minimum spanning tree  shortest path problem  single-source shortest path all-pairs shortest path  maximum flow  max-flow vs min-cut applications   DFS time complexity: O(|V|+|E|)</description>
+      <description>Graph Algorithms Algorithm on Graphs  elementary graph algorithms  breadth-first search depth-first search minimum spanning tree  shortest path problem  single-source shortest path all-pairs shortest path  maximum flow  max-flow vs min-cut applications   DFS time complexity: O(|V|+|E|)</description>
     </item>
     
   </channel>

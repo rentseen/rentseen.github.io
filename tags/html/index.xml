@@ -17,13 +17,14 @@
       <pubDate>Tue, 11 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/htmlpy/</guid>
-      <description>Notes for htmlpy Installation Platform: Ubuntu 16.04 LTS
+      <description>Installation Platform: Ubuntu 16.04 LTS
 1) Installing python package manager: pip
 sudo apt-get install python-pip  2) Installing htmlPy
 pip install htmlPy  3) Installing PySide
 sudo apt-get install python-pyside  4) Installing jinja2, which is depended by htmlPy.
 sudo pip install jinja2  5) Installing PyQt4
-sudo apt-get install python-qt4  A simple demo Assume that there is a file named &amp;ldquo;index.html&amp;rdquo; in the same path.</description>
+sudo apt-get install python-qt4  A simple demo Assume that there is a file named &amp;ldquo;index.html&amp;rdquo; in the same path.
+import htmlPy import os app = htmlPy.</description>
     </item>
     
   </channel>

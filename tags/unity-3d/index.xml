@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Unity 3d 学习、体验</title>
+      <title>游戏引擎：unity-3d 的初次学习以及体验</title>
       <link>http://yelinsheng.top/post/unity-3d/</link>
       <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/unity-3d/</guid>
-      <description> 游戏引擎：unity-3d 的初次学习以及体验 unity-3d 是由Unity Technologies开发的专业游戏引擎
+      <description> unity-3d 是由Unity Technologies开发的专业游戏引擎
 安装： 支持mac和windows这两个平台，我使用的是windows，直接选择免费版的下载安装即可，在安装时需要登录并填写一个调查问卷（不知道是干嘛的==）。
 使用： 我是学习了一下官网上的教程，做的是第一个案例：Roll a ball.（没做完- -）
 官网上的视频讲的很清楚，每一步的操作都解释的很明白，它的视频用的是youtube提供的接口（youtube的字幕太强大了，似乎是自动生成的，用了机器学习神马的，很精准）

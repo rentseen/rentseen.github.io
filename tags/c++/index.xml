@@ -17,7 +17,7 @@
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/cplusplus-multithread/</guid>
-      <description>c++ concurrency in action g++ compile g++ -std=c++11 launch-thread.cpp -o launch-thread -lpthread
+      <description>g++ compile g++ -std=c++11 launch-thread.cpp -o launch-thread -lpthread
 basic thread management lanch a thread we can lanch a thread by passing a parameter which can be function, lamda expression and function call operator
 #include&amp;lt;iostream&amp;gt; #include&amp;lt;thread&amp;gt; void helloWorld(){ std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function&amp;quot;&amp;lt;&amp;lt;std::endl; } class hello{ public: void operator()(){ std::cout&amp;lt;&amp;lt;&amp;quot;hello world from function call operator&amp;quot;&amp;lt;&amp;lt;std::endl; } }; int main(){ std::thread testFunction(helloWorld); std::thread testLamda([]{ std::cout&amp;lt;&amp;lt;&amp;quot;hello world from lamda&amp;quot;&amp;lt;&amp;lt;std::endl; }); hello x; std::thread testCall(x); testFunction.</description>
     </item>
@@ -28,7 +28,7 @@ basic thread management lanch a thread we can lanch a thread by passing a parame
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/cplusplus-functions/</guid>
-      <description>函数用法 function call operator 在class中加入operator()使类具有函数的特征
+      <description>function call operator 在class中加入operator()使类具有函数的特征
 #include&amp;lt;iostream&amp;gt; class mul{ public: mul(int x){ multiplier=x; } int operator()(int x) const { return x*multiplier; } private: int multiplier; }; int main(){ mul test(10); std::cout&amp;lt;&amp;lt;test(2)&amp;lt;&amp;lt;std::endl; }  lamda expression [传入的变量列表](函数参数){函数体}(调用);
 在[ ]中声明需要使用的调用体的域中的本地变量，全局变量不需要声明。[=]表示所有的变量以赋值的形式传入，[&amp;amp;]表示所有的变量以引用的形式传入，[=,&amp;amp;j]表示除j外都以赋值传入，[i,&amp;amp;j]，表示i以赋值传入，j以引用传入
 第一个()为参数列表

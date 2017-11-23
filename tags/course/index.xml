@@ -17,7 +17,7 @@
       <pubDate>Fri, 30 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/advanced-database-review/</guid>
-      <description>数据库复习 第14章 事务 事务：原子性，隔离线（并发控制系统），持久性，一致性
+      <description>第14章 事务 事务：原子性，隔离线（并发控制系统），持久性，一致性
 存储结构：易失型，非易失型，稳定型
 事务的状态：活动，部分提交，失败，中止，提交
 原子性，持久性：系统遇到故障时可能无法保证原子性和持久性。日志可以提供恢复机制。回滚。
@@ -57,7 +57,8 @@ Thomas写规则: 过时的write操作将被忽略
 多版本机制: 记录每个版本的值
 第16章 恢复系统 恢复与原子性:
 日志记录: 更新日志记录  等
-数据库修改: 延迟修改，立即修改，undo，redo</description>
+数据库修改: 延迟修改，立即修改，undo，redo
+并发控制和恢复</description>
     </item>
     
     <item>
@@ -66,7 +67,7 @@ Thomas写规则: 过时的write操作将被忽略
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/algorithm-review/</guid>
-      <description>Algorithm course review Graph Algorithms Algorithm on Graphs  elementary graph algorithms  breadth-first search depth-first search minimum spanning tree  shortest path problem  single-source shortest path all-pairs shortest path  maximum flow  max-flow vs min-cut applications   DFS time complexity: O(|V|+|E|)</description>
+      <description>Graph Algorithms Algorithm on Graphs  elementary graph algorithms  breadth-first search depth-first search minimum spanning tree  shortest path problem  single-source shortest path all-pairs shortest path  maximum flow  max-flow vs min-cut applications   DFS time complexity: O(|V|+|E|)</description>
     </item>
     
   </channel>

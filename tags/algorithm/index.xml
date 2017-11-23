@@ -29,13 +29,13 @@ Given an integer array of size n, find all elements that appear more than ⌊ n/
     </item>
     
     <item>
-      <title>leetcode: Question 714</title>
+      <title>leetcode Q714: Best Time to Buy and Sell Stock with Transaction Fee</title>
       <link>http://yelinsheng.top/post/leetcode-714/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/leetcode-714/</guid>
-      <description>714. Best Time to Buy and Sell Stock with Transaction Fee 题目 Your are given an array of integers prices, for which the i-th element is the price of a given stock on day i; and a non-negative integer fee representing a transaction fee.
-You may complete as many transactions as you like, but you need to pay the transaction fee for each transaction. You may not buy more than 1 share of a stock at a time (ie.</description>
+      <description>题目 Your are given an array of integers prices, for which the i-th element is the price of a given stock on day i; and a non-negative integer fee representing a transaction fee.
+You may complete as many transactions as you like, but you need to pay the transaction fee for each transaction. You may not buy more than 1 share of a stock at a time (ie. you must sell the stock share before you buy again.</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@ You may complete as many transactions as you like, but you need to pay the trans
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://yelinsheng.top/post/algorithm-review/</guid>
-      <description>Algorithm course review Graph Algorithms Algorithm on Graphs  elementary graph algorithms  breadth-first search depth-first search minimum spanning tree  shortest path problem  single-source shortest path all-pairs shortest path  maximum flow  max-flow vs min-cut applications   DFS time complexity: O(|V|+|E|)</description>
+      <description>Graph Algorithms Algorithm on Graphs  elementary graph algorithms  breadth-first search depth-first search minimum spanning tree  shortest path problem  single-source shortest path all-pairs shortest path  maximum flow  max-flow vs min-cut applications   DFS time complexity: O(|V|+|E|)</description>
     </item>
     
   </channel>
