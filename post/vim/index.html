@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.30.2" />
+
+  <title>Vim 的使用与学习 &middot; Rentseen&#39;s Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://yelinsheng.top/css/side-menu.css">
+
+  <link rel="stylesheet" href="http://yelinsheng.top/css/style.css">
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="http://yelinsheng.top/img/icon.jpg" type="image/x-icon" />
+
+
+  
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?359fb22fd6314d3420331c372d6a6544";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="http://yelinsheng.top/">Rentseen</a>
+
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://yelinsheng.top/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://yelinsheng.top/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://yelinsheng.top/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="mailto:yelinsheng@sjtu.edu.cn"><i class='fa fa-envelope fa-fw'></i>Email Me</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://yelinsheng.top/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/rentseen" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/%e6%9e%97%e7%94%9f-%e5%8f%b6-b73a6793" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>Copyright &copy; 叶林生 2016.</small>
+  </div>
+  <div class="small-print">
+    <small>Powered by <a class="copyright-a" href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <br>
+    <small>Theme with  <a class="copyright-a" href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Vim 的使用与学习</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2016-12-06</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="tag-a" href="http://yelinsheng.top/tags/vim">vim</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  
+
+<p>据说大神都在用Vim，为了把右手从鼠标上解放出来，我也来入这个坑把。。。</p>
+
+<h2 id="网站资源">网站资源</h2>
+
+<p><a href="http://www.openvim.com/">openvim</a></p>
+
+<h2 id="shortcut">shortcut</h2>
+
+<p>hjkl:左下上右</p>
+
+<p>dd:删除一行</p>
+
+<p>J:合并一行</p>
+
+<p>x:删除一个字符</p>
+
+<p>i:在光标前插入</p>
+
+<p>a:在光标后插入</p>
+
+<p>A:在行末尾插入</p>
+
+<p>u:undo</p>
+
+<p>U:将一行恢复原样</p>
+
+<p>ctrl+r:redo</p>
+
+<p>O:在上方插入一行</p>
+
+<p>o:在下方插入一行</p>
+
+<p>number:在指令前加数字，可以执行多次</p>
+
+<dl>
+<dt>ZZ:保存并退出</dt>
+</dl>
+
+<p>:q!:不保存退出</p>
+
+<p>dw:删除一个word</p>
+
+<p>d$:从光标处删除到行尾</p>
+
+<p>de:删除到当前单词的end</p>
+
+<p>0:移动到开头</p>
+
+<p>$:移动到行尾</p>
+
+<p>2w:移动2个word到开头</p>
+
+<p>2e：移动两个word到end</p>
+
+<p>d2w:删除两个word</p>
+
+<p>2dd:删除两行</p>
+
+<p>r+字母:替换当前光标的字母</p>
+
+<p>ce:change until the end word</p>
+
+<p>c+number+motion:与d类似</p>
+
+<p>gg:移动到文档开头</p>
+
+<p>G:移动到文档末尾</p>
+
+<p>number+G:移动到第number行</p>
+
+<p>/word:搜索，正向</p>
+
+<p>?word:搜索，反向</p>
+
+<p>n:搜索时下一个命中项</p>
+
+<p>N:搜索时上一个命中项</p>
+
+<p>ctrl+o:到光标上一个位置</p>
+
+<dl>
+<dt>%:找到与当前光标匹配的),],}</dt>
+<dt>:s/old/new:将当前行的第一个old替换成new</dt>
+<dt>:s/old/new/g:将当前行所有的old替换成new</dt>
+<dt>:%s/old/new/gc:替换文件所有的匹配项，在替换每一个匹配项之前会询问用户</dt>
+<dt>:%s/old/new/g:替换文件所有的匹配项</dt>
+<dt>:#,#/old/new/g:替换#之间的行的所有匹配项</dt>
+<dt>:!command:可以执行命令行的命令</dt>
+</dl>
+
+<p>:w filename:另存为</p>
+
+<dl>
+<dt>v:可以高亮选择文本</dt>
+</dl>
+
+<p>:r filename: 把filename的内容粘贴过来</p>
+
+<p>R:进入replace模式，替换多个字符</p>
+
+<p>y：yank 复制</p>
+
+<p>p:put 粘贴/将删除的放在光标之后</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://yelinsheng.top/post/machine-learning-week2/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://yelinsheng.top/post/machine-learning-week2/">Machine Learning: Week 2</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="http://yelinsheng.top/post/unity-3d/">游戏引擎：unity-3d 的初次学习以及体验</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="http://yelinsheng.top/post/unity-3d/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+  
+  
+
+</div>
+
+</div>
+</div>
+<script src="http://yelinsheng.top/js/ui.js"></script>
+
+</body>
+</html>

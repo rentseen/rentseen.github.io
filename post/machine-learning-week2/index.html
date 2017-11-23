@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.30.2" />
+
+  <title>Machine Learning: Week 2 &middot; Rentseen&#39;s Blog</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+
+  <link rel="stylesheet" href="http://yelinsheng.top/css/side-menu.css">
+
+  <link rel="stylesheet" href="http://yelinsheng.top/css/style.css">
+
+  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="http://yelinsheng.top/img/icon.jpg" type="image/x-icon" />
+
+
+  
+  
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?359fb22fd6314d3420331c372d6a6544";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="http://yelinsheng.top/">Rentseen</a>
+
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://yelinsheng.top/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://yelinsheng.top/tags/"><i class='fa fa-tags fa-fw'></i>Tags</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://yelinsheng.top/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="mailto:yelinsheng@sjtu.edu.cn"><i class='fa fa-envelope fa-fw'></i>Email Me</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://yelinsheng.top/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/rentseen" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://linkedin.com/in/%e6%9e%97%e7%94%9f-%e5%8f%b6-b73a6793" target="_blank"><i class="fa fa-linkedin-square fa-fw"></i>LinkedIn</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>Copyright &copy; 叶林生 2016.</small>
+  </div>
+  <div class="small-print">
+    <small>Powered by <a class="copyright-a" href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <br>
+    <small>Theme with  <a class="copyright-a" href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Machine Learning: Week 2</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2016-12-06</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="tag-a" href="http://yelinsheng.top/tags/machine-learning">machine learning</a>
+    
+  </div>
+  
+  
+
+</div>
+
+
+  
+
+<h2 id="multivariate-linear-regression">Multivariate linear regression</h2>
+
+<p>Linear regression with multiple variables is also known as &ldquo;multivariate linear regression&rdquo;.</p>
+
+<h3 id="notation">Notation</h3>
+
+<p><img src="http://yelinsheng.top/img/ML-2-1.png" alt="image" /></p>
+
+<h3 id="hypothesis">Hypothesis</h3>
+
+<p><img src="http://yelinsheng.top/img/ML-2-2.png" alt="image" /></p>
+
+<h3 id="gradient-descent">Gradient descent</h3>
+
+<p>Formula:</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-3.png" alt="image" /></p>
+
+<p>Partial derivation will be like this:</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-4.png" alt="image" /></p>
+
+<h3 id="feature-scaling">Feature scaling</h3>
+
+<p>If scale of features differ widely, it may take long time to converge. So it is
+necessary to scale the feature.</p>
+
+<p>The contour will look like a circle after scaling.</p>
+
+<p><strong>Problem:</strong> Is converge result which is scaled the same as converge result which is not scaled.</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-5.png" alt="image" /></p>
+
+<p>If scale of feature is similar to [-1,1], it will be fine. When it is too big or too small, it should be scaled.</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-6.png" alt="image" /></p>
+
+<p>Mean normalization:</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-7.png" alt="image" /></p>
+
+<h3 id="learning-rate">Learning rate</h3>
+
+<p>Check if gradient descent works correctly using this plot: min(J) - iteration number.</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-8.png" alt="image" /></p>
+
+<p>Alpha can&rsquo;t be too small or too big, we can check it using descent rate plot.</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-9.png" alt="image" /></p>
+
+<h3 id="polynomial-regression">Polynomial regression</h3>
+
+<p>We can combine multiple features into one, or use polynomial function.</p>
+
+<p>Convert it into linear regression, but range of variables may differ widely, so it need feature scaling.</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-10.png" alt="image" /></p>
+
+<h2 id="computing-parameters-analytically">Computing parameters analytically</h2>
+
+<h3 id="normal-equation">Normal Equation</h3>
+
+<p>Solve the optimal theta analytically just by one go.</p>
+
+<p>Matrix setup:</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-11.png" alt="image" /></p>
+
+<p>Derivation of theta: <a href="https://zhuanlan.zhihu.com/p/22757336">知乎专栏</a>
+<img src="http://yelinsheng.top/img/ML-2-12.png" alt="image" /></p>
+
+<p>Normal equation don&rsquo;t need feature scaling:</p>
+
+<p><img src="http://yelinsheng.top/img/ML-2-13.png" alt="image" /></p>
+
+<p>When number of features is small, normal equation is better. Otherwise, gradient descent is better.
+<img src="http://yelinsheng.top/img/ML-2-14.png" alt="image" /></p>
+
+<p>What if X^T X is not invertable.</p>
+
+<p>pinv() in octave will give a value even if parameter is not invertable; int() is not.
+<img src="http://yelinsheng.top/img/ML-2-15.png" alt="image" /></p>
+
+<p>The reason why X^T X is not invertable:
+1. Redundant feature;
+2. Too many features.
+<img src="http://yelinsheng.top/img/ML-2-16.png" alt="image" /></p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://yelinsheng.top/post/advanced-database-review/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://yelinsheng.top/post/advanced-database-review/">高级数据库课程复习</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="http://yelinsheng.top/post/vim/">Vim 的使用与学习</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="http://yelinsheng.top/post/vim/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+  
+  
+
+</div>
+
+</div>
+</div>
+<script src="http://yelinsheng.top/js/ui.js"></script>
+
+</body>
+</html>
