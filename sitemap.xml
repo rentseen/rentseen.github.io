@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://yelinsheng.top/post/torhop/</loc>
+    <lastmod>2018-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yelinsheng.top/post/majority-voting-algorithm/</loc>
     <lastmod>2017-11-23T00:00:00+00:00</lastmod>
   </url>
@@ -168,13 +173,19 @@
   
   <url>
     <loc>http://yelinsheng.top/post/</loc>
-    <lastmod>2017-11-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://yelinsheng.top/tags/project/</loc>
+    <lastmod>2018-03-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://yelinsheng.top/</loc>
-    <lastmod>2017-11-23T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
